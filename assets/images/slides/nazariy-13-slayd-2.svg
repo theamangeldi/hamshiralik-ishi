@@ -1,0 +1,46 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 420" width="520" height="420">
+  <defs>
+    <!-- Shaffof fonga mos gradientlar -->
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e11d48"/>
+      <stop offset="100%" stop-color="#fb7185"/>
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fb7185"/>
+      <stop offset="100%" stop-color="#e11d48"/>
+    </linearGradient>
+    <filter id="glowF" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="16" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- 100% SHAFFOF FON: HECH QANDAY TO'RTBURCHAK QORA FON YO'Q! -->
+  
+  <!-- Yorituvchi nafis ambient nur -->
+  <circle cx="260" cy="210" r="150" fill="#e11d48" opacity="0.12" filter="url(#glowF)"/>
+
+  <!-- Asosiy 3D Vektor Tibbiy Kompozitsiya -->
+          <g transform="translate(200, 140)">
+          <circle cx="50" cy="50" r="115" fill="#e11d48" opacity="0.15" filter="url(#glowF)"/>
+          
+          <!-- Katta 3D Yurak konturi -->
+          <path d="M50 0 C15 -45 -55 -15 -55 45 C-55 110 50 165 50 165 C50 165 155 110 155 45 C155 -15 85 -45 50 0 Z" fill="url(#grad1)" stroke="#ffffff" stroke-width="3" opacity="0.92"/>
+          
+          <!-- EKG kardiogramma zarbi -->
+          <path d="M-65 60 L-10 60 L5 25 L25 95 L45 35 L60 75 L75 60 L165 60" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="25" cy="95" r="5" fill="#ffffff"/>
+
+          <!-- Puls me'yori nishoni -->
+          <g transform="translate(-10, 175)">
+            <rect width="120" height="32" rx="16" fill="rgba(15,23,42,0.9)" stroke="#fb7185" stroke-width="1.5"/>
+            <text x="60" y="21" fill="#fb7185" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="800" text-anchor="middle">120-140 ur/daq</text>
+          </g>
+        </g>
+
+  <!-- Yuqori qismdagi nafis tibbiy yorliq -->
+  <g transform="translate(260, 30)">
+    <rect x="-80" y="0" width="160" height="28" rx="14" fill="rgba(56,189,248,0.12)" stroke="#fb7185" stroke-width="1.2"/>
+    <text x="0" y="19" fill="#fb7185" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="800" letter-spacing="1" text-anchor="middle">KARDIOLOGIYA</text>
+  </g>
+</svg>

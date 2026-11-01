@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .quiz-container {
+            width: 80%;
+            margin: 50px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            font-size: 1.1em;
+            margin-bottom: 12px;
+            background-color: #f9f9f9;
+            padding: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        label:hover {
+            background-color: #e8e8e8;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+
+        .btn-submit {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            margin-top: 30px;
+            font-size: 1.2em;
+            text-align: center;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .correct {
+            color: green;
+        }
+
+        .incorrect {
+            color: red;
+        }
+
+        .unanswered {
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Geriatrik Test</h1>
+        <form id="quizForm">
+            <!-- Question 1 -->
+            <div class="question">
+                <p>1. Pedikulezda qaysı meditsina hújjet toltırıladı?</p>
+                <label><input type="radio" name="question1" value="A"> A) F-003-U</label>
+                <label><input type="radio" name="question1" value="B"> B) F-030-U</label>
+                <label><input type="radio" name="question1" value="C"> C) F-058-U</label>
+                <label><input type="radio" name="question1" value="D"> D) F-001-U</label>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question">
+                <p>2. Pedikulez anıqlanģanda qay jerge xabar beriledi?</p>
+                <label><input type="radio" name="question2" value="A"> A) sanitariya epidemiologiya stantsiyasına</label>
+                <label><input type="radio" name="question2" value="B"> B) bólim shıpakerlerine</label>
+                <label><input type="radio" name="question2" value="C"> C) emlewxananıń bas shıpakerine</label>
+                <label><input type="radio" name="question2" value="D"> D) Aymaqlıq shıpakerine</label>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question">
+                <p>3. Dezinfektsiyanıń mexanik usılın tabıń</p>
+                <label><input type="radio" name="question3" value="A"> A) sıpırıw, qaģıw, artıw</label>
+                <label><input type="radio" name="question3" value="B"> B) sıpırıw, tazalaw, qaynatıw, kúydiriw</label>
+                <label><input type="radio" name="question3" value="C"> C) sıpırıw, qaģıw, kúydiriw</label>
+                <label><input type="radio" name="question3" value="D"> D) sıpırıw, qaģıw avtoklavlaw</label>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question">
+                <p>4. Dezinfektsiyanıń fizik usılın tabıń</p>
+                <label><input type="radio" name="question4" value="A"> A) qaynatıw, qaģıw, sıpırıw, kúydiriw</label>
+                <label><input type="radio" name="question4" value="B"> B) qaynatıw, sıpırıw, avtoklavlaw</label>
+                <label><input type="radio" name="question4" value="C"> C) qaynatıw, sıpırıw, avtoklavlaw</label>
+                <label><input type="radio" name="question4" value="D"> D) qaynatıw, puwlaw, kvartslaw</label>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question">
+                <p>5. Joqarı basım astında puw menen sterillew dezinfektsiyanıń qaysı usılına kiredi?</p>
+                <label><input type="radio" name="question5" value="A"> A) fizikalıq</label>
+                <label><input type="radio" name="question5" value="B"> B) ximiyalıq</label>
+                <label><input type="radio" name="question5" value="C"> C) mexanikalıq</label>
+                <label><input type="radio" name="question5" value="D"> D) biologiyalıq</label>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="question">
+                <p>6. Avtoklavlaw ne?</p>
+                <label><input type="radio" name="question6" value="A"> A) qaynatıw sterillew</label>
+                <label><input type="radio" name="question6" value="B"> B) joqarı basım astında sterillew</label>
+                <label><input type="radio" name="question6" value="C"> C) kúydirip sterillew</label>
+                <label><input type="radio" name="question6" value="D"> D) qızdırıp sterillew</label>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="question">
+                <p>7. Vanna, unitaz, rakvinalar qanday zıyansızlandırıladıs</p>
+                <label><input type="radio" name="question7" value="A"> A) 0,5% li xlorlı oxak yamasa 1% gipoxlorid eritpesi</label>
+                <label><input type="radio" name="question7" value="B"> B) 0,5% li xlorlı oxak yamasa 5% gipoxlorid eritpesi</label>
+                <label><input type="radio" name="question7" value="C"> C) 0,5% li xlorlı oxak yamasa 3% gipoxlorid eritpesi</label>
+                <label><input type="radio" name="question7" value="D"> D) Tek ģana 1% li gipoxlorid eritpesi</label>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="question">
+                <p>8. Dezinsektsiya degenimiz ne</p>
+                <label><input type="radio" name="question8" value="A"> A) Kesellikti tarqatıwshı mikroblardı joq etiw</label>
+                <label><input type="radio" name="question8" value="B"> B) Kesellik tarqatıwshı shıbın-shirkeylerdi joq etiw</label>
+                <label><input type="radio" name="question8" value="C"> C) Kesellik tarqatıwshı kemiriwshilerdi joq etiw</label>
+                <label><input type="radio" name="question8" value="D"> D) Kesellik tarqatıwshı mikrob hám olardıń sporaların joq etiw</label>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="question">
+                <p>9. Nawqastıń aqlıqları qansha waqıtta almastırıladı?</p>
+                <label><input type="radio" name="question9" value="A"> A) Háptesine 1 márte</label>
+                <label><input type="radio" name="question9" value="B"> B) Háptesine 2 márte</label>
+                <label><input type="radio" name="question9" value="C"> C) Háptesine 3 márte</label>
+                <label><input type="radio" name="question9" value="D"> D) Háptesine 4 márte</label>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="question">
+                <p>10. Nawqaslardıń aktivlilik rejimi qaysı túrlerge bólinedi</p>
+                <label><input type="radio" name="question10" value="A"> A) aktiv, yarım jatıw, jatıw, qatań jatıw</label>
+                <label><input type="radio" name="question10" value="B"> B) aktiv, yarım jatıw, jatıw, júriw</label>
+                <label><input type="radio" name="question10" value="C"> C) aktiv, yarım jatıw, jatıw, juwırıw</label>
+                <label><input type="radio" name="question10" value="D"> D) aktiv, jatıw, qatań jatıw</label>
+            </div>
+
+            <button type="button" class="btn-submit" onclick="calculateResult()">Natijani hisoblash</button>
+        </form>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function calculateResult() {
+            let totalQuestions = 10;
+            let score = 0;
+            const answers = {
+                question1: 'D',
+                question2: 'A',
+                question3: 'A',
+                question4: 'D',
+                question5: 'A',
+                question6: 'B',
+                question7: 'B',
+                question8: 'B',
+                question9: 'A',
+                question10: 'D'
+            };
+
+            for (let i = 1; i <= totalQuestions; i++) {
+                const questionName = `question${i}`;
+                const selectedAnswer = document.querySelector(`input[name="${questionName}"]:checked`);
+                if (selectedAnswer && selectedAnswer.value === answers[questionName]) {
+                    score++;
+                }
+            }
+
+            const resultDiv = document.getElementById('result');
+            resultDiv.style.display = 'block';
+            resultDiv.innerHTML = `Sizning natijangiz: ${score} dan ${totalQuestions} ga`;
+
+            if (score === totalQuestions) {
+                resultDiv.classList.add("correct");
+            } else {
+                resultDiv.classList.add("incorrect");
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .quiz-container {
+            width: 80%;
+            margin: 50px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            font-size: 1.1em;
+            margin-bottom: 12px;
+            background-color: #f9f9f9;
+            padding: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        label:hover {
+            background-color: #e8e8e8;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+
+        .btn-submit {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            margin-top: 30px;
+            font-size: 1.2em;
+            text-align: center;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .correct {
+            color: green;
+        }
+
+        .incorrect {
+            color: red;
+        }
+
+        .unanswered {
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Hamshiralıq Isi Páni Tarıyxı Testi</h1>
+        <form id="quizForm">
+            <!-- Question 1 -->
+            <div class="question">
+                <p>1. Hamshiralıq isi páni tarıyxında neni úyretedi dep esaplaǵan?</p>
+                <label><input type="radio" name="question1" value="A"> A) *Nawqaslarǵa kútim jasaw,ádeplilikti,keselliktiń aldın alıw hám insanlar menen qarım-qatnasta bolıwdı</label>
+                <label><input type="radio" name="question1" value="B"> B) Nawqaslardı emlewdi,ádeplilikti,keselliktiń aldin alıw hám insanlar menen qarım-qatnasta bolıwdı</label>
+                <label><input type="radio" name="question1" value="C"> C) Nawqaslardı emlewdi, salamat turmıs tárizin,salamatlastırıw usılların</label>
+                <label><input type="radio" name="question1" value="D"> D) Nawqaslardı emlewdi,salamat turmıs tárizin,salamatlastırıw usılların,balalardı kutim qılıw hám awqatlandırıwdı</label>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question">
+                <p>2. Nawqaslardı emlewdi, ,ádeplilikti,tuwıw dáwirlerin baqlap barıwdı shólkemlestiriw « Kitab ai-xofiy» kim tárepinen jazılǵan?</p>
+                <label><input type="radio" name="question2" value="A"> A) Abu Mansur Samoniy</label>
+                <label><input type="radio" name="question2" value="B"> B) Maxmud Ibn Baxrom Kalonskiy</label>
+                <label><input type="radio" name="question2" value="C"> C) *Abu Bakir ar-Roziy</label>
+                <label><input type="radio" name="question2" value="D"> D) Abu Ali Ibn Sino</label>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question">
+                <p>3. Ózbekistanda Qızıl Xoch Qızıl yarım ay jámiyeti qashan shólkemlestirilgen?</p>
+                <label><input type="radio" name="question3" value="A"> A) 1905 jil</label>
+                <label><input type="radio" name="question3" value="B"> B) 1925 jil</label>
+                <label><input type="radio" name="question3" value="C"> C) *1912 jil</label>
+                <label><input type="radio" name="question3" value="D"> D) 1945 jil</label>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question">
+                <p>4. Florens Naytingeyil medalı qashan usinilǵan?</p>
+                <label><input type="radio" name="question4" value="A"> A) 1905 jil</label>
+                <label><input type="radio" name="question4" value="B"> B) 1925 jil</label>
+                <label><input type="radio" name="question4" value="C"> C) 1912 jil</label>
+                <label><input type="radio" name="question4" value="D"> D) 1935 jil</label>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question">
+                <p>5. Abu Ali Ibn Sinoniń «Tib qonunları» neshe kitaptan ibarat?</p>
+                <label><input type="radio" name="question5" value="A"> A) 2</label>
+                <label><input type="radio" name="question5" value="B"> B) 3</label>
+                <label><input type="radio" name="question5" value="C"> C) 4</label>
+                <label><input type="radio" name="question5" value="D"> D) *5</label>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="question">
+                <p>6. Abu Ali Ibn Sino jasaǵan jillardı kórsetiń</p>
+                <label><input type="radio" name="question6" value="A"> A) 920-1017 jillar</label>
+                <label><input type="radio" name="question6" value="B"> B) 998-1047 jillar</label>
+                <label><input type="radio" name="question6" value="C"> C) 960-1037 jillar</label>
+                <label><input type="radio" name="question6" value="D"> D) *980-1037 jillar</label>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="question">
+                <p>7. Xaliq araliq hamshiralar keńesi qashan payda bolǵan hám qay jerde jaylasqan?</p>
+                <label><input type="radio" name="question7" value="A"> A) 1889 jılı Vashingtonda</label>
+                <label><input type="radio" name="question7" value="B"> B) 1989 jılı Berlinde</label>
+                <label><input type="radio" name="question7" value="C"> C) 1899 jılı Jenevada</label>
+                <label><input type="radio" name="question7" value="D"> D) *1989 jılı Jenevada</label>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="question">
+                <p>8. Tashkent qalasinda medicina orayı qashan shólkemlestirilgen?</p>
+                <label><input type="radio" name="question8" value="A"> A) 1868 jılı</label>
+                <label><input type="radio" name="question8" value="B"> B) 1818 jılı</label>
+                <label><input type="radio" name="question8" value="C"> C) *1918 jılı</label>
+                <label><input type="radio" name="question8" value="D"> D) 1932 jılı</label>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="question">
+                <p>9. Florens Naytingeyil qashan hám qay jerde tuwilǵan?</p>
+                <label><input type="radio" name="question9" value="A"> A) 1860 jılı 12 may Florida</label>
+                <label><input type="radio" name="question9" value="B"> B) 1820 jılı 12 may Florida</label>
+                <label><input type="radio" name="question9" value="C"> C) *1820 jılı 12 may Florenciya</label>
+                <label><input type="radio" name="question9" value="D"> D) 1860 jılı 12 may Florenciya</label>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="question">
+                <p>10. Xaliq araliq hamshiralar kúni qashannan baslap belgilenedi?</p>
+                <label><input type="radio" name="question10" value="A"> A) 1899 jılı 12 may</label>
+                <label><input type="radio" name="question10" value="B"> B) 1999 jılı 12 may</label>
+                <label><input type="radio" name="question10" value="C"> C) 1820 jılı 12 may</label>
+                <label><input type="radio" name="question10" value="D"> D) *1912 jılı 12 may</label>
+            </div>
+
+            <button type="button" class="btn-submit" onclick="checkAnswers()">Javoblarni tekshirish</button>
+        </form>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const answers = {
+                question1: "A",
+                question2: "C",
+                question3: "C",
+                question4: "D",
+                question5: "D",
+                question6: "D",
+                question7: "D",
+                question8: "C",
+                question9: "C",
+                question10: "D"
+            };
+
+            let score = 0;
+            let totalQuestions = Object.keys(answers).length;
+            let resultText = "";
+
+            for (let question in answers) {
+                const selectedOption = document.querySelector(`input[name="${question}"]:checked`);
+                if (selectedOption) {
+                    if (selectedOption.value === answers[question]) {
+                        score++;
+                    }
+                }
+            }
+
+            resultText = `Siz ${score} ta to'g'ri javob berdingiz. Natija: ${score} / ${totalQuestions}`;
+
+            const resultDiv = document.getElementById("result");
+            resultDiv.textContent = resultText;
+            resultDiv.style.display = "block";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .quiz-container {
+            width: 80%;
+            margin: 50px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            font-size: 1.1em;
+            margin-bottom: 12px;
+            background-color: #f9f9f9;
+            padding: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        label:hover {
+            background-color: #e8e8e8;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+
+        .btn-submit {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            margin-top: 30px;
+            font-size: 1.2em;
+            text-align: center;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .correct {
+            color: green;
+        }
+
+        .incorrect {
+            color: red;
+        }
+
+        .unanswered {
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Etika, Baylanis, Hám Térimler Testi</h1>
+        <form id="quizForm">
+            <!-- Question 1 -->
+            <div class="question">
+                <p>1. Etika sóziniń mánisi qanday?</p>
+                <label><input type="radio" name="question1" value="A"> A) *Yunonsha- júris-turıs, moral</label>
+                <label><input type="radio" name="question1" value="B"> B) Latinsha - júris-turıs, axloq</label>
+                <label><input type="radio" name="question1" value="C"> C) Yunonsha- júris-turıs, zárur</label>
+                <label><input type="radio" name="question1" value="D"> D) Latinsha - júris-turıs, parız</label>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question">
+                <p>2. Nawqaslardıń kesselligi sebepli óz-ara bir-birine tásiri</p>
+                <label><input type="radio" name="question2" value="A"> A) *Egogeniya</label>
+                <label><input type="radio" name="question2" value="B"> B) Egrotogeniya</label>
+                <label><input type="radio" name="question2" value="C"> C) Yatrageniya</label>
+                <label><input type="radio" name="question2" value="D"> D) Emociya</label>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question">
+                <p>3. Medicina xizmetkerleriniń qatti háreketleri hám sebepleri nátiyjesinde kelip shıǵatúǵin nawqaslardaǵı jaǵday bui ne dep ataladı?</p>
+                <label><input type="radio" name="question3" value="A"> A) Egogeniya</label>
+                <label><input type="radio" name="question3" value="B"> B) Egrotogeniya</label>
+                <label><input type="radio" name="question3" value="C"> C) *Yatrageniya</label>
+                <label><input type="radio" name="question3" value="D"> D) Emociya</label>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question">
+                <p>4. I. Xardi « shipaker, hamshira,nawqas» degen kitabinda neshe neshe túrdegi hamshiralardı táriyplep bergen?</p>
+                <label><input type="radio" name="question4" value="A"> A) 2</label>
+                <label><input type="radio" name="question4" value="B"> B) 3</label>
+                <label><input type="radio" name="question4" value="C"> C) *6</label>
+                <label><input type="radio" name="question4" value="D"> D) 7</label>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question">
+                <p>5. Deontologiya sóziniń mánisi qanday?</p>
+                <label><input type="radio" name="question5" value="A"> A) Yunonsha- júris-turıs, axloq</label>
+                <label><input type="radio" name="question5" value="B"> B) Latinsha - júris-turıs, axloq</label>
+                <label><input type="radio" name="question5" value="C"> C) *Yunonsha- júris-turıs, zárur</label>
+                <label><input type="radio" name="question5" value="D"> D) Latinsha - júris-turıs, parız</label>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="question">
+                <p>6. Gospitalizm bul-?</p>
+                <label><input type="radio" name="question6" value="A"> A) *Nawqaslardiń emlewxana sharayatına beyimlesiwine deyingi bolǵan dáwir</label>
+                <label><input type="radio" name="question6" value="B"> B) Nawqaslardıń óz ara itibarsizlıǵı</label>
+                <label><input type="radio" name="question6" value="C"> C) Nawqaslardıń óz ara tásiri</label>
+                <label><input type="radio" name="question6" value="D"> D) Nawqaslardın emlewxanadan shıǵip ketiw dáwiri</label>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="question">
+                <p>7. Nátiyjeli baylanıs neshe elementten turadı?</p>
+                <label><input type="radio" name="question7" value="A"> A) 2</label>
+                <label><input type="radio" name="question7" value="B"> B) 3</label>
+                <label><input type="radio" name="question7" value="C"> C) 4</label>
+                <label><input type="radio" name="question7" value="D"> D) *5</label>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="question">
+                <p>8. baylanisti neshe túrge bóliw múmkin?</p>
+                <label><input type="radio" name="question8" value="A"> A) 5</label>
+                <label><input type="radio" name="question8" value="B"> B) 4</label>
+                <label><input type="radio" name="question8" value="C"> C) *3</label>
+                <label><input type="radio" name="question8" value="D"> D) 2</label>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="question">
+                <p>9. Bir insanniń kisiler toparı menen sáwbeti dúrıs kórsetilgen qatardi tabiń?</p>
+                <label><input type="radio" name="question9" value="A"> A) verbal baylanis</label>
+                <label><input type="radio" name="question9" value="B"> B) ishki baylanis</label>
+                <label><input type="radio" name="question9" value="C"> C) *Jámiyetlik baylanis</label>
+                <label><input type="radio" name="question9" value="D"> D) Óz ara baylanis</label>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="question">
+                <p>10. insanniń óz-ózi menen sáwbeti dúrıs kórsetilgen qatardi tabiń?</p>
+                <label><input type="radio" name="question10" value="A"> A) verbal baylanis</label>
+                <label><input type="radio" name="question10" value="B"> B) *ishki baylanis</label>
+                <label><input type="radio" name="question10" value="C"> C) Jámiyetlik baylanis</label>
+                <label><input type="radio" name="question10" value="D"> D) Óz ara baylanis</label>
+            </div>
+
+            <button type="button" class="btn-submit" onclick="checkAnswers()">Javoblarni tekshirish</button>
+        </form>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const answers = {
+                question1: "A",
+                question2: "A",
+                question3: "C",
+                question4: "C",
+                question5: "C",
+                question6: "A",
+                question7: "D",
+                question8: "C",
+                question9: "C",
+                question10: "B"
+            };
+
+            let score = 0;
+            let totalQuestions = Object.keys(answers).length;
+            let resultText = "";
+
+            for (let question in answers) {
+                const selectedOption = document.querySelector(`input[name="${question}"]:checked`);
+                if (selectedOption) {
+                    if (selectedOption.value === answers[question]) {
+                        score++;
+                    }
+                }
+            }
+
+            resultText = `Siz ${score} ta to'g'ri javob berdingiz. Natija: ${score} / ${totalQuestions}`;
+
+            const resultDiv = document.getElementById("result");
+            resultDiv.textContent = resultText;
+            resultDiv.style.display = "block";
+        }
+    </script>
+</body>
+</html>

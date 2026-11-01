@@ -1,0 +1,59 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 420" width="520" height="420">
+  <defs>
+    <!-- Shaffof fonga mos gradientlar -->
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#00f2fe"/>
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f2fe"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <filter id="glowF" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="16" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- 100% SHAFFOF FON: HECH QANDAY TO'RTBURCHAK QORA FON YO'Q! -->
+  
+  <!-- Yorituvchi nafis ambient nur -->
+  <circle cx="260" cy="210" r="150" fill="#0284c7" opacity="0.12" filter="url(#glowF)"/>
+
+  <!-- Asosiy 3D Vektor Tibbiy Kompozitsiya -->
+          <!-- Antropometriya kompozitsiyasi -->
+        <g transform="translate(190, 140)">
+          <!-- Fon nurlari -->
+          <circle cx="60" cy="60" r="110" fill="#0284c7" opacity="0.12" filter="url(#glowF)"/>
+          
+          <!-- Bo'y o'lchash vertikal shkalasi -->
+          <rect x="-80" y="-70" width="28" height="250" rx="8" fill="url(#grad1)" opacity="0.85"/>
+          <line x1="-80" y1="-40" x2="-62" y2="-40" stroke="#ffffff" stroke-width="3"/>
+          <line x1="-80" y1="-10" x2="-68" y2="-10" stroke="#ffffff" stroke-width="2"/>
+          <line x1="-80" y1="20" x2="-62" y2="20" stroke="#ffffff" stroke-width="3"/>
+          <line x1="-80" y1="50" x2="-68" y2="50" stroke="#ffffff" stroke-width="2"/>
+          <line x1="-80" y1="80" x2="-62" y2="80" stroke="#ffffff" stroke-width="3"/>
+          <line x1="-80" y1="110" x2="-68" y2="110" stroke="#ffffff" stroke-width="2"/>
+          <line x1="-80" y1="140" x2="-62" y2="140" stroke="#ffffff" stroke-width="3"/>
+
+          <!-- Dumaloq tarozi diski -->
+          <circle cx="80" cy="50" r="75" fill="url(#grad2)" stroke="#00f2fe" stroke-width="4"/>
+          <circle cx="80" cy="50" r="62" fill="rgba(15,23,42,0.85)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+          
+          <!-- Tarozi raqamlari va ko'rsatkichi -->
+          <text x="80" y="38" fill="#00f2fe" font-family="'Outfit', sans-serif" font-size="24" font-weight="800" text-anchor="middle">kg</text>
+          <text x="80" y="68" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="28" font-weight="800" text-anchor="middle">0.00</text>
+          <path d="M80 50 L110 32" stroke="#ef4444" stroke-width="3.5" stroke-linecap="round"/>
+          <circle cx="80" cy="50" r="5" fill="#ffffff"/>
+
+          <!-- Sentil egri chizig'i miniatyurasi -->
+          <path d="M-30 140 Q 40 100, 160 50" fill="none" stroke="#00f2fe" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="160" cy="50" r="7" fill="#00f2fe" stroke="#ffffff" stroke-width="2"/>
+        </g>
+
+  <!-- Yuqori qismdagi nafis tibbiy yorliq -->
+  <g transform="translate(260, 30)">
+    <rect x="-80" y="0" width="160" height="28" rx="14" fill="rgba(56,189,248,0.12)" stroke="#00f2fe" stroke-width="1.2"/>
+    <text x="0" y="19" fill="#00f2fe" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="800" letter-spacing="1" text-anchor="middle">O'SISH MONITORINGI</text>
+  </g>
+</svg>

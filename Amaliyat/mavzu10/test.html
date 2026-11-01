@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .quiz-container {
+            width: 80%;
+            margin: 50px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            font-size: 1.1em;
+            margin-bottom: 12px;
+            background-color: #f9f9f9;
+            padding: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        label:hover {
+            background-color: #e8e8e8;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+
+        .btn-submit {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            margin-top: 30px;
+            font-size: 1.2em;
+            text-align: center;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .correct {
+            color: green;
+        }
+
+        .incorrect {
+            color: red;
+        }
+
+        .unanswered {
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Fizioterapiya Testi</h1>
+        <form id="quizForm">
+            <!-- Question 1 -->
+            <div class="question">
+                <p>1. Fizioterapiya qanday tilden alinǵan?</p>
+                <label><input type="radio" name="question1" value="A"> A) Latin</label>
+                <label><input type="radio" name="question1" value="B"> B) Ingliz</label>
+                <label><input type="radio" name="question1" value="C"> C) Grek</label>
+                <label><input type="radio" name="question1" value="D"> D) Turk</label>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question">
+                <p>2. Gorshishnikti paydalaniwdan aldin neshe gradusli suwǵa hólleymiz?</p>
+                <label><input type="radio" name="question2" value="A"> A) 25 c</label>
+                <label><input type="radio" name="question2" value="B"> B) 10 c</label>
+                <label><input type="radio" name="question2" value="C"> C) 80 c</label>
+                <label><input type="radio" name="question2" value="D"> D) 45 c</label>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question">
+                <p>3. Isitiwshi kompress neshe qabattan ibarat?</p>
+                <label><input type="radio" name="question3" value="A"> A) 4</label>
+                <label><input type="radio" name="question3" value="B"> B) 3</label>
+                <label><input type="radio" name="question3" value="C"> C) 2</label>
+                <label><input type="radio" name="question3" value="D"> D) 5</label>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question">
+                <p>4. Isitqishtiń neshe bólimi suw menen toltiriladi?</p>
+                <label><input type="radio" name="question4" value="A"> A) 3/4 bólimi</label>
+                <label><input type="radio" name="question4" value="B"> B) 2/4 bólimi</label>
+                <label><input type="radio" name="question4" value="C"> C) ¼ bólimi</label>
+                <label><input type="radio" name="question4" value="D"> D) 4/4 bólimi</label>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question">
+                <p>5. Kompressti orta esapta neshe saatta qollaniw mumkin?</p>
+                <label><input type="radio" name="question5" value="A"> A) 24 saat</label>
+                <label><input type="radio" name="question5" value="B"> B) 12-18 saat</label>
+                <label><input type="radio" name="question5" value="C"> C) 12 saat</label>
+                <label><input type="radio" name="question5" value="D"> D) 6-8 saat</label>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="question">
+                <p>6. Bankalar teride neshe minut turiwi kerek?</p>
+                <label><input type="radio" name="question6" value="A"> A) 30-45 minut</label>
+                <label><input type="radio" name="question6" value="B"> B) 5-10 minut</label>
+                <label><input type="radio" name="question6" value="C"> C) 15-20 minut</label>
+                <label><input type="radio" name="question6" value="D"> D) 30 minut</label>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="question">
+                <p>7. Fabrikada tayarlanǵan gorshishniktiń ólshemi neshe?</p>
+                <label><input type="radio" name="question7" value="A"> A) 12x18</label>
+                <label><input type="radio" name="question7" value="B"> B) 20x20</label>
+                <label><input type="radio" name="question7" value="C"> C) 10x12</label>
+                <label><input type="radio" name="question7" value="D"> D) 12x16</label>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="question">
+                <p>8. Gorshitsali vanna qalay tayarlanadi?</p>
+                <label><input type="radio" name="question8" value="A"> A) 80 c suw, 50 gr gorshishnik, 1 l suw</label>
+                <label><input type="radio" name="question8" value="B"> B) 10 c suw, 50 gr gorshishnik, 20 l suw</label>
+                <label><input type="radio" name="question8" value="C"> C) 50 c suw, 50 gr gorshishnik, 10 l suw</label>
+                <label><input type="radio" name="question8" value="D"> D) 30 c suw, 50 gr gorshishnik, 5 l suw</label>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="question">
+                <p>9. Apiwayilastirilǵan fizioterapiyaniń túrleri qanday?</p>
+                <label><input type="radio" name="question9" value="A"> A) Jillilq qoyiw</label>
+                <label><input type="radio" name="question9" value="B"> B) Muz qoyiw</label>
+                <label><input type="radio" name="question9" value="C"> C) Kompresser qoyiw</label>
+                <label><input type="radio" name="question9" value="D"> D) Hámme júwap duris</label>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="question">
+                <p>10. Muzli qaltashadan qanday waqitlarda paydalanamiz?</p>
+                <label><input type="radio" name="question10" value="A"> A) Qan aqqanda</label>
+                <label><input type="radio" name="question10" value="B"> B) Ótkir isip awiriw</label>
+                <label><input type="radio" name="question10" value="C"> C) Shibin-shirkeyler shaqqanda</label>
+                <label><input type="radio" name="question10" value="D"> D) Hámme júwap duris</label>
+            </div>
+
+            <button type="submit" class="btn-submit">Testni tamamla</button>
+        </form>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        const form = document.getElementById('quizForm');
+        const resultDiv = document.getElementById('result');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const answers = {
+                question1: 'C',
+                question2: 'D',
+                question3: 'B',
+                question4: 'A',
+                question5: 'D',
+                question6: 'C',
+                question7: 'A',
+                question8: 'A',
+                question9: 'D',
+                question10: 'A'
+            };
+
+            let score = 0;
+            let totalQuestions = 10;
+
+            for (let i = 1; i <= totalQuestions; i++) {
+                const question = form.querySelector(`input[name="question${i}"]:checked`);
+                if (question) {
+                    if (question.value === answers[`question${i}`]) {
+                        score++;
+                    }
+                }
+            }
+
+            resultDiv.style.display = 'block';
+            resultDiv.innerHTML = `You scored ${score} out of ${totalQuestions}.`;
+        });
+    </script>
+</body>
+</html>

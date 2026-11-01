@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="uz" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mavzu Shablon | Hamshiralik Ishi Texnikasi</title>
+
+  <!-- Google Fonts & Font Awesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/topic.css">
+
+  <style>
+    .standalone-page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .standalone-header {
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 16px 0;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .standalone-container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 20px;
+      width: 100%;
+    }
+    .topic-stage {
+      padding: 40px 0 60px;
+      flex-grow: 1;
+    }
+  </style>
+</head>
+<body class="standalone-page">
+
+  <!-- Yuqori panel: Ortga qaytish va tema -->
+  <header class="standalone-header">
+    <div class="standalone-container" style="display: flex; align-items: center; justify-content: space-between;">
+      <a href="index.html" class="btn-secondary" style="padding: 8px 18px; font-size: 0.9rem;" onclick="if(window.history.length>1){window.history.back();return false;}">
+        <i class="fas fa-arrow-left"></i> Orqaga
+      </a>
+
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <span class="topic-header-badge">Alohida Mavzu Shabloni</span>
+        <button class="theme-toggle-btn" id="themeToggleBtn" title="Rejimni almashtirish">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Asosiy mavzu maydoni -->
+  <main class="topic-stage">
+    <div class="standalone-container">
+      
+      <!-- Mavzu sarlavhasi -->
+      <div style="margin-bottom: 24px;">
+        <span class="section-tag">Amaliy mashg'ulot • 1-Mavzu</span>
+        <h1 class="hero-title" style="font-size: 2.2rem; margin-bottom: 12px;">
+          Emlew profilaktika mekemeleriniń tiykarǵi jónelisleri hám meditsinalıq hújjetlerdi júritiw
+        </h1>
+        <p class="section-subtitle" style="text-align: left; max-width: 800px;">
+          Davolash-profilaktika muassasalari turlari, ichki tuzilishi, sanitariya tartibi va bemorlarning statsionar tibbiy kartasini to'g'ri yuritish tartibi.
+        </p>
+      </div>
+
+      <!-- Resurslar tab menyusi -->
+      <div class="topic-tabs-nav" style="border-radius: var(--radius-md) var(--radius-md) 0 0; border: 1px solid var(--border-subtle); border-bottom: none;">
+        <button class="topic-tab-link active" onclick="switchStandaloneTab('lecture', this)">
+          <i class="fas fa-file-pdf"></i> Ma'ruza matni (PDF)
+        </button>
+        <button class="topic-tab-link" onclick="switchStandaloneTab('slide', this)">
+          <i class="fas fa-tv"></i> Taqdimot / Slayd
+        </button>
+        <button class="topic-tab-link" onclick="switchStandaloneTab('quiz', this)">
+          <i class="fas fa-tasks"></i> Interaktiv Test
+        </button>
+        <button class="topic-tab-link" onclick="switchStandaloneTab('video', this)">
+          <i class="fas fa-video"></i> Video darslik
+        </button>
+        <button class="topic-tab-link" onclick="switchStandaloneTab('resources', this)">
+          <i class="fas fa-folder-open"></i> Didaktik resurslar
+        </button>
+      </div>
+
+      <!-- Tab kontenti -->
+      <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 0 0 var(--radius-md) var(--radius-md); padding: 24px;">
+        
+        <!-- 1. Ma'ruza -->
+        <div id="st-lecture" class="topic-tab-pane active">
+          <div class="pdf-viewer-wrapper">
+            <div class="pdf-toolbar">
+              <div class="pdf-toolbar-info">
+                <i class="fas fa-file-pdf"></i>
+                <span>1-Mavzu: Ma'ruza matni konspekti</span>
+              </div>
+              <div>
+                <a href="Amaliyat/mavzu1/maruza/maruza.html" target="_blank" class="btn-primary" style="padding: 6px 14px; font-size: 0.85rem;">
+                  <i class="fas fa-external-link-alt"></i> Ochish / Chop etish
+                </a>
+              </div>
+            </div>
+            <iframe class="pdf-frame" src="Amaliyat/mavzu1/maruza/maruza.html" title="Ma'ruza matni"></iframe>
+          </div>
+        </div>
+
+        <!-- 2. Slayd -->
+        <div id="st-slide" class="topic-tab-pane">
+          <div class="slide-3d-wrapper">
+            <iframe class="slide-3d-frame" src="slayd-3d.html?id=amaliy-1&embed=1" title="3D Taqdimot" allow="fullscreen"></iframe>
+          </div>
+        </div>
+
+        <!-- 3. Interaktiv Test -->
+        <div id="st-quiz" class="topic-tab-pane">
+          <div class="quiz-runner-card">
+            <div class="quiz-header-status">
+              <span class="quiz-question-number">Savol 1 / 1</span>
+              <span class="quiz-timer"><i class="far fa-clock"></i> Test</span>
+            </div>
+            <h3 class="quiz-question-title">Davolash-profilaktika muassasasida bemorning asosiy tibbiy hujjati qaysi?</h3>
+            <div class="quiz-options-list">
+              <div class="quiz-option-item selected" onclick="alert('To\'g\'ri javob!')">
+                <span class="quiz-option-indicator">A</span>
+                <span>Statsionar bemorning kasallik tarixi (003/u shakl)</span>
+              </div>
+              <div class="quiz-option-item" onclick="alert('Noto\'g\'ri! Qayta o\'ylab ko\'ring.')">
+                <span class="quiz-option-indicator">B</span>
+                <span>Yo'llanma kvitansiyasi</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Video -->
+        <div id="st-video" class="topic-tab-pane">
+          <div class="video-player-container">
+            <video class="topic-video-elem" controls playsinline>
+              <source src="Amaliyat/mavzu1/vedio/Антропометрия.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <!-- 5. Resurslar -->
+        <div id="st-resources" class="topic-tab-pane">
+          <div class="resources-grid-cards">
+            <div class="resource-download-card">
+              <div class="resource-file-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+              <div class="resource-card-info">
+                <h4 class="resource-card-title">Pedagogik texnologiya</h4>
+                <p class="resource-card-desc">Darsning interaktiv metodlari va bosqichlari.</p>
+                <a href="Amaliyat/mavzu1/pedtex/ped  texnologiya.pdf" download class="btn-primary" style="padding: 6px 14px; font-size: 0.85rem;">Yuklab olish</a>
+              </div>
+            </div>
+            <div class="resource-download-card">
+              <div class="resource-file-icon"><i class="fas fa-images"></i></div>
+              <div class="resource-card-info">
+                <h4 class="resource-card-title">Vizual didaktik resurs</h4>
+                <p class="resource-card-desc">Ko'rgazmali qurollar va jadvallar.</p>
+                <a href="Amaliyat/mavzu1/vizual/vizual didaktik resurs.pdf" download class="btn-primary" style="padding: 6px 14px; font-size: 0.85rem;">Yuklab olish</a>
+              </div>
+            </div>
+            <div class="resource-download-card">
+              <div class="resource-file-icon"><i class="fas fa-book-medical"></i></div>
+              <div class="resource-card-info">
+                <h4 class="resource-card-title">Glossariy qo'llanmasi</h4>
+                <p class="resource-card-desc">Mavzu bo'yicha to'liq tibbiy terminologik lug'at va atamalar izohi.</p>
+                <div style="display: flex; gap: 8px;">
+                  <a href="Amaliyat/mavzu1/Glasssariy/glossariy.html" target="_blank" class="btn-secondary" style="padding: 6px 14px; font-size: 0.85rem;"><i class="fas fa-eye"></i> Ko'rish</a>
+                  <a href="Amaliyat/mavzu1/Glasssariy/glossariy.html" download class="btn-primary" style="padding: 6px 14px; font-size: 0.85rem;"><i class="fas fa-download"></i> Yuklab olish</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Tab almashtirish
+    function switchStandaloneTab(tabId, btn) {
+      document.querySelectorAll('.topic-tab-link').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.topic-tab-pane').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('st-' + tabId).classList.add('active');
+    }
+
+    // Rejimni almashtirish
+    const themeBtn = document.getElementById('themeToggleBtn');
+    themeBtn.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      themeBtn.innerHTML = next === 'dark' ? '<i class="fas fa-sun" style="color: #f59e0b;"></i>' : '<i class="fas fa-moon"></i>';
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .quiz-container {
+            width: 80%;
+            margin: 50px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            font-size: 1.1em;
+            margin-bottom: 12px;
+            background-color: #f9f9f9;
+            padding: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        label:hover {
+            background-color: #e8e8e8;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+
+        .btn-submit {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            margin-top: 30px;
+            font-size: 1.2em;
+            text-align: center;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .correct {
+            color: green;
+        }
+
+        .incorrect {
+            color: red;
+        }
+
+        .unanswered {
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Geriatrik Test</h1>
+        <form id="quizForm">
+            <!-- Question 1 -->
+            <div class="question">
+                <p>1. Klizma degenimiz ne?</p>
+                <label><input type="radio" name="question1" value="A"> A) Juwan ishektiń tómengi bólimine túrli suyiqliqlardi emlew hám diagnostika maqsetinde kirgiziwine aytiladi</label>
+                <label><input type="radio" name="question1" value="B"> B) Ishekdi dáret hám gazlardan tazalaw úshin qanday klizma qollaniladi</label>
+                <label><input type="radio" name="question1" value="C"> C) Ishektiń tez bosaliwi úshin ishekti kóp márte juwiw</label>
+                <label><input type="radio" name="question1" value="D"> D) A hám B juwapleri duris</label>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question">
+                <p>2. Ishekdi dáret hám gazlardan tazalaw úshin qanday klizma qollaniladi?</p>
+                <label><input type="radio" name="question2" value="A"> A) Tazalawshi klizma</label>
+                <label><input type="radio" name="question2" value="B"> B) Dárili klizma</label>
+                <label><input type="radio" name="question2" value="C"> C) Aziqli klizma</label>
+                <label><input type="radio" name="question2" value="D"> D) Mayli klizma</label>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question">
+                <p>3. Tuwri ishek arqali qanday túrdegi dárilik zatlar qollaniladi?</p>
+                <label><input type="radio" name="question3" value="A"> A) Shamshalar</label>
+                <label><input type="radio" name="question3" value="B"> B) Demlemeler</label>
+                <label><input type="radio" name="question3" value="C"> C) Tabletkalar</label>
+                <label><input type="radio" name="question3" value="D"> D) Hámmesi tuwri</label>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question">
+                <p>4. Sifonli klizma qanday waqitta qollaniladi?</p>
+                <label><input type="radio" name="question4" value="A"> A) Tazalawshi klizma tásir etpegende</label>
+                <label><input type="radio" name="question4" value="B"> B) Ish jellesgende</label>
+                <label><input type="radio" name="question4" value="C"> C) Ish ótiwde</label>
+                <label><input type="radio" name="question4" value="D"> D) Ishekti juwiw ushin</label>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question">
+                <p>5. Sifonli klizma bul?</p>
+                <label><input type="radio" name="question5" value="A"> A) Ishektiń tez bosaliwi úshin ishekti kóp márte juwiw</label>
+                <label><input type="radio" name="question5" value="B"> B) Juwan ishektiń tómengi bólimine túrli suyiqliqlardi emlew hám diagnostika maqsetinde kirgiziwine aytiladi</label>
+                <label><input type="radio" name="question5" value="C"> C) Ishekdi dáret hám gazlardan tazalaw úshin qanday klizma qollaniladi</label>
+                <label><input type="radio" name="question5" value="D"> D) Hámmesi tuwri</label>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="question">
+                <p>6. Klizmadan soń isletilgen úskeneler qanday ziyansizlandinladi?</p>
+                <label><input type="radio" name="question6" value="A"> A) Issi suwda sabin menen jaqsilap juwiladi hám 3% li xloramin menen ziyansizlandinladi</label>
+                <label><input type="radio" name="question6" value="B"> B) 5% li xloramin menen ziyansizlandinladi</label>
+                <label><input type="radio" name="question6" value="C"> C) 0.5 % li xloramin menen ziyansizlandinladi</label>
+                <label><input type="radio" name="question6" value="D"> D) Issi suwda sabin menen jaqsilap juwiladi</label>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="question">
+                <p>7. Bir mayli klizma úshin qansha kúngebaǵar, ziǵir yamasa vazelin mayi kerek boladi?</p>
+                <label><input type="radio" name="question7" value="A"> A) 37-38c 50-100 ml</label>
+                <label><input type="radio" name="question7" value="B"> B) 37-38c 200 ml</label>
+                <label><input type="radio" name="question7" value="C"> C) 37-40c 500 ml</label>
+                <label><input type="radio" name="question7" value="D"> D) 36 c 10-20 ml</label>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="question">
+                <p>8. Klizma islew ushın múneliklerge qaysılar kiredi?</p>
+                <label><input type="radio" name="question8" value="A"> A) Ishekten qan ketiwi</label>
+                <label><input type="radio" name="question8" value="B"> B) Qabızlıq</label>
+                <label><input type="radio" name="question8" value="C"> C) Ish ótiwi</label>
+                <label><input type="radio" name="question8" value="D"> D) Záhárleniw</label>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="question">
+                <p>9. Qunda úshlik qanday háreket penen kirgiziledi?</p>
+                <label><input type="radio" name="question9" value="A"> A) Kindikke tuwri, omirtqaǵa parallel</label>
+                <label><input type="radio" name="question9" value="B"> B) 10-15 sm ishke kirgiziledi</label>
+                <label><input type="radio" name="question9" value="C"> C) Ushı kirgiziledi</label>
+                <label><input type="radio" name="question9" value="D"> D) Vazelin jaǵıp, aylanba háreket penen kirgiziledi</label>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="question">
+                <p>10. Sifonlı klizma ushın qansha suyıqlıq qollanıladı?</p>
+                <label><input type="radio" name="question10" value="A"> A) 1,5 litr</label>
+                <label><input type="radio" name="question10" value="B"> B) 10 litr</label>
+                <label><input type="radio" name="question10" value="C"> C) 2 litr</label>
+                <label><input type="radio" name="question10" value="D"> D) 0,5 litr</label>
+            </div>
+
+            <button type="submit" class="btn-submit">Testni tamamla</button>
+        </form>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        const form = document.getElementById('quizForm');
+        const resultDiv = document.getElementById('result');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const answers = {
+                question1: 'D',
+                question2: 'A',
+                question3: 'A',
+                question4: 'A',
+                question5: 'A',
+                question6: 'C',
+                question7: 'A',
+                question8: 'A',
+                question9: 'D',
+                question10: 'B'
+            };
+
+            let score = 0;
+            let totalQuestions = 10;
+
+            for (let i = 1; i <= totalQuestions; i++) {
+                const question = form.querySelector(`input[name="question${i}"]:checked`);
+                if (question) {
+                    if (question.value === answers[`question${i}`]) {
+                        score++;
+                    }
+                }
+            }
+
+            resultDiv.style.display = 'block';
+            resultDiv.innerHTML = `You scored ${score} out of ${totalQuestions}.`;
+        });
+    </script>
+</body>
+</html>

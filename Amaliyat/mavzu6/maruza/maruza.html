@@ -1,0 +1,369 @@
+﻿<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bolalarni ovqatlantirish. Chaqaloqlarni ko&#039;krak suti bilan emizish qoidalari, ona sutining afzalliklari. Bolaga kerak bo&#039;lgan sut miqdorini hisoblash. - Ma'ruza matni</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #0284c7;
+      --primary-dark: #0369a1;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --bg-body: #f8fafc;
+      --bg-card: #ffffff;
+      --border-color: #e2e8f0;
+      --base-font-size: 16px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: var(--base-font-size);
+      line-height: 1.7;
+      color: var(--text-main);
+      background: var(--bg-body);
+      padding: 20px 12px 60px;
+    }
+    .lecture-container {
+      max-width: 880px;
+      margin: 0 auto;
+      background: var(--bg-card);
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+    }
+    .lecture-toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border-color);
+      padding: 10px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .toolbar-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+    }
+    .toolbar-actions { display: flex; align-items: center; gap: 8px; }
+    .btn-tool {
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      color: #334155;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .btn-tool:hover { background: #e2e8f0; color: #0f172a; }
+    .btn-tool.btn-primary { background: var(--primary); border-color: var(--primary); color: #ffffff; }
+    .btn-tool.btn-primary:hover { opacity: 0.9; }
+    .lecture-header {
+      padding: 32px 36px 24px;
+      border-bottom: 1px solid var(--border-color);
+      background: linear-gradient(180deg, #f0f9ff 0%, #ffffff 100%);
+    }
+    .inst-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .topic-tag {
+      display: inline-block;
+      background: #e0f2fe;
+      color: #0284c7;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+    .lecture-title {
+      font-size: 1.55rem;
+      font-weight: 800;
+      line-height: 1.35;
+      color: #0f172a;
+      margin-bottom: 14px;
+    }
+    .lecture-overview-box {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-left: 4px solid var(--primary);
+      border-radius: 8px;
+      padding: 12px 18px;
+      margin: 14px 0 16px;
+      font-size: 0.96rem;
+      color: #334155;
+      line-height: 1.6;
+    }
+    .lecture-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      padding-top: 12px;
+      border-top: 1px dashed var(--border-color);
+    }
+    .meta-item { display: inline-flex; align-items: center; gap: 6px; }
+    .lecture-body { padding: 32px 36px; }
+    .reja-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-left: 4px solid var(--primary);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 32px;
+    }
+    .reja-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .reja-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .reja-list a {
+      color: #334155;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+      display: inline-block;
+    }
+    .reja-list a:hover { color: var(--primary); transform: translateX(4px); }
+    .reja-num { font-weight: 700; color: var(--primary); }
+    .lecture-section { margin-bottom: 36px; scroll-margin-top: 70px; }
+    .section-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+    .badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--primary); }
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    .lead-text {
+      font-size: 1.02rem;
+      line-height: 1.8;
+      color: #334155;
+      margin-bottom: 16px;
+      text-align: justify;
+    }
+    .lecture-callout {
+      display: flex;
+      gap: 14px;
+      padding: 16px 20px;
+      border-radius: 12px;
+      margin: 18px 0;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .callout-info { background: #f0f9ff; border: 1px solid #bae6fd; color: #0369a1; }
+    .callout-warning { background: #fffbeb; border: 1px solid #fde68a; color: #92400e; }
+    .callout-success { background: #f0fdf4; border: 1px solid #bbf7d0; color: #166534; }
+    .callout-icon { font-size: 1.25rem; flex-shrink: 0; margin-top: 2px; }
+    .callout-body strong { display: block; margin-bottom: 4px; }
+    .nursing-points {
+      background: #f8fafc;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-top: 14px;
+      border: 1px solid #e2e8f0;
+    }
+    .nursing-points h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nursing-points ul { padding-left: 20px; color: #475569; font-size: 0.92rem; }
+    .nursing-points li { margin-bottom: 6px; }
+    .algorithm-box {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-left: 4px solid #16a34a;
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 36px 0;
+    }
+    .algo-title {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: #166534;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .algo-list { padding-left: 20px; color: #1e293b; font-size: 0.95rem; line-height: 1.8; }
+    .algo-list li { margin-bottom: 8px; }
+    .literature-box {
+      margin-top: 36px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-color);
+    }
+    .lit-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .lit-list { padding-left: 20px; font-size: 0.9rem; color: #475569; line-height: 1.6; }
+    .lecture-footer {
+      padding: 20px 36px;
+      background: #f8fafc;
+      border-top: 1px solid var(--border-color);
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    @media print {
+      body { background: #ffffff; padding: 0; }
+      .lecture-container { box-shadow: none; border: none; max-width: 100%; }
+      .lecture-toolbar { display: none !important; }
+      .reja-box, .algorithm-box { border: 1px solid #ccc; }
+      .section-title { page-break-after: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="lecture-container">
+  <div class="lecture-toolbar">
+    <div class="toolbar-left">
+      <i class="fas fa-book-reader"></i>
+      <span>Amaliy mashg'ulot #6</span>
+    </div>
+    <div class="toolbar-actions">
+      <button class="btn-tool" onclick="changeFontSize(-1)" title="Shriftni kichiklashtirish">A-</button>
+      <button class="btn-tool" onclick="changeFontSize(1)" title="Shriftni kattalashtirish">A+</button>
+      <button class="btn-tool btn-primary" onclick="window.print()"><i class="fas fa-print"></i> Chop etish</button>
+    </div>
+  </div>
+
+  <header class="lecture-header">
+    <div class="inst-badge">
+      <i class="fas fa-university"></i> 2-son Nukus Abu Ali ibn Sino nomidagi jamoat salomatligi texnikumi
+    </div>
+    <br>
+    <span class="topic-tag">Amaliy mashg'ulot &bull; 6-Mavzu</span>
+    <h1 class="lecture-title">Bolalarni ovqatlantirish. Chaqaloqlarni ko&#039;krak suti bilan emizish qoidalari, ona sutining afzalliklari. Bolaga kerak bo&#039;lgan sut miqdorini hisoblash.</h1>
+    <div class="lecture-overview-box">
+      <strong><i class="fas fa-stethoscope"></i> Mavzu mazmuni:</strong> Bolalarni ovqatlantirish. Chaqaloqlarni ko&#039;krak suti bilan emizish qoidalari, ona sutining afzalliklari. Bolaga kerak bo&#039;lgan sut miqdorini hisoblash. bo&#039;yicha bolalar va ularning oila a&#039;zolariga zamonaviy professional hamshiralik parvarishini ko&#039;rsatish, kasallik alomatlarini erta aniqlash, laborator-instrumental tekshiruvlarga tayyorlash hamda shoshilinch birinchi yordam ko&#039;rsatish.
+    </div>
+    <div class="lecture-meta">
+      <span class="meta-item"><i class="fas fa-book-medical"></i> Pediatriya va neonatologiyada hamshiralik ishi</span>
+      <span class="meta-item"><i class="fas fa-user-tie"></i> Sametullaeva Sveta Smaylovna</span>
+      <span class="meta-item"><i class="fas fa-clock"></i> 80 daqiqa (2 akademik soat)</span>
+    </div>
+  </header>
+
+  <main class="lecture-body">
+    <div class="reja-box">
+      <h3 class="reja-title"><i class="fas fa-list-ol"></i> Mavzu rejasi:</h3>
+      <ol class="reja-list"><li><a href="#section-1"><span class="reja-num">1.</span> 1. Mavzuning umumiy tavsifi va klinik ahamiyati</a></li>
+<li><a href="#section-2"><span class="reja-num">2.</span> 2. Asosiy klinik belgilar, turlari va diagnostika</a></li>
+<li><a href="#section-3"><span class="reja-num">3.</span> 3. Hamshiralik parvarishi va muolajalar standarti</a></li>
+<li><a href="#section-4"><span class="reja-num">4.</span> 4. Amaliy ko&#039;nikmalar va oila a&#039;zolariga maslahatlar</a></li>
+<li><a href="#section-5"><span class="reja-num">5.</span> 5. Asoratlarning oldini olish va dispanser nazorati</a></li>
+</ol>
+    </div>
+
+    <section class="lecture-section" id="section-1"><div class="section-badge"><span class="badge-dot"></span> 1-QISM</div><h2 class="section-title">1. Mavzuning umumiy tavsifi va klinik ahamiyati</h2><div class="section-content"><p class="lead-text">Bolalarni ovqatlantirish. Chaqaloqlarni ko&#039;krak suti bilan emizish qoidalari, ona sutining afzalliklari. Bolaga kerak bo&#039;lgan sut miqdorini hisoblash. bolalar amaliyotida eng muhim sohalardan biri hisoblanadi. O&#039;rta tibbiyot xodimi mazkur holatning erta alomatlarini aniqlash, bolaning yoshiga xos fiziologik holatini inobatga olish va parvarish rejasini to&#039;g&#039;ri shakllantirishi lozim.</p><div class="lecture-callout callout-info"><div class="callout-icon"><i class="fas fa-info-circle"></i></div><div class="callout-body"><strong>Klinik ahamiyati</strong><p>Bolalarda har qanday patologik jarayon kattalarga qaraganda tez rivojlanadi, shu sababli hamshiraning hushyorligi va o&#039;z vaqtida ko&#039;rsatgan yordami asoratlarning oldini oladi.</p></div></div><div class="nursing-points"><h4><i class="fas fa-user-nurse"></i> Hamshiralik parvarishi va klinik talablar:</h4><ul><li>Bolaning yoshiga xos anatomik-fiziologik xususiyatlarini hisobga olish</li>
+<li>Birlamchi tibbiy hujjatlar va muolaja varaqalarini aniq yuritish</li>
+<li>Ota-onalar bilan to&#039;g&#039;ri deontologik va psixologik muloqot o&#039;rnatish</li>
+</ul></div></div></section>
+<section class="lecture-section" id="section-2"><div class="section-badge"><span class="badge-dot"></span> 2-QISM</div><h2 class="section-title">2. Asosiy klinik belgilar, turlari va diagnostika</h2><div class="section-content"><p class="lead-text">Bemor bolani qabul qilishda uning umumiy ahvoli, terisi, nafas va qon aylanish ko&#039;rsatkichlari, shikoyatlari sinchkovlik bilan tekshiriladi. Vrach ko&#039;rsatmasiga binoan umumiy va maxsus laboratoriya tahlillari o&#039;tkaziladi.</p><div class="lecture-callout callout-warning"><div class="callout-icon"><i class="fas fa-exclamation-triangle"></i></div><div class="callout-body"><strong>Xavf belgilari (Zudlik bilan e&#039;tibor qaratish zarur)</strong><p>Tana haroratining 38.5 gradus dan ko&#039;tarilishi, talvasa (sudorgi), nafas qisishi, kuchli holsizlik, to&#039;xtovsiz qusish va hushning buzilishi holatlarida zudlik bilan shifokorga xabar berish shart.</p></div></div><div class="nursing-points"><h4><i class="fas fa-user-nurse"></i> Hamshiralik parvarishi va klinik talablar:</h4><ul><li>Tana harorati, puls va nafas sonini muntazam qayd etib borish</li>
+<li>Laboratoriya tekshiruvlari uchun tahlil namunalarini to&#039;g&#039;ri yig&#039;ish</li>
+<li>Kasalxona ichki sanitariya-gigiyena qoidalariga so&#039;zsiz rioya qilish</li>
+</ul></div></div></section>
+<section class="lecture-section" id="section-3"><div class="section-badge"><span class="badge-dot"></span> 3-QISM</div><h2 class="section-title">3. Hamshiralik parvarishi va muolajalar standarti</h2><div class="section-content"><p class="lead-text">Bolaga to&#039;g&#039;ri yotoq rejimi, uning holatiga mos parhez hamda shifokor tayinlagan dori vositalarini (oral, parenteral, mahalliy) xatosiz qabul qilishini ta&#039;minlash hamshiraning bevosita vazifasidir.</p><div class="lecture-callout callout-success"><div class="callout-icon"><i class="fas fa-clipboard-check"></i></div><div class="callout-body"><strong>Muolaja va xavfsizlik standarti</strong><p>Dori vositalarining dozasini bolaning tana vazniga qarab qayta tekshirish hamda aseptika va antiseptika qoidalariga rioya qilgan holda yuborish shart.</p></div></div><div class="nursing-points"><h4><i class="fas fa-user-nurse"></i> Hamshiralik parvarishi va klinik talablar:</h4><ul><li>Dori vositalarini qat&#039;iy jadval va soati bo&#039;yicha qabul qildirish</li>
+<li>Allergik reaksiyalarni oldindan aniqlash va allergologik anamnezni surishtirish</li>
+<li>Nojo&#039;ya ta&#039;sirlar kuzatilganda muolajani to&#039;xtatib, darhol shifokorga bildirish</li>
+</ul></div></div></section>
+<section class="lecture-section" id="section-4"><div class="section-badge"><span class="badge-dot"></span> 4-QISM</div><h2 class="section-title">4. Amaliy ko&#039;nikmalar va oila a&#039;zolariga maslahatlar</h2><div class="section-content"><p class="lead-text">Bolaning to&#039;liq sog&#039;ayishida oila a&#039;zolarining hamkorligi muhim o&#039;rin tutadi. Hamshira ota-onaga bolani uyda parvarishlash, xona harorati va namligini saqlash hamda to&#039;g&#039;ri ovqatlantirish qoidalarini batafsil o&#039;rgatadi.</p><div class="lecture-callout callout-info"><div class="callout-icon"><i class="fas fa-info-circle"></i></div><div class="callout-body"><strong>Oila parvarishi va gigiyenik rejim</strong><p>Bolaning xonasini kuniga kamida 3-4 marta shamollatish, haroratni 18-22 gradus va namlikni 50-60% oralig&#039;ida saqlash, yengil hazm bo&#039;luvchi vitaminli taomlar berish zarur.</p></div></div><div class="nursing-points"><h4><i class="fas fa-user-nurse"></i> Hamshiralik parvarishi va klinik talablar:</h4><ul><li>Yetarli miqdorda iliq suyuqlik (choy, kompot, mors) ichirish</li>
+<li>Bemor bolaning kiyimlari va o&#039;rin-ko&#039;rpalarini toza va qulay saqlash</li>
+<li>Ortiqcha jismoniy va ruhiy zo&#039;riqishlarga yo&#039;l qo&#039;ymaslik</li>
+</ul></div></div></section>
+<section class="lecture-section" id="section-5"><div class="section-badge"><span class="badge-dot"></span> 5-QISM</div><h2 class="section-title">5. Asoratlarning oldini olish va dispanser nazorati</h2><div class="section-content"><p class="lead-text">Kasallikning qaytalanishi yoki surunkali shaklga o&#039;tishining oldini olish uchun bemor bola belgilangan muddat davomida poliklinika dispanser nazoratida turadi va sog&#039;lomlashtirish choralari ko&#039;riladi.</p><div class="lecture-callout callout-success"><div class="callout-icon"><i class="fas fa-clipboard-check"></i></div><div class="callout-body"><strong>Hamshira xulosasi</strong><p>Tizimli dispanser kuzatuvi, o&#039;z vaqtida o&#039;tkazilgan profilaktik emlashlar va sog&#039;lom turmush tarzi bolalarning barkamol o&#039;sishining kafolatidir.</p></div></div><div class="nursing-points"><h4><i class="fas fa-user-nurse"></i> Hamshiralik parvarishi va klinik talablar:</h4><ul><li>Profilaktik tibbiy ko&#039;riklarni o&#039;z vaqtida tashkil etish</li>
+<li>Sog&#039;lom turmush tarzi va gigiyena qoidalarini targ&#039;ib qilish</li>
+<li>Bolaning rivojlanish ko&#039;rsatkichlarini muntazam kuzatib borish</li>
+</ul></div></div></section>
+
+    <div class="algorithm-box"><h3 class="algo-title"><i class="fas fa-stethoscope"></i> Hamshira harakat algoritmi va amaliy ko'nikmalar:</h3><ol class="algo-list"><li><strong>1-qadam:</strong> Bemor bolaning umumiy ahvolini va hayotiy ko&#039;rsatkichlarini (harorat, puls, nafas) baholash;</li>
+<li><strong>2-qadam:</strong> Shifokor ko&#039;rsatmasiga asosan muolajalarni aseptika qoidalariga amal qilib bajarish;</li>
+<li><strong>3-qadam:</strong> Laboratoriya tahlillari uchun biologik materiallarni qoidaga muvofiq to&#039;plash;</li>
+<li><strong>4-qadam:</strong> Bolaga yoshiga mos parhez va to&#039;g&#039;ri suv rejimini ta&#039;minlash;</li>
+<li><strong>5-qadam:</strong> Kuzatuv natijalarini tibbiy kartaga qayd etib, o&#039;zgarishlar haqida shifokorga xabar berish.</li>
+</ol></div>
+
+
+    <div class="literature-box">
+      <h3 class="lit-title"><i class="fas fa-books"></i> Tavsiya etilgan adabiyotlar:</h3>
+      <ol class="lit-list">
+        <li>A. Inamov, Sh. Ergashev. "Pediatriyada hamshiralik ishi"  -  Toshkent, 2021-yil.</li>
+        <li>O'zbekiston Respublikasi SSV ning bolalar salomatligini muhofaza qilishga oid me'yoriy buyruqlari.</li>
+        <li>Neonatologiya va chaqaloqlar parvarishi bo'yicha amaliy qo'llanma  -  Toshkent, 2022-yil.</li>
+      </ol>
+    </div>
+  </main>
+
+  <footer class="lecture-footer">
+    <p>&copy; 2024 - 2026 &bull; 2-son Nukus Abu Ali ibn Sino nomidagi jamoat salomatligi texnikumi</p>
+    <p>Tuzuvchi: Sametullaeva Sveta Smaylovna (Pediatriya va neonatologiyada hamshiralik ishi fani o&#039;qituvchisi)</p>
+  </footer>
+</div>
+
+<script>
+  var currentFontSize = 16;
+  function changeFontSize(delta) {
+    currentFontSize += delta;
+    if (currentFontSize < 13) currentFontSize = 13;
+    if (currentFontSize > 22) currentFontSize = 22;
+    document.documentElement.style.setProperty("--base-font-size", currentFontSize + "px");
+  }
+</script>
+</body>
+</html>

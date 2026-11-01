@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .quiz-container {
+            width: 80%;
+            margin: 50px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            font-size: 1.1em;
+            margin-bottom: 12px;
+            background-color: #f9f9f9;
+            padding: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        label:hover {
+            background-color: #e8e8e8;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+
+        .btn-submit {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            margin-top: 30px;
+            font-size: 1.2em;
+            text-align: center;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .correct {
+            color: green;
+        }
+
+        .incorrect {
+            color: red;
+        }
+
+        .unanswered {
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Geriatric Care and Hygiene Test</h1>
+        <form id="quizForm">
+            <!-- Question 1 -->
+            <div class="question">
+                <p>1. Júrek diywali neshe qabattan ibarat?</p>
+                <label><input type="radio" name="question1" value="A"> A) 6</label>
+                <label><input type="radio" name="question1" value="B"> B) 5</label>
+                <label><input type="radio" name="question1" value="C"> C) 4</label>
+                <label><input type="radio" name="question1" value="D"> D) 3</label>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question">
+                <p>2. Júrektiń ishki qabatı ne dep ataladı?</p>
+                <label><input type="radio" name="question2" value="A"> A) Miokard</label>
+                <label><input type="radio" name="question2" value="B"> B) Endokard</label>
+                <label><input type="radio" name="question2" value="C"> C) Perikard</label>
+                <label><input type="radio" name="question2" value="D"> D) Qaqpaq</label>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question">
+                <p>3. Júrektiń muskul qabatı ne dep ataladı?</p>
+                <label><input type="radio" name="question3" value="A"> A) Miokard</label>
+                <label><input type="radio" name="question3" value="B"> B) Endokard</label>
+                <label><input type="radio" name="question3" value="C"> C) Perikard</label>
+                <label><input type="radio" name="question3" value="D"> D) Qaqpaq</label>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question">
+                <p>4. Júrektiń sırtqı qabatı ne dep ataladı?</p>
+                <label><input type="radio" name="question4" value="A"> A) Miokard</label>
+                <label><input type="radio" name="question4" value="B"> B) Endokard</label>
+                <label><input type="radio" name="question4" value="C"> C) Perikard</label>
+                <label><input type="radio" name="question4" value="D"> D) Qaqpaq</label>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question">
+                <p>5. Puls normada 1 minutada neshe ret uradi?</p>
+                <label><input type="radio" name="question5" value="A"> A) 30 -60</label>
+                <label><input type="radio" name="question5" value="B"> B) 80-100</label>
+                <label><input type="radio" name="question5" value="C"> C) 60 -80</label>
+                <label><input type="radio" name="question5" value="D"> D) 50-80</label>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="question">
+                <p>6. Pulsniń tezligi nelerge baylanıslı emes?</p>
+                <label><input type="radio" name="question6" value="A"> A) Jasqa</label>
+                <label><input type="radio" name="question6" value="B"> B) Fizikalıq zorıǵıwǵa</label>
+                <label><input type="radio" name="question6" value="C"> C) Sutka waqıtına</label>
+                <label><input type="radio" name="question6" value="D"> D) Sezim-tınıshsızlanıwǵa</label>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="question">
+                <p>7. Puls ritminiń aynıwı qanday ataladı?</p>
+                <label><input type="radio" name="question7" value="A"> A) Aritmiya</label>
+                <label><input type="radio" name="question7" value="B"> B) Taxisfigmiya</label>
+                <label><input type="radio" name="question7" value="C"> C) Bradikardiya</label>
+                <label><input type="radio" name="question7" value="D"> D) Bradisfigmiya</label>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="question">
+                <p>8. Minimal arterial qan basımı qanday ataladı?</p>
+                <label><input type="radio" name="question8" value="A"> A) Diastolic</label>
+                <label><input type="radio" name="question8" value="B"> B) Sistolik</label>
+                <label><input type="radio" name="question8" value="C"> C) Asistolik</label>
+                <label><input type="radio" name="question8" value="D"> D) Puls basımı</label>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="question">
+                <p>9. Pulsniń tezlashuvi qanday ataladı?</p>
+                <label><input type="radio" name="question9" value="A"> A) Taxisfigmiya</label>
+                <label><input type="radio" name="question9" value="B"> B) Taxikardiya</label>
+                <label><input type="radio" name="question9" value="C"> C) Bradisfigmiya</label>
+                <label><input type="radio" name="question9" value="D"> D) Bradikardiya</label>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="question">
+                <p>10. Arterial qan basımı qaysı ásbapda olshenedi?</p>
+                <label><input type="radio" name="question10" value="A"> A) Manometer</label>
+                <label><input type="radio" name="question10" value="B"> B) Tonometr</label>
+                <label><input type="radio" name="question10" value="C"> C) Urometr</label>
+                <label><input type="radio" name="question10" value="D"> D) Termometr</label>
+            </div>
+
+            <button type="submit" class="btn-submit">Testni tapşırıp kórüp shıqarıw</button>
+        </form>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        const quizForm = document.getElementById('quizForm');
+        const resultDiv = document.getElementById('result');
+
+        quizForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+            let score = 0;
+
+            // Define correct answers
+            const correctAnswers = {
+                question1: 'D',
+                question2: 'B',
+                question3: 'A',
+                question4: 'C',
+                question5: 'C',
+                question6: 'C',
+                question7: 'A',
+                question8: 'A',
+                question9: 'B',
+                question10: 'B',
+            };
+
+            // Calculate score
+            for (let i = 1; i <= 10; i++) {
+                const userAnswer = document.querySelector(`input[name="question${i}"]:checked`);
+                if (userAnswer) {
+                    if (userAnswer.value === correctAnswers[`question${i}`]) {
+                        score++;
+                    }
+                }
+            }
+
+            resultDiv.style.display = 'block';
+            resultDiv.textContent = `Sizning ball: ${score} / 10`;
+        });
+    </script>
+</body>
+</html>

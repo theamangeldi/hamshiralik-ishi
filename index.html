@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="uz" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta teglar -->
+  <title>Hamshiralik ishi texnikasi | Elektron O'quv-Metodik Majmuasi</title>
+  <meta name="description" content="2-son Nukus Abu Ali ibn Sino nomidagi jamoat salomatligi texnikumi Hamshiralik ishi texnikasi fani bo'yicha professional elektron o'quv-metodik majmuasi.">
+  <meta name="keywords" content="hamshiralik ishi, tibbiyot texnikumi, Nukus, amaliyot, teoriya, testlar, slaydlar, Asem Yakupova">
+  <meta name="author" content="Yakupova Asem Baxardirovna">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./assets/images/favicon.png">
+
+  <!-- Asosiy Stillar -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/topic.css">
+</head>
+<body>
+
+  <!-- ======================================================================
+       1. SAYT TEPASI (HEADER & NAVBAR)
+       ====================================================================== -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="#home" class="site-logo">
+        <div class="logo-icon-wrapper">
+          <i class="fas fa-heartbeat"></i>
+        </div>
+        <div class="logo-texts">
+          <span class="logo-title">Hamshiralik Ishi</span>
+          <span class="logo-subtitle">Elektron Ta'lim Portali</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="#home" class="nav-link active">Bosh sahifa</a>
+        <a href="#syllabus" class="nav-link">Mundarija</a>
+        <a href="#about" class="nav-link">O'qituvchi haqida</a>
+        <a href="#contact" class="nav-link">Bog'lanish</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle-btn" id="themeToggleBtn" title="Mavzuni almashtirish" aria-label="Mavzuni almashtirish">
+          <i class="fas fa-moon"></i>
+        </button>
+        <a href="#syllabus" class="btn-header-cta">
+          <i class="fas fa-book-reader"></i>
+          <span>Darslar mundarijasi</span>
+        </a>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menyuni ochish">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ======================================================================
+         2. ASOSIY BANNER (HERO SECTION)
+         ====================================================================== -->
+    <section class="hero-section" id="home">
+      <div class="container hero-grid">
+        <div class="hero-content-col">
+          <div class="hero-badge">
+            <span class="badge-dot"></span>
+            <span id="courseCodeBadge">Fan kodi: 40910302</span>
+          </div>
+
+          <h1 class="hero-title">
+            <span id="courseTitleElem">Hamshiralik ishi texnikasi</span><br>
+            <span class="hero-title-highlight">Elektron Majmuasi</span>
+          </h1>
+
+          <p class="hero-description" id="courseSubtitleElem">
+            Abu Ali ibn Sino nomidagi jamoat salomatligi texnikumi talabalari uchun amaliy va nazariy ko'nikmalarni mustahkamlovchi interaktiv ta'lim platformasi.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#syllabus" class="btn-primary">
+              <i class="fas fa-book-reader"></i>
+              <span>O'quv Mundarijasi</span>
+            </a>
+            <a href="#about" class="btn-secondary">
+              <i class="fas fa-user-md"></i>
+              <span>O'qituvchi haqida</span>
+            </a>
+          </div>
+
+          <div class="hero-stats-row">
+            <div class="stat-item">
+              <span class="stat-number" id="statPracticalCount">33</span>
+              <span class="stat-label">Amaliy mashg'ulot</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" id="statTheoryCount">30</span>
+              <span class="stat-label">Nazariy dars</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" id="statTotalCount">63</span>
+              <span class="stat-label">Taqdimot & Slayd</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" id="statTestsCount">63</span>
+              <span class="stat-label">Interaktiv test</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- O'qituvchi kartasi (Hero card) -->
+        <div class="hero-card-preview">
+          <div class="teacher-spotlight-card">
+            <div class="teacher-avatar-wrapper">
+              <img id="teacherAvatarImg" src="./assets/images/teacher.png" alt="O'qituvchi rasmi" class="teacher-avatar-img">
+              <span class="teacher-badge-verified" title="Tasdiqlangan mutaxassis">
+                <i class="fas fa-check"></i>
+              </span>
+            </div>
+
+            <h3 class="teacher-name" id="teacherNameHero">Sametullaeva Sveta Smaylovna</h3>
+            <p class="teacher-role" id="teacherRoleHero">Hamshiralik ishi fani o'qituvchisi</p>
+            <p class="teacher-inst" id="teacherInstHero">2-son Nukus Abu Ali ibn Sino nomidagi jamoat salomatligi texnikumi</p>
+
+            <div class="teacher-meta-chips">
+              <span class="meta-chip"><i class="fas fa-user-md"></i> Oliy toifa</span>
+              <span class="meta-chip"><i class="fas fa-clock"></i> <span id="heroTeacherExp">23 yil</span> staj</span>
+              <span class="meta-chip"><i class="fas fa-award"></i> Guvohnoma</span>
+            </div>
+
+            <button class="btn-view-certificate" id="viewCertificateBtn">
+              <i class="fas fa-certificate"></i>
+              <span>Malaka guvohnomasini ko'rish</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- ======================================================================
+         4. MUNDARIJA VA O'QUV DASTURI (SYLLABUS SECTION)
+         ====================================================================== -->
+    <section class="syllabus-section" id="syllabus">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Fan Mundarijasi</span>
+          <h2 class="section-title">O'quv Dasturi va Taqvim-Mavzuiy Reja</h2>
+          <p class="section-subtitle">
+            "Hamshiralik ishi texnikasi" fani bo'yicha mashg'ulotlar mundarijasi. Kerakli bo'limni tanlang:
+          </p>
+        </div>
+
+        <!-- Statistika umumiy xulosasi -->
+        <div class="syllabus-summary-bar">
+          <div class="syl-stat-badge">
+            <i class="fas fa-layer-group"></i>
+            <div>
+              <span class="syl-stat-val">63 ta</span>
+              <span class="syl-stat-lbl">Jami o'quv mavzulari</span>
+            </div>
+          </div>
+          <div class="syl-stat-badge">
+            <i class="fas fa-clock"></i>
+            <div>
+              <span class="syl-stat-val" id="sylTotalHoursVal">192 soat</span>
+              <span class="syl-stat-lbl">Jami o'quv yuklamasi</span>
+            </div>
+          </div>
+          <div class="syl-stat-badge">
+            <i class="fas fa-stethoscope"></i>
+            <div>
+              <span class="syl-stat-val">33 mavzu (132 soat)</span>
+              <span class="syl-stat-lbl">Amaliy ko'nikmalar</span>
+            </div>
+          </div>
+          <div class="syl-stat-badge">
+            <i class="fas fa-book-open"></i>
+            <div>
+              <span class="syl-stat-val">30 mavzu (60 soat)</span>
+              <span class="syl-stat-lbl">Nazariy ma'ruzalar</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- BOSHIDAGI 2 TA ASOSIY TUGMA (KARTA) -->
+        <div class="syllabus-choice-grid" id="syllabusChoiceGrid">
+          <!-- 1-Tugma: Amaliy mashg'ulotlar -->
+          <div class="syl-choice-card amaliy-card" id="btnOpenAmaliySyllabus" role="button" tabindex="0" onclick="openSyllabusCategory('amaliy')">
+            <div class="syl-choice-header">
+              <div class="syl-choice-icon amaliy-icon">
+                <i class="fas fa-user-md"></i>
+              </div>
+              <span class="syl-choice-pill amaliy-pill">
+                <i class="fas fa-stethoscope"></i> 33 ta Mavzu &bull; 132 soat
+              </span>
+            </div>
+            <div class="syl-choice-content">
+              <h3 class="syl-choice-title">Amaliy mashg'ulotlar mundarijasi</h3>
+              <p class="syl-choice-desc">
+                Muolajalar texnikasi, inyeksiya, qon olish, aseptika, shoshilinch yordam va klinik ko'nikmalar bo'yicha 33 ta amaliy mashg'ulot mundarijasi.
+              </p>
+            </div>
+            <div class="syl-choice-action" onclick="openSyllabusCategory('amaliy')">
+              <span class="syl-action-text">Mundarijani ko'rish</span>
+              <div class="syl-arrow-circle">
+                <i class="fas fa-arrow-right"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2-Tugma: Nazariy mashg'ulotlar -->
+          <div class="syl-choice-card nazariy-card" id="btnOpenNazariySyllabus" role="button" tabindex="0" onclick="openSyllabusCategory('nazariy')">
+            <div class="syl-choice-header">
+              <div class="syl-choice-icon nazariy-icon">
+                <i class="fas fa-book-medical"></i>
+              </div>
+              <span class="syl-choice-pill nazariy-pill">
+                <i class="fas fa-graduation-cap"></i> 30 ta Mavzu &bull; 60 soat
+              </span>
+            </div>
+            <div class="syl-choice-content">
+              <h3 class="syl-choice-title">Nazariy mashg'ulotlar mundarijasi</h3>
+              <p class="syl-choice-desc">
+                Hamshiralik asoslari, etika, infeksion nazorat, kasalliklar profilaktikasi va nazariy asoslar bo'yicha 30 ta ma'ruza mashg'ulot mundarijasi.
+              </p>
+            </div>
+            <div class="syl-choice-action" onclick="openSyllabusCategory('nazariy')">
+              <span class="syl-action-text">Mundarijani ko'rish</span>
+              <div class="syl-arrow-circle">
+                <i class="fas fa-arrow-right"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MUNDARIJA JADVALI KO'RINISHI (TUGMALARDAN BIRIGA KIRILGANDA KO'RINADI) -->
+        <div class="syllabus-detail-view" id="syllabusDetailView" style="display: none;">
+          <!-- Mundarija Header va Boshqaruv paneli -->
+          <div class="syllabus-view-header">
+            <div class="syllabus-header-left">
+              <button class="syl-back-btn" id="sylBackBtn" onclick="closeSyllabusCategory()" title="Orqaga qaytish">
+                <i class="fas fa-arrow-left"></i>
+                <span>Orqaga</span>
+              </button>
+              <div class="syl-active-title-group">
+                <h3 class="syl-active-title" id="sylActiveTitle">Amaliy mashg'ulotlar mundarijasi</h3>
+                <span class="syl-active-badge" id="sylActiveBadge">33 ta mavzu &bull; 132 soat</span>
+              </div>
+            </div>
+
+            <!-- Bo'limlar o'rtasida tezkor almashish -->
+            <div class="syllabus-category-switch">
+              <button class="syl-switch-btn active" data-syl-switch="amaliy" id="switchAmaliyBtn" onclick="openSyllabusCategory('amaliy')" title="Amaliy mashg'ulotlar mundarijasi">
+                <i class="fas fa-stethoscope"></i>
+                <span>Amaliyot</span>
+                <span class="syl-switch-count">33</span>
+              </button>
+              <button class="syl-switch-btn" data-syl-switch="nazariy" id="switchNazariyBtn" onclick="openSyllabusCategory('nazariy')" title="Nazariy mashg'ulotlar mundarijasi">
+                <i class="fas fa-book-medical"></i>
+                <span>Nazariya</span>
+                <span class="syl-switch-count">30</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Qidiruv va Eksport toolbar -->
+          <div class="syllabus-toolbar">
+            <div class="syllabus-search-box">
+              <i class="fas fa-search"></i>
+              <input type="text" id="syllabusSearchInput" placeholder="Mundarijadan qidirish..." aria-label="Mundarijadan qidirish">
+              <button id="syllabusClearSearch" class="search-clear-btn" style="display:none;" title="Tozalash"><i class="fas fa-times"></i></button>
+            </div>
+
+            <div class="syllabus-tools-right">
+              <button class="btn-primary syllabus-pdf-btn" id="syllabusPdfBtn" onclick="exportSyllabusToPdf()" title="Rasmiy taqvim-mavzuiy rejani PDF variantda yuklab olish">
+                <i class="fas fa-file-pdf"></i>
+                <span>PDF Hisobot</span>
+              </button>
+              <button class="btn-secondary syllabus-print-btn" onclick="window.print()" title="Mundarijani chop etish">
+                <i class="fas fa-print"></i>
+                <span>Chop etish</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- MAXSUS HISOBOT BO'LIMI (REPORT CARD) -->
+          <div class="syllabus-report-box" id="syllabusReportBox">
+            <div class="syl-report-left">
+              <div class="syl-report-icon">
+                <i class="fas fa-file-invoice"></i>
+              </div>
+              <div class="syl-report-info">
+                <span class="syl-report-badge"><i class="fas fa-award"></i> Rasmiy Taqvim-Mavzuiy Reja & PDF Hisobot</span>
+                <h4 class="syl-report-title" id="sylReportCardTitle">Pediatriya fani bo'yicha rasmiy o'quv dasturi va taqvim-mavzuiy reja</h4>
+                <p class="syl-report-desc">
+                  Vazirlik va texnikum standarti asosida tasdiqlangan taqvim-mavzuiy rejani A4 formatda to'liq yuklab oling yoki chop eting:
+                </p>
+              </div>
+            </div>
+            <div class="syl-report-actions">
+              <button class="syl-rep-btn btn-rep-all" onclick="exportSyllabusToPdf('all')" title="Barcha 63 ta mavzu (192 soat) umumiy hisobotini yuklab olish">
+                <i class="fas fa-file-pdf"></i>
+                <span>To'liq reja (192 s)</span>
+              </button>
+              <button class="syl-rep-btn btn-rep-print" onclick="window.print()" title="Mundarijani chop etish">
+                <i class="fas fa-print"></i>
+                <span>Chop etish</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Chop etish va PDF eksport uchun tayyorlangan rasmiy hujjat bloki -->
+          <div id="syllabusPrintReportContainer" class="syllabus-print-report-container">
+            <!-- Faqat chop etishda ko'rinuvchi rasmiy bosh qism (Print Header) -->
+            <div class="syllabus-print-header">
+              <div class="print-org-line">O'ZBEKISTON RESPUBLIKASI SOG'LIQNI SAQLASH VAZIRLIGI</div>
+              <div class="print-college-line">2-SON NUKUS ABU ALI IBN SINO NOMIDAGI JAMOAT SALOMATLIGI TEXNIKUMI</div>
+              <h1 class="print-doc-title" id="printDocTitle">"PEDIATRIYA VA NEONATOLOGIYADA HAMSHIRALIK ISHI" FANI BO'YICHA TAQVIM-MAVZUIY REJA VA MUNDARIJA</h1>
+              <div class="print-doc-meta">
+                <span><strong>Fan kodi:</strong> <span id="printDocCode">50910302</span></span>
+                <span><strong>Yo'nalish:</strong> Tibbiy profilaktika va Davolash ishi</span>
+                <span><strong>O'qituvchi:</strong> <span id="printTeacherName">Sametullaeva Sveta Smaylovna</span></span>
+                <span id="printDocHours"><strong>O'quv hajmi:</strong> 33 ta amaliy mavzu (132 soat)</span>
+                <span><strong>O'quv yili:</strong> 2024 - 2026</span>
+              </div>
+            </div>
+
+            <!-- Mundarija Jadvali (Resurslar ustuni olib tashlangan) -->
+            <div class="syllabus-table-wrapper">
+              <table class="syllabus-table" id="syllabusTable">
+                <thead>
+                  <tr>
+                    <th class="syl-th-num" style="text-align: center;">№</th>
+                    <th class="syl-th-cat" style="text-align: center;">Turi</th>
+                    <th class="syl-th-title">Mavzular nomi</th>
+                    <th class="syl-th-hours" style="text-align: center;">Hajmi</th>
+                    <th class="syl-col-action-header" style="text-align: center;">Darsga o'tish</th>
+                  </tr>
+                </thead>
+                <tbody id="syllabusTableBody">
+                  <!-- JavaScript orqali to'ldiriladi -->
+                </tbody>
+              </table>
+              <div id="syllabusNoResults" class="syllabus-no-results" style="display:none;">
+                <i class="fas fa-search"></i>
+                <p>Qidiruv bo'yicha mos mavzu topilmadi</p>
+              </div>
+            </div>
+
+            <!-- Faqat chop etishda ko'rinuvchi rasmiy imzo qismi (Print Signatures) -->
+            <div class="syllabus-print-signatures">
+              <div class="print-sig-block">
+                <span class="sig-title">Kafedra mudiri:</span>
+                <span class="sig-dots">____________________ (imzo)</span>
+              </div>
+              <div class="print-sig-block">
+                <span class="sig-title">Fan o'qituvchisi:</span>
+                <span class="sig-dots"><span id="printSigTeacherName">Sametullaeva S. S.</span> _________ (imzo)</span>
+              </div>
+              <div class="print-sig-block">
+                <span class="sig-title">Tasdiqlangan sana:</span>
+                <span class="sig-dots">«____» ____________ 202__ y.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         5. O'QITUVCHI HAQIDA (ABOUT SECTION)
+         ====================================================================== -->
+    <section class="about-section" id="about">
+      <div class="container">
+        <div class="about-card-container">
+          <div class="about-image-column">
+            <img id="aboutTeacherPhoto" src="./assets/images/teacher.png" alt="O'qituvchi rasmi" class="about-photo">
+            <button class="btn-secondary" onclick="document.getElementById('viewCertificateBtn').click()" style="width: 280px; margin: 0 auto;">
+              <i class="fas fa-award"></i> Malaka guvohnomasi
+            </button>
+          </div>
+
+          <div class="about-info-column">
+            <span class="section-tag">O'qituvchi Portfeli</span>
+            <h2 class="section-title" id="aboutTeacherName">Sametullaeva Sveta Smaylovna</h2>
+            <p class="about-bio-text" id="teacherBioElem">
+              1973-yil 06-iyulda Nukus shahrida tug'ilgan. 1990-1997 yillarda Toshkent Pediatriya Tibbiyot instituti Nukus filialida ta'lim olgan. 2003-yildan buyon 2-son Nukus Abu Ali ibn Sino nomidagi jamoat salomatligi texnikumida Pediatriya va neonatologiyada hamshiralik ishi fani bo'yicha talabalarga dars berib kelmoqda.
+            </p>
+
+            <div class="about-details-list">
+              <div class="about-detail-item">
+                <div class="detail-icon"><i class="fas fa-briefcase"></i></div>
+                <div class="detail-content">
+                  <span class="detail-label">Ish staji</span>
+                  <span class="detail-val" id="teacherExpVal">23 yil</span>
+                </div>
+              </div>
+
+              <div class="about-detail-item">
+                <div class="detail-icon"><i class="fas fa-university"></i></div>
+                <div class="detail-content">
+                  <span class="detail-label">Muassasa</span>
+                  <span class="detail-val" id="courseInstElem">Nukus Abu Ali ibn Sino texnikumi</span>
+                </div>
+              </div>
+
+              <div class="about-detail-item">
+                <div class="detail-icon"><i class="fas fa-envelope"></i></div>
+                <div class="detail-content">
+                  <span class="detail-label">Elektron pochta</span>
+                  <span class="detail-val" id="teacherEmailVal">sametullaevasveta@gmail.com</span>
+                </div>
+              </div>
+
+              <div class="about-detail-item">
+                <div class="detail-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <div class="detail-content">
+                  <span class="detail-label">Hudud</span>
+                  <span class="detail-val" id="teacherLocationVal">Nukus shahri, Chimboy guzari 1</span>
+                </div>
+              </div>
+            </div>
+
+            <a href="#contact" class="btn-primary">
+              <i class="fas fa-paper-plane"></i>
+              <span>O'qituvchi bilan bog'lanish</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         6. BOG'LANISH BO'LIMI (CONTACT SECTION)
+         ====================================================================== -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Aloqa va Fikr-mulohaza</span>
+          <h2 class="section-title">Savollaringiz bormi?</h2>
+          <p class="section-subtitle">
+            Dars jarayoni, mavzular yoki qo'shimcha metodik materiallar yuzasidan bevosita o'qituvchi bilan bog'lanishingiz mumkin.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info-card">
+            <h3 style="font-family: var(--font-heading); margin-bottom: 24px; font-size: 1.3rem;">Aloqa ma'lumotlari</h3>
+            
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+              <div class="contact-meta">
+                <span>Telefon raqami</span>
+                <strong><a id="contactPhoneLink" href="tel:+998973572599">+998 97 357-25-99</a></strong>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+              <div class="contact-meta">
+                <span>Elektron pochta</span>
+                <strong><a id="contactEmailLink" href="mailto:sametullaevasveta@gmail.com">sametullaevasveta@gmail.com</a></strong>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fas fa-map-marked-alt"></i></div>
+              <div class="contact-meta">
+                <span>Manzil</span>
+                <strong id="contactAddressVal">Nukus shahri, Chimboy guzari 1</strong>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fab fa-telegram-plane"></i></div>
+              <div class="contact-meta">
+                <span>Telegram kanal / profil</span>
+                <strong><a id="contactTelegramLink" href="https://t.me" target="_blank">@sametullaevasveta</a></strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-card">
+            <h3 style="font-family: var(--font-heading); margin-bottom: 20px; font-size: 1.3rem;">Xabar yo'llash</h3>
+            <form id="contactForm">
+              <div class="form-group">
+                <label class="form-label" for="senderName">Ism va familiyangiz</label>
+                <input type="text" id="senderName" class="form-input" placeholder="Masalan: Azizbek Aliyev" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="senderContact">Telefon yoki Telegram</label>
+                <input type="text" id="senderContact" class="form-input" placeholder="+998 90 123 45 67" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="senderMessage">Xabaringiz</label>
+                <textarea id="senderMessage" class="form-textarea" placeholder="Savol yoki taklifingizni yozing..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn-primary" style="width: 100%;">
+                <i class="fas fa-paper-plane"></i>
+                <span>Xabarni yuborish</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======================================================================
+       7. SAYT PASTKI QISMI (FOOTER)
+       ====================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="#home" class="site-logo">
+            <div class="logo-icon-wrapper" style="width: 38px; height: 38px; font-size: 18px;">
+              <i class="fas fa-heartbeat"></i>
+            </div>
+            <div class="logo-texts">
+              <span class="logo-title" style="font-size: 1.1rem;">Hamshiralik Ishi</span>
+            </div>
+          </a>
+          <p>
+            2-son Nukus Abu Ali ibn Sino nomidagi jamoat salomatligi texnikumi talabalari uchun yaratilgan elektron ta'lim resursi.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <a href="#home">Bosh sahifa</a>
+          <a href="#syllabus">Mundarija</a>
+          <a href="#about">O'qituvchi</a>
+          <a href="#contact">Bog'lanish</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Barcha huquqlar himoyalangan. Muallif: <span id="footerAuthor">Sametullaeva Sveta Smaylovna</span>.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================================================================
+       8. MALAKA GUVAHNOMASI MODAL OYNASI
+       ====================================================================== -->
+  <div class="modal-overlay" id="certificateModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title"><i class="fas fa-certificate" style="color: var(--amber-500);"></i> Malaka Guvohnomasi</h3>
+        <button class="modal-close-btn" id="closeCertificateBtn" aria-label="Yopish">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="modal-body" style="text-align: center;">
+        <img id="certificateModalImg" src="photo_2025-05-07_11-55-23.jpg" alt="Malaka guvohnomasi" class="certificate-img-view">
+        <div style="margin-top: 16px;">
+          <a href="photo_2025-05-07_11-55-23.jpg" download class="btn-primary" style="display: inline-flex;">
+            <i class="fas fa-download"></i> Asl nusxani yuklab olish
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       9. MAVZUNI TO'LIQ OCHISH VA INTERAKTIV WORKSPACE (TOPIC VIEWER MODAL)
+       ====================================================================== -->
+  <div class="topic-modal-overlay" id="topicModalOverlay">
+    <div class="topic-modal-window" id="topicModalWindow">
+      <!-- Modal Header -->
+      <div class="topic-modal-header">
+        <div class="topic-header-left-wrap">
+          <button class="topic-back-btn" id="topicBackBtn" title="Orqaga qaytish">
+            <i class="fas fa-arrow-left"></i>
+            <span>Orqaga</span>
+          </button>
+          <div class="topic-header-info">
+            <span class="topic-header-badge" id="topicHeaderBadge">Amaliyot • 1-mavzu</span>
+            <h2 class="topic-header-title" id="topicHeaderTitle">Mavzu nomi</h2>
+          </div>
+        </div>
+
+        <div class="topic-header-controls">
+          <button class="topic-ctrl-btn" id="topicFullscreenBtn" title="To'liq ekran">
+            <i class="fas fa-expand"></i>
+          </button>
+          <button class="topic-ctrl-btn topic-close-btn" id="topicCloseBtn" title="Yopish (ESC)">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Modal Tabs Navigation -->
+      <div class="topic-tabs-nav">
+        <button class="topic-tab-link active" data-tab="lecture">
+          <i class="fas fa-file-pdf"></i>
+          <span>Ma'ruza matni</span>
+        </button>
+        <button class="topic-tab-link" data-tab="slide">
+          <i class="fas fa-tv"></i>
+          <span>Taqdimot / Slayd</span>
+        </button>
+        <button class="topic-tab-link" data-tab="quiz">
+          <i class="fas fa-tasks"></i>
+          <span>Interaktiv Test</span>
+        </button>
+        <button class="topic-tab-link" data-tab="video">
+          <i class="fas fa-video"></i>
+          <span>Video darslik</span>
+        </button>
+        <button class="topic-tab-link" data-tab="resources">
+          <i class="fas fa-folder-open"></i>
+          <span>Didaktik resurslar</span>
+        </button>
+      </div>
+
+      <!-- Modal Body (Panels) -->
+      <div class="topic-modal-body">
+        <!-- 1. Ma'ruza (PDF) -->
+        <div class="topic-tab-pane active" id="tabPane-lecture">
+          <div id="pdfViewerContainer"></div>
+        </div>
+
+        <!-- 2. Slaydlar -->
+        <div class="topic-tab-pane" id="tabPane-slide">
+          <div id="slideViewerContainer"></div>
+        </div>
+
+        <!-- 3. Test tizimi -->
+        <div class="topic-tab-pane" id="tabPane-quiz">
+          <div id="quizRunnerContainer"></div>
+        </div>
+
+        <!-- 4. Video darslik -->
+        <div class="topic-tab-pane" id="tabPane-video">
+          <div id="videoPlayerContainer"></div>
+        </div>
+
+        <!-- 5. Didaktik resurslar -->
+        <div class="topic-tab-pane" id="tabPane-resources">
+          <div id="resourcesGridContainer"></div>
+        </div>
+      </div>
+
+      <!-- Modal Footer (Oldingi / Keyingi navigatsiya) -->
+      <div class="topic-modal-footer">
+        <button class="btn-secondary" id="prevTopicBtn">
+          <i class="fas fa-chevron-left"></i>
+          <span>Oldingi mavzu</span>
+        </button>
+
+        <button class="btn-secondary topic-footer-back-btn" id="topicFooterBackBtn" title="Oldingi sahifaga qaytish">
+          <i class="fas fa-arrow-left"></i>
+          <span>Orqaga qaytish</span>
+        </button>
+
+        <button class="btn-secondary" id="nextTopicBtn">
+          <span>Keyingi mavzu</span>
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript fayllari -->
+  <script src="./data/course-data.js"></script>
+  <script src="./assets/js/html2pdf.bundle.min.js"></script>
+  <script src="./assets/js/topic-viewer.js"></script>
+  <script src="./assets/js/main.js"></script>
+</body>
+</html>

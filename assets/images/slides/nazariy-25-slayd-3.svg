@@ -1,0 +1,52 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 420" width="520" height="420">
+  <defs>
+    <!-- Shaffof fonga mos gradientlar -->
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#34d399"/>
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <filter id="glowF" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="16" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- 100% SHAFFOF FON: HECH QANDAY TO'RTBURCHAK QORA FON YO'Q! -->
+  
+  <!-- Yorituvchi nafis ambient nur -->
+  <circle cx="260" cy="210" r="150" fill="#059669" opacity="0.12" filter="url(#glowF)"/>
+
+  <!-- Asosiy 3D Vektor Tibbiy Kompozitsiya -->
+          <g transform="translate(190, 130)">
+          <circle cx="60" cy="60" r="115" fill="#059669" opacity="0.14" filter="url(#glowF)"/>
+          
+          <!-- Himoya qalqoni (Immunitet) -->
+          <path d="M60 -30 L150 15 C150 110 95 155 60 175 C25 155 -30 110 -30 15 Z" fill="url(#grad1)" opacity="0.25" stroke="#34d399" stroke-width="3"/>
+          
+          <!-- Shprits -->
+          <rect x="48" y="-10" width="24" height="110" rx="8" fill="url(#grad2)" stroke="#ffffff" stroke-width="3"/>
+          <line x1="60" y1="100" x2="60" y2="155" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+          <path d="M40 -10 L80 -10 M50 -25 L70 -25 M60 -25 L60 -10" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+          
+          <!-- O'lchov chiziqchalari -->
+          <line x1="53" y1="20" x2="65" y2="20" stroke="#ffffff" stroke-width="2.5"/>
+          <line x1="53" y1="45" x2="65" y2="45" stroke="#ffffff" stroke-width="2.5"/>
+          <line x1="53" y1="70" x2="65" y2="70" stroke="#ffffff" stroke-width="2.5"/>
+
+          <!-- Aseptika nishoni -->
+          <g transform="translate(10, 165)">
+            <rect width="100" height="30" rx="15" fill="rgba(15,23,42,0.9)" stroke="#34d399" stroke-width="1.5"/>
+            <text x="50" y="20" fill="#34d399" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="800" text-anchor="middle">&#10003; STERIL 100%</text>
+          </g>
+        </g>
+
+  <!-- Yuqori qismdagi nafis tibbiy yorliq -->
+  <g transform="translate(260, 30)">
+    <rect x="-80" y="0" width="160" height="28" rx="14" fill="rgba(56,189,248,0.12)" stroke="#34d399" stroke-width="1.2"/>
+    <text x="0" y="19" fill="#34d399" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="800" letter-spacing="1" text-anchor="middle">IMMUNIZATSIYA</text>
+  </g>
+</svg>

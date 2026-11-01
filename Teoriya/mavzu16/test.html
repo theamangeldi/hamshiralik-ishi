@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .quiz-container {
+            width: 80%;
+            margin: 50px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            font-size: 1.1em;
+            margin-bottom: 12px;
+            background-color: #f9f9f9;
+            padding: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        label:hover {
+            background-color: #e8e8e8;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+
+        .btn-submit {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            margin-top: 30px;
+            font-size: 1.2em;
+            text-align: center;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .correct {
+            color: green;
+        }
+
+        .incorrect {
+            color: red;
+        }
+
+        .unanswered {
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Duodenal Zondlaw Test</h1>
+        <form id="quizForm">
+            <!-- Question 1 -->
+            <div class="question">
+                <p>1. Duodenal zondlawda qaysi organ suyiqliǵin  jiynaw ushin magniy sulfat eritpesi kiritiledi?</p>
+                <label><input type="radio" name="question1" value="A"> A) Asqazan suyiqliǵi;</label>
+                <label><input type="radio" name="question1" value="B"> B) Juwan ishek suyiqliǵi;</label>
+                <label><input type="radio" name="question1" value="C"> C) Ót qaltasi suyiqliǵi;</label>
+                <label><input type="radio" name="question1" value="D"> D) Asqazan shiresi suyiqliǵi.</label>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question">
+                <p>2. Duodenal zondlawda “C” porsiya qaysi organ suyiqliǵi esaplanadi?</p>
+                <label><input type="radio" name="question2" value="A"> A) 12 barmaq ishek;</label>
+                <label><input type="radio" name="question2" value="B"> B) Ót qaltasi;</label>
+                <label><input type="radio" name="question2" value="C"> C) Asqazan;</label>
+                <label><input type="radio" name="question2" value="D"> D) Bawir ót-jollari suyiqliǵi.</label>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question">
+                <p>3. Duodenal zondlawdi ótkeriwde qanday zond isletiledi?</p>
+                <label><input type="radio" name="question3" value="A"> A) Almurtsiman ballonsha;</label>
+                <label><input type="radio" name="question3" value="B"> B) Olivali zond;</label>
+                <label><input type="radio" name="question3" value="C"> C) Juwan asqazan zondi;</label>
+                <label><input type="radio" name="question3" value="D"> D) Esmarx krujkasi.</label>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question">
+                <p>4. Duodenal zondlaw qaysi keselliklerde ótkeriledi?</p>
+                <label><input type="radio" name="question4" value="A"> A) Bawir hám ót qaltasi keselliklerinde;</label>
+                <label><input type="radio" name="question4" value="B"> B) Asqazan hám ishek keselliklerinda;</label>
+                <label><input type="radio" name="question4" value="C"> C) Isheklerden qan ketgende;</label>
+                <label><input type="radio" name="question4" value="D"> D) Ót qaltasi tas keselliklerinde.</label>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question">
+                <p>5. Duodenal zondlawda “A” porsiya qaysi organ suyuqliǵi esaplanadi?</p>
+                <label><input type="radio" name="question5" value="A"> A) Asqazan;</label>
+                <label><input type="radio" name="question5" value="B"> B) Bawir;</label>
+                <label><input type="radio" name="question5" value="C"> C) Ót qaltasi;</label>
+                <label><input type="radio" name="question5" value="D"> D) 12 barmaq ishek.</label>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="question">
+                <p>6. Duodenal zondlawda “B” porsiya qaysi aǵza suyiqliǵi esaplanadi?</p>
+                <label><input type="radio" name="question6" value="A"> A) Asqazan asti bezi;</label>
+                <label><input type="radio" name="question6" value="B"> B) Bawir ót jollari;</label>
+                <label><input type="radio" name="question6" value="C"> C) Ót qaltasi;</label>
+                <label><input type="radio" name="question6" value="D"> D) 12 barmaq ishek.</label>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="question">
+                <p>7. Tamaqtan surtpe aliwda ne isletilmeydi?</p>
+                <label><input type="radio" name="question7" value="A"> A) Kornsań;</label>
+                <label><input type="radio" name="question7" value="B"> B) Konservantli st. probirkaǵa alinadi;</label>
+                <label><input type="radio" name="question7" value="C"> C) Paxta oralǵan metal sterjen;</label>
+                <label><input type="radio" name="question7" value="D"> D) Shpatel menen alinadi.</label>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="question">
+                <p>8. Ulken dáretti jasirin qanǵa tekseriw ushin awqat ratsioninnan neler alip taslanadi?</p>
+                <label><input type="radio" name="question8" value="A"> A) Sut, tvorog;</label>
+                <label><input type="radio" name="question8" value="B"> B) Gósh, baliq ónimleri;</label>
+                <label><input type="radio" name="question8" value="C"> C) Gurush hám manniy kashasi;</label>
+                <label><input type="radio" name="question8" value="D"> D) Makaron ónimleri.</label>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="question">
+                <p>9. Úlken dáretti qurt tuqimlarina qanday jiynaladi?</p>
+                <label><input type="radio" name="question9" value="A"> A) Jańa ajratilǵan ulken dárettiń 3 jerinnen;</label>
+                <label><input type="radio" name="question9" value="B"> B) Tazalawshi klizma ótkergennen sóń;</label>
+                <label><input type="radio" name="question9" value="C"> C) Bosastiruwshi zatlardi qabillaǵannan kiyin;</label>
+                <label><input type="radio" name="question9" value="D"> D) Gel’mentlarge qarsi dárilik zatlardi qabillaǵannan soń.</label>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="question">
+                <p>10. Úlken dáretti qanǵa qashan jiynaladi?</p>
+                <label><input type="radio" name="question10" value="A"> A) Tazalawshi klizma ótkergennen soń;</label>
+                <label><input type="radio" name="question10" value="B"> B) Azanǵi awqattan soń;</label>
+                <label><input type="radio" name="question10" value="C"> C) 3 kun arnawli tayarliqtan kiyin;</label>
+                <label><input type="radio" name="question10" value="D"> D) Kontrast zat jibergennen kiyin.</label>
+            </div>
+
+            <button type="button" class="btn-submit" onclick="submitQuiz()">Submit</button>
+        </form>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function submitQuiz() {
+            const form = document.getElementById('quizForm');
+            const resultDiv = document.getElementById('result');
+            const formData = new FormData(form);
+            let score = 0;
+            let totalQuestions = 10;
+
+            formData.forEach((value, key) => {
+                if (value === 'A') {
+                    score++;
+                }
+            });
+
+            resultDiv.style.display = 'block';
+            resultDiv.innerHTML = `Your Score: ${score} / ${totalQuestions}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .quiz-container {
+            width: 80%;
+            margin: 50px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            font-size: 1.1em;
+            margin-bottom: 12px;
+            background-color: #f9f9f9;
+            padding: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        label:hover {
+            background-color: #e8e8e8;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+
+        .btn-submit {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            margin-top: 30px;
+            font-size: 1.2em;
+            text-align: center;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .correct {
+            color: green;
+        }
+
+        .incorrect {
+            color: red;
+        }
+
+        .unanswered {
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Palliativ Qayğırış Hám Terminal Jaǵday Testi</h1>
+        <form id="quizForm">
+            <!-- Question 1 -->
+            <div class="question">
+                <p>1. Joǵaltiwǵa ushraǵan adamniń neshe emotsional basqishi bar?</p>
+                <label><input type="radio" name="question1" value="A"> A) 4</label>
+                <label><input type="radio" name="question1" value="B"> B) *5</label>
+                <label><input type="radio" name="question1" value="C"> C) 3</label>
+                <label><input type="radio" name="question1" value="D"> D) 2</label>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question">
+                <p>2. Klinik ólim neshe minut dawam etedi?</p>
+                <label><input type="radio" name="question2" value="A"> A) *4-5 min</label>
+                <label><input type="radio" name="question2" value="B"> B) 10 min</label>
+                <label><input type="radio" name="question2" value="C"> C) 15 min</label>
+                <label><input type="radio" name="question2" value="D"> D) 2-3 min</label>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question">
+                <p>3. Terminal jaǵday qanday fazalardi óz ishine aladi?</p>
+                <label><input type="radio" name="question3" value="A"> A) Agonal aldi, Agonal</label>
+                <label><input type="radio" name="question3" value="B"> B) Agonal aldi, Agonal, Klinik ólim, biologik ólim</label>
+                <label><input type="radio" name="question3" value="C"> C) *Agonal aldi, Agonal, Klinik ólim</label>
+                <label><input type="radio" name="question3" value="D"> D) Klinik ólim, Biologik ólim</label>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question">
+                <p>4. Sopor jaǵdayi búl....?</p>
+                <label><input type="radio" name="question4" value="A"> A) *Ańsizliq yamasa úyqi jaǵdayi</label>
+                <label><input type="radio" name="question4" value="B"> B) Tirishilik hám ólim arasindaǵi jaǵday</label>
+                <label><input type="radio" name="question4" value="C"> C) Reflekslerdiń joǵaliwi</label>
+                <label><input type="radio" name="question4" value="D"> D) Biyhushliq jaǵdayi</label>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question">
+                <p>5. Xospis sóziniń mánisi neni ańlatadi?</p>
+                <label><input type="radio" name="question5" value="A"> A) *Lot- miymandos mánisin ańlatadi</label>
+                <label><input type="radio" name="question5" value="B"> B) Grek-jaratiw mánisin ańlatadi</label>
+                <label><input type="radio" name="question5" value="C"> C) Grek- júris-turis maral mánisin ańlatadi</label>
+                <label><input type="radio" name="question5" value="D"> D) Lat- tabiiy kushler járdeminde emlew mánisin ańlatadi</label>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="question">
+                <p>6. Terminal jaǵday búl......?</p>
+                <label><input type="radio" name="question6" value="A"> A) *búl tirishilik hám ólim arasindaǵi jaǵday mánisin ańlatadi</label>
+                <label><input type="radio" name="question6" value="B"> B) Ańsizliq yamasa úyqi jaǵdayi</label>
+                <label><input type="radio" name="question6" value="C"> C) Reflekslerdiń joǵaliwi</label>
+                <label><input type="radio" name="question6" value="D"> D) Biyhushliq jaǵdayi</label>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="question">
+                <p>7. Palliativ járdem búl.....?</p>
+                <label><input type="radio" name="question7" value="A"> A) *Nawqas haqqinda hár tárepleme aktiv qayǵiriw, oniń Fizikaliq, ruwhiy, satsial mútájliklerin qandiriwǵa qaratilǵan ǵamxorliq</label>
+                <label><input type="radio" name="question7" value="B"> B) Kesellik dawaminda hám nawqas óliminen soń shańaraǵi hám jaqinlarin qollap-quwatlaw</label>
+                <label><input type="radio" name="question7" value="C"> C) Nawqas ómiriniń sonǵi waqitlarin múnásip ótkeriw</label>
+                <label><input type="radio" name="question7" value="D"> D) Nawqasti tiklew emes al oniń ómir sipatin jaqsilaw hám azap-uqibetlerdi jeńillestiriw</label>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="question">
+                <p>8. Klinik ólim belgileri....?</p>
+                <label><input type="radio" name="question8" value="A"> A) *Dem aliw uliwma toqtaydi, Puls hám jurek uriwi bolmaydi, Biraq miy kislorodsiz 4-6 min jasawi múmkin</label>
+                <label><input type="radio" name="question8" value="B"> B) Muskuller qatadi, qatiw tómengi jaǵ hám enseden baslanip 6-8 saat ishinde putkul deneni iyeleydi</label>
+                <label><input type="radio" name="question8" value="C"> C) Qarashiqlar keńeyedi hám olar jaqtiliqti sezbeydi</label>
+                <label><input type="radio" name="question8" value="D"> D) Kózdiń jiltiraqliǵi joǵaladi, seziwshenlik bolmaydi</label>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="question">
+                <p>9. Arterial basım qaysi arteriyada ólshenedi?</p>
+                <label><input type="radio" name="question9" value="A"> A) Bilek arteriyasında;</label>
+                <label><input type="radio" name="question9" value="B"> B) San arteriyasında;</label>
+                <label><input type="radio" name="question9" value="C"> C) *Iyin arteriyasında;</label>
+                <label><input type="radio" name="question9" value="D"> D) Taban arteriyasında.</label>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="question">
+                <p>10. Puls qaysı arteriyada ólshenedi?</p>
+                <label><input type="radio" name="question10" value="A"> A) *Bilek, uyqı, sheke arteriyasında;</label>
+                <label><input type="radio" name="question10" value="B"> B) Bilek, uyqi, iyin arteriyasında;</label>
+                <label><input type="radio" name="question10" value="C"> C) Bilek, uyqı;</label>
+                <label><input type="radio" name="question10" value="D"> D) Bilek, uyqi, baltır arteriyasında</label>
+            </div>
+
+            <button type="button" class="btn-submit" onclick="submitQuiz()">Javoblarni tekshirish</button>
+        </form>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function submitQuiz() {
+            const answers = {
+                question1: "B",
+                question2: "A",
+                question3: "C",
+                question4: "A",
+                question5: "A",
+                question6: "A",
+                question7: "A",
+                question8: "A",
+                question9: "C",
+                question10: "A"
+            };
+
+            let score = 0;
+            let totalQuestions = Object.keys(answers).length;
+            let resultText = "";
+
+            for (let question in answers) {
+                const selectedOption = document.querySelector(`input[name="${question}"]:checked`);
+                if (selectedOption) {
+                    if (selectedOption.value === answers[question]) {
+                        score++;
+                    }
+                }
+            }
+
+            resultText = `Siz ${score} ta to'g'ri javob berdingiz. Natija: ${score} / ${totalQuestions}`;
+
+            const resultDiv = document.getElementById("result");
+            resultDiv.textContent = resultText;
+            resultDiv.style.display = "block";
+        }
+    </script>
+</body>
+</html>

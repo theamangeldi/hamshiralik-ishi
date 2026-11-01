@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .quiz-container {
+            width: 80%;
+            margin: 50px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            font-size: 1.1em;
+            margin-bottom: 12px;
+            background-color: #f9f9f9;
+            padding: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        label:hover {
+            background-color: #e8e8e8;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+
+        .btn-submit {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            margin-top: 30px;
+            font-size: 1.2em;
+            text-align: center;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .correct {
+            color: green;
+        }
+
+        .incorrect {
+            color: red;
+        }
+
+        .unanswered {
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Geriatric Care and Hygiene Test</h1>
+        <form id="quizForm">
+            <!-- Question 1 -->
+            <div class="question">
+                <p>1. Zond arqalı awqatlandırıw ushın kerekli úskenelerdi kórsetiń</p>
+                <label><input type="radio" name="question1" value="A"> A) olivasız zond, Jane shprits, 200 ml kólemli voronka 3-4 stakan awqat</label>
+                <label><input type="radio" name="question1" value="B"> B) olivasız zond, voronka, shtativ probirka</label>
+                <label><input type="radio" name="question1" value="C"> C) olivasız zond, Jane shprits 3-4 stakan awqat probirka</label>
+                <label><input type="radio" name="question1" value="D"> D) olivasız zond, Jane shpritsı probirkalar, shtativ</label>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question">
+                <p>2. Rektal awqatlandırıwında qollanılatuģın suyıqlıq temperaturası qansha bolıwı kerek?</p>
+                <label><input type="radio" name="question2" value="A"> A) 38-40 g</label>
+                <label><input type="radio" name="question2" value="B"> B) 20-25 g</label>
+                <label><input type="radio" name="question2" value="C"> C) 30-35 g</label>
+                <label><input type="radio" name="question2" value="D"> D) 37-38 g</label>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question">
+                <p>3. Záhárleniwde klizmanıń qaysı túrinen paydalanamız?</p>
+                <label><input type="radio" name="question3" value="A"> A) tazalawshı klizma</label>
+                <label><input type="radio" name="question3" value="B"> B) dárili klizma</label>
+                <label><input type="radio" name="question3" value="C"> C) sifonlı klizma</label>
+                <label><input type="radio" name="question3" value="D"> D) maylı klizma</label>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question">
+                <p>4. Nawqaslardı zond arqalı awqatlandırıwģa kórsetpeler</p>
+                <label><input type="radio" name="question4" value="A"> A) til, jutqınshaq, kegirdek jaraqatında bulbar, essizlik halatında</label>
+                <label><input type="radio" name="question4" value="B"> B) til, jutqınshaq, kegirdek jaraqatında, asqazan jara keselliginde</label>
+                <label><input type="radio" name="question4" value="C"> C) til, jutqınshaq, kegirdek jaraqatında, bawır hám ót qalta keselliginde</label>
+                <label><input type="radio" name="question4" value="D"> D) til, jutqınshaq, kegirdek jaraqatında,qızılóńesh tarayıp áwqat jutpaģanda</label>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question">
+                <p>5. Rektal awqatlandırıw paydalanılģanda eritpeler qaysı</p>
+                <label><input type="radio" name="question5" value="A"> A) glyukoza 5% fiziologik eritpe</label>
+                <label><input type="radio" name="question5" value="B"> B) glyukoza 5%, 2% natriy bikorbanat</label>
+                <label><input type="radio" name="question5" value="C"> C) glyukoza 5% albumin</label>
+                <label><input type="radio" name="question5" value="D"> D) glyukoza 5% gemodez</label>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="question">
+                <p>6. Rektal jasalma awqatlanıw ushın kórsetpeler</p>
+                <label><input type="radio" name="question6" value="A"> A) organizimniń suyıqlıqqa hám vitaminge bolģan mútájligin qanaatlandırıw ushın</label>
+                <label><input type="radio" name="question6" value="B"> B) organizimniń suyıqlıqqa hám belokka bolģan mútájligin qanaatlandırıw ushın</label>
+                <label><input type="radio" name="question6" value="C"> C) organizimniń suyıqlıqqa hám as duzına bolģan mútájligin qanaatlandırıw ushın</label>
+                <label><input type="radio" name="question6" value="D"> D) organizimniń suyıqlıqqa hám mayģa bolģan mútájligin qanaatlandırıw ushın</label>
+            </div>
+
+            <button type="submit" class="btn-submit">Testni tapşırıp kórüp shıqarıw</button>
+        </form>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        const quizForm = document.getElementById('quizForm');
+        const resultDiv = document.getElementById('result');
+
+        quizForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+            let score = 0;
+
+            // Define correct answers
+            const correctAnswers = {
+                question1: 'A',
+                question2: 'D',
+                question3: 'A',
+                question4: 'A',
+                question5: 'A',
+                question6: 'A',
+            };
+
+            // Calculate score
+            for (let i = 1; i <= 6; i++) {
+                const userAnswer = document.querySelector(`input[name="question${i}"]:checked`);
+                if (userAnswer) {
+                    if (userAnswer.value === correctAnswers[`question${i}`]) {
+                        score++;
+                    }
+                }
+            }
+
+            resultDiv.style.display = 'block';
+            resultDiv.textContent = `Sizning ball: ${score} / 6`;
+        });
+    </script>
+</body>
+</html>

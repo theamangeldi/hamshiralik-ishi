@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      width: 100%;
+      max-width: 800px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .question {
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+
+    .answers {
+      margin-bottom: 20px;
+    }
+
+    .answers label {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #fff;
+      background: #4CAF50;
+      border-radius: 5px;
+      width: 100%;
+      cursor: pointer;
+      border: none;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #45a049;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      text-align: center;
+      color: #333;
+    }
+
+    .correct {
+      color: green;
+    }
+
+    .incorrect {
+      color: red;
+    }
+
+    .question-container {
+      margin-bottom: 30px;
+    }
+
+    .question-container:last-child {
+      margin-bottom: 40px;
+    }
+
+    .feedback {
+      font-size: 16px;
+      margin-top: 5px;
+      color: #555;
+    }
+
+    .back-btn {
+      background-color: #009688;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 12px 24px;
+      border-radius: 5px;
+      width: 100%;
+      cursor: pointer;
+      border: none;
+      text-align: center;
+      display: block;
+      margin-top: 20px;
+    }
+
+    .back-btn:hover {
+      background-color: #00796b;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Test</h1>
+    
+    <div id="quiz">
+      <div class="question-container">
+        <div class="question">1. Kesellikte gigienik emlewlerdiń maqset hám áhmiyeti neden ibarat?</div>
+        <div class="answers">
+          <label><input type="radio" name="answer1" value="A"> A) Infeksiyanı aldın alıw</label>
+          <label><input type="radio" name="answer1" value="B"> B) Immunitetti kóteriw</label>
+          <label><input type="radio" name="answer1" value="C"> C) Keyipti jaqsılaw</label>
+          <label><input type="radio" name="answer1" value="D"> D) Kesellikke qarsı gúresiw, erk-ıqrarın kúsheytiw</label>
+        </div>
+      </div>
+
+      <div class="question-container">
+        <div class="question">2. Teri astı may kletchatkasi may toqımaǵa bay boladıu qanday funksiyalardı atqaradı?</div>
+        <div class="answers">
+          <label><input type="radio" name="answer2" value="A"> A) Íssılıqtı saqlaw hám deoziq elementların toplaw</label>
+          <label><input type="radio" name="answer2" value="B"> B) Infeksiyanı aldın alıw</label>
+          <label><input type="radio" name="answer2" value="C"> C) Kesellikke qarsı gúresiw, erk-ıqrarın kúsheytiw</label>
+          <label><input type="radio" name="answer2" value="D"> D) Qorǵawlaydı sırtqı ortalıqtan</label>
+        </div>
+      </div>
+
+      <div class="question-container">
+        <div class="question">3. Jambas jatıw jaǵdayında jataq jaralar kóbirek qaysı tarawlarda payda boladı?</div>
+        <div class="answers">
+          <label><input type="radio" name="answer3" value="A"> A) Qulaq paxtanıń ǵóregileri, akromial ósik, dize bo'g'imlar isohasi, taban súyeki tarawı</label>
+          <label><input type="radio" name="answer3" value="B"> B) Bastıń jelke bólegi, gúrek tarawı, dumg1 aza tarawı</label>
+          <label><input type="radio" name="answer3" value="C"> C) Tirsek bo'g'imi tarawı, taban tarawı</label>
+          <label><input type="radio" name="answer3" value="D"> D) Jınıslıq aǵzalar tarawı, jelke, tavon tarawı</label>
+        </div>
+      </div>
+
+      <div class="question-container">
+        <div class="question">4. Qarında qaptal bas jaǵdayında jataq jaralar kóbirek qaysı tarawlarda payda boladı?</div>
+        <div class="answers">
+          <label><input type="radio" name="answer4" value="A"> A) Tós tarawı, toz, qulaq paxtanıń ǵóregilai, ayaq dizeleri</label>
+          <label><input type="radio" name="answer4" value="B"> B) Qulaq chanog'ida, dumg'aza salasında</label>
+          <label><input type="radio" name="answer4" value="C"> C) Tisrak baǵıma salasında</label>
+          <label><input type="radio" name="answer4" value="D"> D) Dumg'aza salasında</label>
+        </div>
+      </div>
+
+      <div class="question-container">
+        <div class="question">5. Otırıw jaǵdayında jataq jaralar kóbirek qaysı tarawlarda payda baladı?</div>
+        <div class="answers">
+          <label><input type="radio" name="answer5" value="A"> A) Tirsek bo'g'imi, dumg'aza tarawlarında</label>
+          <label><input type="radio" name="answer5" value="B"> B) Qulaq chanog'ida, dumg'aza salasında</label>
+          <label><input type="radio" name="answer5" value="C"> C) Tisrak baǵıma salasında</label>
+          <label><input type="radio" name="answer5" value="D"> D) Dumg'aza salasında</label>
+        </div>
+      </div>
+
+      <div class="question-container">
+        <div class="question">6. Jataq jara payda bolmaytuǵın tarawların anıqlań.</div>
+        <div class="answers">
+          <label><input type="radio" name="answer6" value="A"> A) Tos tarawı, taban sahasi, dumg'za</label>
+          <label><input type="radio" name="answer6" value="B"> B) Jelke tarawı, taban, gúrek tarawı</label>
+          <label><input type="radio" name="answer6" value="C"> C) Dumg'aza, gúrek tarawı, tirsek tarawı</label>
+          <label><input type="radio" name="answer6" value="D"> D) Qarın, san, jelke</label>
+        </div>
+      </div>
+
+      <div class="question-container">
+        <div class="question">7. Jataq jaralardıń I-basqıshında qanday kútim ámelge asıriladı?</div>
+        <div class="answers">
+          <label><input type="radio" name="answer7" value="A"> A) Tuwrı awqatlantırıw, taza kiyim kiyintirish, oqliqlarni almastırıw</label>
+          <label><input type="radio" name="answer7" value="B"> B) Hár 2 saatta nawqas jaǵdayın ózgertiw, kamfora spirti menen terini súrtiw</label>
+          <label><input type="radio" name="answer7" value="C"> C) Bul basqıshda kútim zárúr emes</label>
+          <label><input type="radio" name="answer7" value="D"> D) 3% vodorod qıshqılanıwı menen qayta islew, steril baylam qoyıw</label>
+        </div>
+      </div>
+
+      <div class="question-container">
+        <div class="question">8. Jataq jara payda bolıwı qaysı shkala boyınsha anıqlanadı?</div>
+        <div class="answers">
+          <label><input type="radio" name="answer8" value="A"> A) Apgar shkalası</label>
+          <label><input type="radio" name="answer8" value="B"> B) Breyden, vaterlou</label>
+          <label><input type="radio" name="answer8" value="C"> C) Solo shkalası</label>
+          <label><input type="radio" name="answer8" value="D"> D) Glazgo shkalası</label>
+        </div>
+      </div>
+
+      <div class="question-container">
+        <div class="question">9. Jataq jara payda bóliwiniń sırtqı sebeplerine kiredi?</div>
+        <div class="answers">
+          <label><input type="radio" name="answer9" value="A"> A) Mazasızlıq</label>
+          <label><input type="radio" name="answer9" value="B"> B) Ǵarrılıq dáwiri</label>
+          <label><input type="radio" name="answer9" value="C"> C) Kiyim hám aqlıqlarda búrmelerdi payda bolıwı</label>
+          <label><input type="radio" name="answer9" value="D"> D) Kem awqat jew</label>
+        </div>
+      </div>
+
+      <div class="question-container">
+        <div class="question">10. Qabılxona bóliminiń medicina miyirbiykesi nawqastı sanitarya tazalovidan aldın denesinig qaysı bólegin tekseredi?</div>
+        <div class="answers">
+          <label><input type="radio" name="answer10" value="A"> A) Dene terisini</label>
+          <label><input type="radio" name="answer10" value="B"> B) Basın</label>
+          <label><input type="radio" name="answer10" value="C"> C) Kiymini</label>
+          <label><input type="radio" name="answer10" value="D"> D) Qulaǵın</label>
+        </div>
+      </div>
+
+      <button onclick="submitQuiz()">Testni yakunlash</button>
+    </div>
+
+    <div id="result" class="result" style="display: none;"></div>
+  </div>
+
+  <script>
+    function submitQuiz() {
+      const correctAnswers = {
+        answer1: 'A',
+        answer2: 'A',
+        answer3: 'A',
+        answer4: 'A',
+        answer5: 'A',
+        answer6: 'A',
+        answer7: 'A',
+        answer8: 'A',
+        answer9: 'A',
+        answer10: 'A'
+      };
+
+      let resultText = 'Sizning natijangiz:\n\n';
+      let correctCount = 0;
+
+      for (let key in correctAnswers) {
+        let selectedOption = document.querySelector(`input[name="${key}"]:checked`);
+        if (selectedOption) {
+          const answerText = selectedOption.value;
+          if (answerText === correctAnswers[key]) {
+            correctCount++;
+            resultText += `${key}: ${answerText} - To’g’ri\n`;
+          } else {
+            resultText += `${key}: ${answerText} - Xato\n`;
+          }
+        } else {
+          resultText += `${key}: Javob tanlanmadi\n`;
+        }
+      }
+
+      const resultDiv = document.getElementById('result');
+      resultDiv.style.display = 'block';
+      resultDiv.textContent = `Siz ${correctCount} ta to'g'ri javob berdingiz.`;
+
+      alert(resultText);
+    }
+  </script>
+</body>
+</html>

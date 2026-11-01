@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .quiz-container {
+            width: 80%;
+            margin: 50px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            font-size: 1.1em;
+            margin-bottom: 12px;
+            background-color: #f9f9f9;
+            padding: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        label:hover {
+            background-color: #e8e8e8;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+
+        .btn-submit {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            margin-top: 30px;
+            font-size: 1.2em;
+            text-align: center;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .correct {
+            color: green;
+        }
+
+        .incorrect {
+            color: red;
+        }
+
+        .unanswered {
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Geriatric Care and Hygiene Test</h1>
+        <form id="quizForm">
+            <!-- Question 1 -->
+            <div class="question">
+                <p>1. As-sińiriw sistemasındaǵı organ asqazan tiykarınan qanday funkciyalardı atqaradı?</p>
+                <label><input type="radio" name="question1" value="A"> A) Evakuatsiya(qısqarıw),sekretsiya(asqazan shireain bólip shiǵarıw), sorılıw hám qorǵanıw funkciyaların atqaradı</label>
+                <label><input type="radio" name="question1" value="B"> B) Evakuatsiya(qısqarıw),sekretsiya(asqazan shireain bólip shiǵarıw), sorılıw hám dem alıw funkciyaların atqaradı</label>
+                <label><input type="radio" name="question1" value="C"> C) Evakuatsiya(qısqarıw),júrektiń qısqarıwında, sorılıw hám qorǵanıw funkciyaların atqaradı</label>
+                <label><input type="radio" name="question1" value="D"> D) Evakuatsiya(qısqarıw),júrektiń bosasıwında, sorılıw hám qorǵanıw funkciyaların atqaradı</label>
+                <label><input type="radio" name="question1" value="E"> E) Evakuatsiya(qısqarıw),júrektiń qısqarıwında, dem alıw hám qorǵanıw funkciyaların atqaradı</label>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question">
+                <p>2. Tuwri ishek arqali qanday tu’rdegi da’rilik zatlar qollaniladi?</p>
+                <label><input type="radio" name="question2" value="A"> A) Shamshalar</label>
+                <label><input type="radio" name="question2" value="B"> B) Demlemeler</label>
+                <label><input type="radio" name="question2" value="C"> C) Tabletkalar</label>
+                <label><input type="radio" name="question2" value="D"> D) Hámmesi tuwri</label>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question">
+                <p>3. 5-dieta stoli qaysi kesellikte buyiriladi?</p>
+                <label><input type="radio" name="question3" value="A"> A) Buyrek keselliklerinde</label>
+                <label><input type="radio" name="question3" value="B"> B) Júrek keselliklerinde</label>
+                <label><input type="radio" name="question3" value="C"> C) Ot jollari keselliklerinde</label>
+                <label><input type="radio" name="question3" value="D"> D) Qantli diabette</label>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question">
+                <p>4. Nawqaslardi arnawli dietaliq awqat penen emlew ne dep ataladi?</p>
+                <label><input type="radio" name="question4" value="A"> A) Gastrostoma</label>
+                <label><input type="radio" name="question4" value="B"> B) Dietaterapiya</label>
+                <label><input type="radio" name="question4" value="C"> C) Parenteral</label>
+                <label><input type="radio" name="question4" value="D"> D) Rektal</label>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question">
+                <p>5. Defekatciya degenimiz ne?</p>
+                <label><input type="radio" name="question5" value="A"> A) Eriksiz ishtin ótiwi</label>
+                <label><input type="radio" name="question5" value="B"> B) As sińiriw jollarında gazlardıń artıqsha jıynalıwı</label>
+                <label><input type="radio" name="question5" value="C"> C) Ishtiń júrmey qalıwı</label>
+                <label><input type="radio" name="question5" value="D"> D) Qarında kúshli awırıwdıń payda bolıwı</label>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="question">
+                <p>6. Orayliq qusiw qashan payda boladi?</p>
+                <label><input type="radio" name="question6" value="A"> A) Gipertoniya kesseliginde</label>
+                <label><input type="radio" name="question6" value="B"> B) Bas suyegi ishinde basim asqanda</label>
+                <label><input type="radio" name="question6" value="C"> C) Miy o`spelerinde</label>
+                <label><input type="radio" name="question6" value="D"> D) Ha`mme juwap duris</label>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="question">
+                <p>7. Qusip atirg`an nawqaslarg`a qanday jardem ko`rsetiledi?</p>
+                <label><input type="radio" name="question7" value="A"> A) Nawqas shep tarepke jatqiziladi</label>
+                <label><input type="radio" name="question7" value="B"> B) Latok tayyarlanadi</label>
+                <label><input type="radio" name="question7" value="C"> C) Kerek bolsa kislorod beriledi , qussiq massasi teksertemiz</label>
+                <label><input type="radio" name="question7" value="D"> D) Ha`mme juwap duris</label>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="question">
+                <p>8. Asqazanda qan ketib atirg`an nawqasqa qanday jardem korsetiledi?</p>
+                <label><input type="radio" name="question8" value="A"> A) Garizantal jag`dayda jatqiziladi ha`m muzli qaltasha qoyiladi</label>
+                <label><input type="radio" name="question8" value="B"> B) Nawqasqa jilli suw ishkiziledi</label>
+                <label><input type="radio" name="question8" value="C"> C) Nawqastin` qarin atrapina massaj islenedi</label>
+                <label><input type="radio" name="question8" value="D"> D) A ham C juwap duris</label>
+            </div>
+
+            <button type="submit" class="btn-submit">Testni tapşırıp kórüp shıqarıw</button>
+        </form>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        const quizForm = document.getElementById('quizForm');
+        const resultDiv = document.getElementById('result');
+
+        quizForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+            let score = 0;
+
+            // Define correct answers
+            const correctAnswers = {
+                question1: 'A',
+                question2: 'D',
+                question3: 'D',
+                question4: 'B',
+                question5: 'C',
+                question6: 'B',
+                question7: 'C',
+                question8: 'D',
+            };
+
+            // Calculate score
+            for (let i = 1; i <= 8; i++) {
+                const userAnswer = document.querySelector(`input[name="question${i}"]:checked`);
+                if (userAnswer) {
+                    if (userAnswer.value === correctAnswers[`question${i}`]) {
+                        score++;
+                    }
+                }
+            }
+
+            resultDiv.style.display = 'block';
+            resultDiv.innerHTML = `Sizning ballingiz: ${score} / 8`;
+
+            if (score === 8) {
+                resultDiv.className = 'correct';
+            } else if (score >= 5) {
+                resultDiv.className = 'unanswered';
+            } else {
+                resultDiv.className = 'incorrect';
+            }
+        });
+    </script>
+</body>
+</html>

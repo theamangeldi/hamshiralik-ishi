@@ -1,0 +1,6 @@
+# Local scripts
+server.ps1
+start.bat
+github_login.bat
+deploy_github.bat
+*.backup.html

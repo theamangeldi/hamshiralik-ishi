@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .quiz-container {
+            width: 80%;
+            margin: 50px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            font-size: 1.1em;
+            margin-bottom: 12px;
+            background-color: #f9f9f9;
+            padding: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        label:hover {
+            background-color: #e8e8e8;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+
+        .btn-submit {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            margin-top: 30px;
+            font-size: 1.2em;
+            text-align: center;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .correct {
+            color: green;
+        }
+
+        .incorrect {
+            color: red;
+        }
+
+        .unanswered {
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Geriatrik Test</h1>
+        <form id="quizForm">
+            <!-- Question 1 -->
+            <div class="question">
+                <p>1. Medicina termometriniń shkalasın dárejesin tabıń?</p>
+                <label><input type="radio" name="question1" value="A"> A) 38-39°</label>
+                <label><input type="radio" name="question1" value="B"> B) 39 -41°</label>
+                <label><input type="radio" name="question1" value="C"> C) 34-42°</label>
+                <label><input type="radio" name="question1" value="D"> D) 40 -41°</label>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question">
+                <p>2. Dene temperaturası normada neshege teń?</p>
+                <label><input type="radio" name="question2" value="A"> A) 36°</label>
+                <label><input type="radio" name="question2" value="B"> B) 37°</label>
+                <label><input type="radio" name="question2" value="C"> C) 36, 6°</label>
+                <label><input type="radio" name="question2" value="D"> D) 36, 8°</label>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question">
+                <p>3. Subfebril ısıtpanı tabıń:</p>
+                <label><input type="radio" name="question3" value="A"> A) 36°-37°</label>
+                <label><input type="radio" name="question3" value="B"> B) 38°-39°</label>
+                <label><input type="radio" name="question3" value="C"> C) 37°-38°</label>
+                <label><input type="radio" name="question3" value="D"> D) 40° den joqarı</label>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question">
+                <p>4. Gektik ısıtpa ne?</p>
+                <label><input type="radio" name="question4" value="A"> A) Ísıtpanı kún dawamında 4 o-5°ózgerip turıwı</label>
+                <label><input type="radio" name="question4" value="B"> B) Ísıtpanı bir neshe bálent boliwi</label>
+                <label><input type="radio" name="question4" value="C"> C) Ísıtpanı 15 kúnden artıq boliwi</label>
+                <label><input type="radio" name="question4" value="D"> D) Ísıtpanı 45 kúnden artıq boliwi</label>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question">
+                <p>5. Sozılmalı ısıtpanı tabıń:</p>
+                <label><input type="radio" name="question5" value="A"> A) Ísıtpanı 15 kunge shekem dawam etiwi</label>
+                <label><input type="radio" name="question5" value="B"> B) Ísıtpanı 45 kunge shekem dawam etiwi</label>
+                <label><input type="radio" name="question5" value="C"> C) Ísıtpanı 45 kúnden artıq dawam etiwi</label>
+                <label><input type="radio" name="question5" value="D"> D) Ísıtpanı 1-2 kún dawam etiwi</label>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="question">
+                <p>6. Turaqlı istmani tabıń?</p>
+                <label><input type="radio" name="question6" value="A"> A) Kún dawamında 0.5-1 ge shekem ózgerip turatuǵın ısıtpa</label>
+                <label><input type="radio" name="question6" value="B"> B) Kún dawamında 4-5° ge shekem ózgerip turatuǵın ısıtpa</label>
+                <label><input type="radio" name="question6" value="C"> C) Uzaq dawam etip 0.5-1° ge shekem ózgerip turatuǵın ısıtpa</label>
+                <label><input type="radio" name="question6" value="D"> D) Uzaq dawam etip, 2-5° ge shekem ózgerip turatuǵın ısıtpa</label>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="question">
+                <p>7. Ísıtpanıń neshe dáwiri bar?</p>
+                <label><input type="radio" name="question7" value="A"> A) 2</label>
+                <label><input type="radio" name="question7" value="B"> B) 3</label>
+                <label><input type="radio" name="question7" value="C"> C) 6</label>
+                <label><input type="radio" name="question7" value="D"> D) 5</label>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="question">
+                <p>8. Subnormal temperaturada dene xarorati neshege teń boladı?</p>
+                <label><input type="radio" name="question8" value="A"> A) 35-36°</label>
+                <label><input type="radio" name="question8" value="B"> B) 39 -41°</label>
+                <label><input type="radio" name="question8" value="C"> C) 37-38°</label>
+                <label><input type="radio" name="question8" value="D"> D) 40 -41°</label>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="question">
+                <p>9. Sutkasına 4-5 ⁰S ge shekem ózgerip turatuǵın ısıtpasın tabıń:</p>
+                <label><input type="radio" name="question9" value="A"> A) Turaqlı ısıtpa</label>
+                <label><input type="radio" name="question9" value="B"> B) Gektik ısıtpa</label>
+                <label><input type="radio" name="question9" value="C"> C) Sozılmalı ısıtpa</label>
+                <label><input type="radio" name="question9" value="D"> D) Noraso ısıtpa</label>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="question">
+                <p>10. Ísıtpanıń birinshi dáwirinde nawqastı qanday baǵıw kerek?</p>
+                <label><input type="radio" name="question10" value="A"> A) Íssı shay beriw, litik qospa qılıw</label>
+                <label><input type="radio" name="question10" value="B"> B) Íssı shay beriw, muzli qapshıq qo yish</label>
+                <label><input type="radio" name="question10" value="C"> C) Íssı shay beriw, ısıtǵısh qo yish</label>
+                <label><input type="radio" name="question10" value="D"> D) Íssı shay beriw, aqlıqların almastırıw</label>
+            </div>
+
+            <button type="button" class="btn-submit" onclick="calculateResult()">Natijani Hisoblash</button>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function calculateResult() {
+            let totalQuestions = 10;
+            let score = 0;
+            const answers = {
+                question1: 'C',
+                question2: 'C',
+                question3: 'A',
+                question4: 'A',
+                question5: 'C',
+                question6: 'C',
+                question7: 'B',
+                question8: 'A',
+                question9: 'B',
+                question10: 'C'
+            };
+
+            for (let i = 1; i <= totalQuestions; i++) {
+                const questionName = `question${i}`;
+                const selectedAnswer = document.querySelector(`input[name="${questionName}"]:checked`);
+                if (selectedAnswer && selectedAnswer.value === answers[questionName]) {
+                    score++;
+                }
+            }
+
+            const resultDiv = document.getElementById('result');
+            resultDiv.style.display = 'block';
+            resultDiv.innerHTML = `Sizning natijangiz: ${score} dan ${totalQuestions} ga`;
+
+            if (score === totalQuestions) {
+                resultDiv.classList.add("correct");
+            } else {
+                resultDiv.classList.add("incorrect");
+            }
+        }
+    </script>
+</body>
+</html>

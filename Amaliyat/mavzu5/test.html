@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      width: 100%;
+      max-width: 800px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .question {
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+
+    .answers {
+      margin-bottom: 20px;
+    }
+
+    .answers label {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #fff;
+      background: #4CAF50;
+      border-radius: 5px;
+      width: 100%;
+      cursor: pointer;
+      border: none;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #45a049;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      text-align: center;
+      color: #333;
+    }
+
+    .correct {
+      color: green;
+    }
+
+    .incorrect {
+      color: red;
+    }
+
+    .question-container {
+      margin-bottom: 30px;
+    }
+
+    .question-container:last-child {
+      margin-bottom: 40px;
+    }
+
+    .feedback {
+      font-size: 16px;
+      margin-top: 5px;
+      color: #555;
+    }
+
+    .back-btn {
+      background-color: #009688;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 12px 24px;
+      border-radius: 5px;
+      width: 100%;
+      cursor: pointer;
+      border: none;
+      text-align: center;
+      display: block;
+      margin-top: 20px;
+    }
+
+    .back-btn:hover {
+      background-color: #00796b;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Test</h1>
+    
+    <div id="quiz">
+      <div class="question-container">
+        <div class="question">1. Zond arqalı awqatlandırıw ushın kerekli úskenelerdi kórsetiń</div>
+        <div class="answers">
+          <label><input type="radio" name="answer1" value="A"> A) Olivasız zond, Jane shprits, 200 ml kólemli voronka 3-4 stakan awqat</label>
+          <label><input type="radio" name="answer1" value="B"> B) Olivasız zond, voronka, shtativ probirka</label>
+          <label><input type="radio" name="answer1" value="C"> C) Olivasız zond, Jane shprits 3-4 stakan awqat probirka</label>
+          <label><input type="radio" name="answer1" value="D"> D) Olivasız zond, Jane shpritsı probirkalar, shtativ</label>
+        </div>
+      </div>
+
+      <div class="question-container">
+        <div class="question">2. Rektal awqatlandırıwında qollanılatuģın suyıqlıq temperaturası qansha bolıwı kerek?</div>
+        <div class="answers">
+          <label><input type="radio" name="answer2" value="A"> A) 38-40 g</label>
+          <label><input type="radio" name="answer2" value="B"> B) 20-25 g</label>
+          <label><input type="radio" name="answer2" value="C"> C) 30-35 g</label>
+          <label><input type="radio" name="answer2" value="D"> D) 37-38 g</label>
+        </div>
+      </div>
+
+      <div class="question-container">
+        <div class="question">3. Záhárleniwde klizmanıń qaysı túrinen paydalanamız?</div>
+        <div class="answers">
+          <label><input type="radio" name="answer3" value="A"> A) Tazalawshı klizma</label>
+          <label><input type="radio" name="answer3" value="B"> B) Dárili klizma</label>
+          <label><input type="radio" name="answer3" value="C"> C) Sifonlı klizma</label>
+          <label><input type="radio" name="answer3" value="D"> D) Maylı klizma</label>
+        </div>
+      </div>
+
+      <div class="question-container">
+        <div class="question">4. Nawqaslardı zond arqalı awqatlandırıwģa kórsetpeler</div>
+        <div class="answers">
+          <label><input type="radio" name="answer4" value="A"> A) Til, jutqınshaq, kegirdek jaraqatında bulbar, essizlik halatında</label>
+          <label><input type="radio" name="answer4" value="B"> B) Til, jutqınshaq, kegirdek jaraqatında, asqazan jara keselliginde</label>
+          <label><input type="radio" name="answer4" value="C"> C) Til, jutqınshaq, kegirdek jaraqatında, bawır hám ót qalta keselliginde</label>
+          <label><input type="radio" name="answer4" value="D"> D) Til, jutqınshaq, kegirdek jaraqatında, qızılóńesh tarayıp áwqat jutpaģanda</label>
+        </div>
+      </div>
+
+      <div class="question-container">
+        <div class="question">5. Rektal awqatlandırıw paydalanılģanda eritpeler qaysı?</div>
+        <div class="answers">
+          <label><input type="radio" name="answer5" value="A"> A) Glyukoza 5% fiziologik eritpe</label>
+          <label><input type="radio" name="answer5" value="B"> B) Glyukoza 5%, 2% natriy bikorbanat</label>
+          <label><input type="radio" name="answer5" value="C"> C) Glyukoza 5% albumin</label>
+          <label><input type="radio" name="answer5" value="D"> D) Glyukoza 5% gemodez</label>
+        </div>
+      </div>
+
+      <div class="question-container">
+        <div class="question">6. Rektal jasalma awqatlanıw ushın kórsetpeler</div>
+        <div class="answers">
+          <label><input type="radio" name="answer6" value="A"> A) Organizimniń suyıqlıqqa hám vitaminge bolģan mútájligin qanaatlandırıw ushın</label>
+          <label><input type="radio" name="answer6" value="B"> B) Organizimniń suyıqlıqqa hám belokka bolģan mútájligin qanaatlandırıw ushın</label>
+          <label><input type="radio" name="answer6" value="C"> C) Organizimniń suyıqlıqqa hám as duzına bolģan mútájligin qanaatlandırıw ushın</label>
+          <label><input type="radio" name="answer6" value="D"> D) Organizimniń suyıqlıqqa hám mayģa bolģan mútájligin qanaatlandırıw ushın</label>
+        </div>
+      </div>
+
+      <div class="question-container">
+        <div class="question">7. Jasalma awqatlandiriwdin’ qanday tu’rleri bar?</div>
+        <div class="answers">
+          <label><input type="radio" name="answer7" value="A"> A) Asqazannin’ yamasa jin’ishke ishektin’ operatsion tesigi (gastrostoma) arqali awqatlandiriw</label>
+          <label><input type="radio" name="answer7" value="B"> B) Parentaral (asqazan-isheklerdi shetlep) awqatlandiriw</label>
+          <label><input type="radio" name="answer7" value="C"> C) Rektal jol arqali awqatlandiriw</label>
+          <label><input type="radio" name="answer7" value="D"> D) Ha’mme juwap duris</label>
+        </div>
+      </div>
+
+      <button onclick="submitQuiz()">Testni yakunlash</button>
+    </div>
+
+    <div id="result" class="result" style="display: none;"></div>
+  </div>
+
+  <script>
+    function submitQuiz() {
+      const correctAnswers = {
+        answer1: 'A',
+        answer2: 'A',
+        answer3: 'A',
+        answer4: 'A',
+        answer5: 'A',
+        answer6: 'A',
+        answer7: 'A'
+      };
+
+      let resultText = 'Sizning natijangiz:\n\n';
+      let correctCount = 0;
+
+      for (let key in correctAnswers) {
+        let selectedOption = document.querySelector(`input[name="${key}"]:checked`);
+        if (selectedOption) {
+          const answerText = selectedOption.value;
+          if (answerText === correctAnswers[key]) {
+            correctCount++;
+            resultText += `${key}: ${answerText} - To’g’ri\n`;
+          } else {
+            resultText += `${key}: ${answerText} - Xato\n`;
+          }
+        } else {
+          resultText += `${key}: Javob tanlanmadi\n`;
+        }
+      }
+
+      const resultDiv = document.getElementById('result');
+      resultDiv.style.display = 'block';
+      resultDiv.textContent = `Siz ${correctCount} ta to'g'ri javob berdingiz.`;
+
+      alert(resultText);
+    }
+  </script>
+
+</body>
+</html>

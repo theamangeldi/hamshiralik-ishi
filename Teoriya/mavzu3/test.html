@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .quiz-container {
+            width: 80%;
+            margin: 50px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            font-size: 1.1em;
+            margin-bottom: 12px;
+            background-color: #f9f9f9;
+            padding: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        label:hover {
+            background-color: #e8e8e8;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+
+        .btn-submit {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            margin-top: 30px;
+            font-size: 1.2em;
+            text-align: center;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .correct {
+            color: green;
+        }
+
+        .incorrect {
+            color: red;
+        }
+
+        .unanswered {
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Salamatlıq hám Xızmetler Testi</h1>
+        <form id="quizForm">
+            <!-- Question 1 -->
+            <div class="question">
+                <p>1. Statsionarda júrgiziletuǵın tiykarǵı hújjet bul.</p>
+                <label><input type="radio" name="question1" value="A"> A) *Kesellik tariyxı</label>
+                <label><input type="radio" name="question1" value="B"> B) Nawqastıń  kelgenligi hám ketkenligi haqqındaǵı dápteri</label>
+                <label><input type="radio" name="question1" value="C"> C) Nawqaslardı qabıllap alıwdápteri</label>
+                <label><input type="radio" name="question1" value="D"> D) Dári-dármaqlar hám dárilerdi jumsaw dápteri</label>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question">
+                <p>2. Nawqaslar jatatuǵın palatalardıń temperaturası qaysı juwapta kórsetilgen?</p>
+                <label><input type="radio" name="question2" value="A"> A) 22-25 gradus</label>
+                <label><input type="radio" name="question2" value="B"> B) *18-20 gradus</label>
+                <label><input type="radio" name="question2" value="C"> C) 25-26 gradus</label>
+                <label><input type="radio" name="question2" value="D"> D) 30-32 gradus</label>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question">
+                <p>3. Nawqastı emlewxanaǵa kelgenligi hám ketgenligi tuwrısında dápterdi kim júritedi?</p>
+                <label><input type="radio" name="question3" value="A"> A) *Úlken hamshira</label>
+                <label><input type="radio" name="question3" value="B"> B) Nawbetshi hamshira</label>
+                <label><input type="radio" name="question3" value="C"> C) Bas hamshira</label>
+                <label><input type="radio" name="question3" value="D"> D) Post hamshirasi</label>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question">
+                <p>4. Gospitalizm bul-?</p>
+                <label><input type="radio" name="question4" value="A"> A) *Nawqaslardiń emlewxana sharayatına beyimlesiwine deyingi bolǵan dáwir</label>
+                <label><input type="radio" name="question4" value="B"> B) Nawqaslardıń óz ara itibarsizlıǵı</label>
+                <label><input type="radio" name="question4" value="C"> C) Nawqaslardıń óz ara tásiri</label>
+                <label><input type="radio" name="question4" value="D"> D) Nawqaslardın emlewxanadan shıǵip ketiw dáwiri</label>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question">
+                <p>5. Xalq salamatlıǵın saqlaw hám jaqsilawǵa qaratılǵan iskerlik neden ibarat?</p>
+                <label><input type="radio" name="question5" value="A"> A) Tez járdem xızmetin jolǵa qoyiw;</label>
+                <label><input type="radio" name="question5" value="B"> B) Den sawlıqtı jaqsılawǵa baǵdarlanǵan bilimlendiriw iskerligi;</label>
+                <label><input type="radio" name="question5" value="C"> C) Kishi jastaǵı balalardı profilaktikalıq emlew;</label>
+                <label><input type="radio" name="question5" value="D"> D) Juqpalı keselliklerdiń massalıq tarqalıwınıń aldın alıw.</label>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="question">
+                <p>6. Biypul medicinalıq járdem sistemasınan qaysı kategoriyadaǵı nawqaslar paydalanadı?</p>
+                <label><input type="radio" name="question6" value="A"> A) Yuridikalıq hám fizikalıq shaxslar;</label>
+                <label><input type="radio" name="question6" value="B"> B) Biypul medicinalıq járdem sistemasına kirmegen rayon, qala hám de kóp tarmaqlı EMM, ilimiy-izertlew institutları, klinikalardaǵı nawqaslar;</label>
+                <label><input type="radio" name="question6" value="C"> C) Tek ǵana DPM jaylasqan máhállelerdegi nawqaslar;</label>
+                <label><input type="radio" name="question6" value="D"> D) *Sociallıq áhmiyetke iye kesellikler hám átiraptaǵılarǵa qáwip tuwdırıwshı kesellikler menen kesellengen nawqaslar</label>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="question">
+                <p>7. Emlewxananıń tiykarǵı quram bólegine neler kiredi?</p>
+                <label><input type="radio" name="question7" value="A"> A) Bas shipaker bólmesi, qabillaw bólimi, emlew bólimi, asxana</label>
+                <label><input type="radio" name="question7" value="B"> B) *Qabillaw bólimi, emlew bólimi, dárixana, asxana, xojalıq bólimi</label>
+                <label><input type="radio" name="question7" value="C"> C) Qabıllaw bólimi, hájetxana, xojalıq bólimi, shıpakerler bólmesi</label>
+                <label><input type="radio" name="question7" value="D"> D) Qabillaw bólimi, dárixana, asxana, xojalıq biykesi bólmesı</label>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="question">
+                <p>8. Shańaraqlıq poliklinikada qanday qánigeler jumıs alıp baradı?</p>
+                <label><input type="radio" name="question8" value="A"> A) Joqarı maǵlıwmatlı miyirbiykeler, farmacevtler, akusherler;</label>
+                <label><input type="radio" name="question8" value="B"> B) Farmacevtler, shipakerler, laborantlar, kishi medicina xizmetkerleri;</label>
+                <label><input type="radio" name="question8" value="C"> C) *Uliwma ámeliyat shipakerleri, tar qánigeler, uliwma ámeliyat miyirbiykeleri;</label>
+                <label><input type="radio" name="question8" value="D"> D) Uliwma ámeliyat shipakerleri, tar qánigeler, ilimiy xizmetkerler.</label>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="question">
+                <p>9. Birlemshi profilaktikani kórsetiń:</p>
+                <label><input type="radio" name="question9" value="A"> A) *Salamatlıqtı bekkemlew, profilaktikalıq shanshıwlar járdeminde keselliktiń aldın alıw hám basqalar;</label>
+                <label><input type="radio" name="question9" value="B"> B) Keselliktiń baslanǵısh dáwirinde simptomlardı anıqlaw hám emlew jolı menen olardıń rawajlanıwınıń aldın alıw;</label>
+                <label><input type="radio" name="question9" value="C"> C) Tuwrı yemlew yaki reabilitaciya ilajları járdeminde kesellik aqıbetlerin jeńiw hám aldın alıw;</label>
+                <label><input type="radio" name="question9" value="D"> D) Mikrob hám onıń sporalarını dezinfekciyalıq eritpeler járdeminde joq etiw.</label>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="question">
+                <p>10. Ekilemshi profilaktikani kórsetiń:</p>
+                <label><input type="radio" name="question10" value="A"> A) Salamatlıqtı bekkemlew, profilaktikalıq shanshıwlar járdeminde keselliktiń aldın alıw hám basqalar;</label>
+                <label><input type="radio" name="question10" value="B"> B) *Keselliktiń baslanǵısh dáwirinde simptomlardı anıqlaw hám yemlew jolı menen olardıń rawajlanıwınıń aldın alıw;</label>
+                <label><input type="radio" name="question10" value="C"> C) Tuwrı yemlew yaki reabilitaciya ilajları járdeminde kesellik aqıbetlerin jeńiw hám aldın alıw;</label>
+                <label><input type="radio" name="question10" value="D"> D) Mikrob hám onıń sporalarını dezinfekcion yeritpeler járdeminde joq yetiw.</label>
+            </div>
+
+            <button type="submit" class="btn-submit">Jávaplardy tekseriw</button>
+        </form>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        const quizForm = document.getElementById("quizForm");
+        const resultDiv = document.getElementById("result");
+
+        const correctAnswers = {
+            question1: "A",
+            question2: "B",
+            question3: "A",
+            question4: "A",
+            question5: "A",
+            question6: "D",
+            question7: "B",
+            question8: "C",
+            question9: "A",
+            question10: "B"
+        };
+
+        quizForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            let score = 0;
+            let totalQuestions = 10;
+            let userAnswers = new FormData(quizForm);
+            let resultHtml = "<h2>Jávapnıń natijesi:</h2><ul>";
+
+            for (let [question, answer] of userAnswers) {
+                let correctAnswer = correctAnswers[question];
+                if (answer === correctAnswer) {
+                    score++;
+                    resultHtml += `<li class="correct">Súyeki: ${question}</li>`;
+                } else if (!answer) {
+                    resultHtml += `<li class="unanswered">Júwapsız: ${question}</li>`;
+                } else {
+                    resultHtml += `<li class="incorrect">Xata: ${question}</li>`;
+                }
+            }
+
+            resultHtml += `</ul><h3>Total: ${score} / ${totalQuestions}</h3>`;
+            resultDiv.innerHTML = resultHtml;
+            resultDiv.style.display = "block";
+        });
+    </script>
+</body>
+</html>

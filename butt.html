@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Teoriya darsliklari</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: radial-gradient(circle at top center, #0f2027, #203a43, #2c5364);
+      font-family: 'Orbitron', sans-serif;
+      margin: 0;
+      gap: 50px;
+      padding: 20px;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      font-size: 60px;
+      color: #ffffff;
+      text-align: center;
+      text-shadow: 
+        0 0 10px #ffffff,
+        0 0 20px #00f7ff,
+        0 0 30px #00f7ff;
+      animation: flicker 3s infinite alternate;
+    }
+
+    @keyframes flicker {
+      0% {opacity: 1;}
+      50% {opacity: 0.8;}
+      100% {opacity: 1;}
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      width: 90%;
+      max-width: 1400px;
+    }
+
+    a.btn {
+      position: relative;
+      padding: 18px 27px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 50px;
+      text-decoration: none;
+      overflow: hidden;
+      transition: 0.4s;
+      backdrop-filter: blur(4px);
+      animation: bounce 2s infinite alternate;
+      z-index: 0;
+    }
+
+    @keyframes bounce {
+      0% {
+        transform: translateY(0px);
+      }
+      100% {
+        transform: translateY(-8px);
+      }
+    }
+
+    a.btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 200%;
+      height: 100%;
+      background: inherit;
+      transition: 0.5s;
+      opacity: 0.4;
+      z-index: -1;
+    }
+
+    a.btn:hover::before {
+      left: 0;
+    }
+
+    a.btn:hover {
+      color: #111;
+      background: #fff;
+      box-shadow: 0 0 20px #fff, 0 0 40px #fff, 0 0 80px #fff;
+    }
+
+    /* Rangli tugmalar */
+    .blue {
+      border: 2px solid #00f7ff;
+      box-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff inset;
+    }
+    .pink {
+      border: 2px solid #ff00ff;
+      box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff inset;
+    }
+    .green {
+      border: 2px solid #00ff90;
+      box-shadow: 0 0 10px #00ff90, 0 0 20px #00ff90 inset;
+    }
+    .purple {
+      border: 2px solid #9b59b6;
+      box-shadow: 0 0 10px #9b59b6, 0 0 20px #9b59b6 inset;
+    }
+    .red {
+      border: 2px solid #ff4d4d;
+      box-shadow: 0 0 10px #ff4d4d, 0 0 20px #ff4d4d inset;
+    }
+    .yellow {
+      border: 2px solid #ffff00;
+      box-shadow: 0 0 10px #ffff00, 0 0 20px #ffff00 inset;
+      color: #000;
+    }
+    .orange {
+      border: 2px solid #ff9900;
+      box-shadow: 0 0 10px #ff9900, 0 0 20px #ff9900 inset;
+    }
+    .cyan {
+      border: 2px solid #00ffff;
+      box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff inset;
+    }
+
+    /* Orqaga qaytish tugmasi */
+    .back-btn {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+    }
+
+    .back-btn .back {
+      padding: 12px 24px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 50px;
+      text-decoration: none;
+      transition: 0.4s;
+      backdrop-filter: blur(4px);
+      box-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff inset;
+    }
+
+    .back-btn .back:hover {
+      color: #000;
+      background: #fff;
+      box-shadow: 0 0 20px #fff, 0 0 40px #fff, 0 0 80px #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Teoriya darsliklari</h1>
+
+  <div class="button-row">
+    <a href="Teoriya/mavzu1/mavzu1.html" class="btn blue"><span>1-Mavzu</span></a>
+    <a href="Teoriya/mavzu2/mavzu2.html" class="btn pink"><span>2-Mavzu</span></a>
+    <a href="Teoriya/mavzu3/mavzu3.html" class="btn green"><span>3-Mavzu</span></a>
+    <a href="Teoriya/mavzu4/mavzu4.html" class="btn purple"><span>4-Mavzu</span></a>
+    <a href="Teoriya/mavzu5/mavzu5.html" class="btn red"><span>5-Mavzu</span></a>
+    <a href="Teoriya/mavzu6/mavzu6.html" class="btn yellow"><span>6-Mavzu</span></a>
+    <a href="Teoriya/mavzu7/mavzu7.html" class="btn orange"><span>7-Mavzu</span></a>
+    <a href="Teoriya/mavzu8/mavzu8.html" class="btn cyan"><span>8-Mavzu</span></a>
+  </div>
+
+  <div class="button-row">
+    <a href="Teoriya/mavzu9/mavzu9.html" class="btn pink"><span>9-Mavzu</span></a>
+    <a href="Teoriya/mavzu10/mavzu10.html" class="btn green"><span>10-Mavzu</span></a>
+    <a href="Teoriya/mavzu11/mavzu11.html" class="btn blue"><span>11-Mavzu</span></a>
+    <a href="Teoriya/mavzu12/mavzu12.html" class="btn orange"><span>12-Mavzu</span></a>
+    <a href="Teoriya/mavzu13/mavzu13.html" class="btn red"><span>13-Mavzu</span></a>
+    <a href="Teoriya/mavzu14/mavzu14.html" class="btn cyan"><span>14-Mavzu</span></a>
+    <a href="Teoriya/mavzu15/mavzu15.html" class="btn yellow"><span>15-Mavzu</span></a>
+    <a href="Teoriya/mavzu16/mavzu16.html" class="btn purple"><span>16-Mavzu</span></a>
+  </div>
+
+  <!-- Yangi qo‘shilgan 17-mavzu -->
+  <div class="button-row">
+    <a href="Teoriya/mundarija/mundarija2.pdf" class="btn green"><span>Mundarija</span></a>
+  </div>
+
+  <!-- Orqaga qaytish tugmasi -->
+  <div class="back-btn">
+    <a href="index.html" class="btn back" onclick="if(window.history.length>1){window.history.back();return false;}">Orqaga qaytish</a>
+  </div>
+
+</body>
+</html>
