@@ -3,5 +3,6 @@ server.ps1
 start.bat
 github_login.bat
 deploy_github.bat
+deploy_to_github.bat
+update_site.bat
 *.backup.html
-
