@@ -471,6 +471,20 @@ class TopicViewerManager {
     const videoUrl = this.currentTopic.videoUrl;
 
     if (videoUrl) {
+      const isHtml = videoUrl.toLowerCase().endsWith('.html') || videoUrl.toLowerCase().endsWith('.htm');
+      if (isHtml) {
+        this.videoContainer.innerHTML = `
+          <div class="video-player-container" style="position: relative; width: 100%; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.25); background: #090d16;">
+            <iframe id="topicVideoIframe" src="${videoUrl}" style="width: 100%; height: 580px; border: none; display: block;" allow="autoplay; fullscreen" allowfullscreen></iframe>
+          </div>
+          <div style="text-align: center; margin-top: 14px; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
+            <a href="${videoUrl}" target="_blank" class="btn-primary" style="font-size: 0.88rem; padding: 8px 18px;">
+              <i class="fas fa-external-link-alt"></i> Alohida to'liq oynada ochish
+            </a>
+          </div>
+        `;
+        return;
+      }
       this.videoContainer.innerHTML = `
         <div class="video-player-container">
           <video class="topic-video-elem" id="topicVideoPlayer" controls playsinline preload="metadata">
@@ -499,6 +513,12 @@ class TopicViewerManager {
     const videoElem = document.getElementById('topicVideoPlayer');
     if (videoElem) {
       videoElem.pause();
+    }
+    const iframeElem = document.getElementById('topicVideoIframe');
+    if (iframeElem && iframeElem.contentWindow) {
+      try {
+        iframeElem.contentWindow.postMessage('stopVideo', '*');
+      } catch (e) {}
     }
   }
 

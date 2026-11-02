@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Darslik: Pediatriyaning rivojlanish tarixi | Nazariy 1-mavzu</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0284c7;
+      --primary-dark: #0369a1;
+      --accent: #00f2fe;
+      --bg-dark: #090d16;
+      --bg-panel: rgba(15, 23, 42, 0.85);
+      --card-bg: rgba(30, 41, 59, 0.7);
+      --text-light: #f8fafc;
+      --text-muted: #94a3b8;
+      --border-glass: rgba(255, 255, 255, 0.12);
+      --danger: #ef4444;
+      --success: #10b981;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-light);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+      user-select: none;
+    }
+
+    /* Video Studio Container (16:9 ratio priority) */
+    .video-studio-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      background: radial-gradient(circle at 50% 20%, #0c213d 0%, #050b14 80%);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 0 1px var(--border-glass);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Studio Header */
+    .studio-top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 20px;
+      background: rgba(10, 15, 29, 0.7);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-glass);
+      z-index: 20;
+    }
+
+    .top-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      background: rgba(2, 132, 199, 0.15);
+      padding: 4px 12px;
+      border-radius: 20px;
+      border: 1px solid rgba(0, 242, 254, 0.3);
+    }
+
+    .top-badge .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 8px var(--accent);
+      animation: pulse 1.5s infinite;
+    }
+
+    .topic-name-headline {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #e2e8f0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 65%;
+    }
+
+    .studio-right-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    /* Studio Main Stage */
+    .studio-stage {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      overflow: hidden;
+      background: transparent;
+    }
+
+    @media (max-width: 860px) {
+      .studio-stage {
+        grid-template-columns: 1fr;
+        aspect-ratio: auto;
+        min-height: 520px;
+      }
+    }
+
+    /* Left: Animated Teacher Avatar Column */
+    .presenter-column {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 20px;
+      background: linear-gradient(180deg, rgba(14, 165, 233, 0.08) 0%, rgba(2, 132, 199, 0.02) 100%);
+      border-right: 1px solid var(--border-glass);
+      overflow: hidden;
+    }
+
+    /* Ambient glowing background circles */
+    .presenter-glow {
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      background: radial-gradient(circle, rgba(2, 132, 199, 0.35) 0%, transparent 70%);
+      border-radius: 50%;
+      top: 25%;
+      z-index: 1;
+      filter: blur(20px);
+      animation: ambientGlow 4s ease-in-out infinite alternate;
+    }
+
+    /* Animated Avatar Figure */
+    .avatar-figure-box {
+      position: relative;
+      z-index: 5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .avatar-figure-box.speaking {
+      animation: headSway 2s ease-in-out infinite alternate;
+    }
+
+    .avatar-head-wrapper {
+      position: relative;
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      padding: 6px;
+      background: linear-gradient(135deg, var(--accent), var(--primary));
+      box-shadow: 0 0 30px rgba(2, 132, 199, 0.4), inset 0 0 15px rgba(255, 255, 255, 0.2);
+    }
+
+    .avatar-head-img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      background: #1e293b;
+      border: 3px solid #0f172a;
+    }
+
+    /* Animated Mouth Overlay (Speaking Lip-Sync) */
+    .mouth-overlay {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 22px;
+      height: 6px;
+      background: #b91c1c;
+      border-radius: 10px;
+      opacity: 0;
+      transition: all 0.1s ease;
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4);
+    }
+
+    .speaking .mouth-overlay {
+      opacity: 0.85;
+      animation: lipSync 0.22s ease-in-out infinite alternate;
+    }
+
+    /* Animated Eye Blink */
+    .eye-blink-layer {
+      position: absolute;
+      top: 66px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 8px;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 14px;
+      pointer-events: none;
+    }
+
+    .eye-lid {
+      width: 18px;
+      height: 3px;
+      background: #334155;
+      border-radius: 2px;
+      opacity: 0;
+      transform: scaleY(0);
+      transition: opacity 0.05s;
+    }
+
+    .blinking .eye-lid {
+      opacity: 0.95;
+      transform: scaleY(1);
+    }
+
+    /* Doctor / Medical Uniform Body Container */
+    .avatar-medical-body {
+      position: relative;
+      width: 240px;
+      height: 130px;
+      background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
+      border-radius: 40px 40px 0 0;
+      margin-top: -24px;
+      border: 2px solid #cbd5e1;
+      border-bottom: none;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 26px;
+    }
+
+    /* Stethoscope & Collar */
+    .avatar-collar {
+      position: absolute;
+      top: 0;
+      width: 100px;
+      height: 28px;
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      border-top: 26px solid #0284c7;
+    }
+
+    .stethoscope-line {
+      position: absolute;
+      top: 18px;
+      width: 120px;
+      height: 60px;
+      border: 4px solid #334155;
+      border-top: none;
+      border-radius: 0 0 60px 60px;
+    }
+
+    .stethoscope-bell {
+      position: absolute;
+      bottom: 24px;
+      width: 18px;
+      height: 18px;
+      background: #94a3b8;
+      border-radius: 50%;
+      border: 3px solid #475569;
+    }
+
+    /* Medical Teacher Badge */
+    .presenter-badge {
+      position: relative;
+      z-index: 10;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(2, 132, 199, 0.4);
+      border-radius: 12px;
+      padding: 10px 16px;
+      text-align: center;
+      width: 90%;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+      margin-top: 10px;
+    }
+
+    .badge-name {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .badge-role {
+      font-size: 0.72rem;
+      color: var(--accent);
+      margin-top: 2px;
+    }
+
+    .audio-waves-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+      height: 16px;
+      margin-top: 6px;
+    }
+
+    .audio-bar {
+      width: 3px;
+      height: 4px;
+      background: var(--accent);
+      border-radius: 3px;
+      transition: height 0.1s ease;
+    }
+
+    .speaking .audio-bar:nth-child(1) { animation: wave 0.4s infinite ease-in-out; }
+    .speaking .audio-bar:nth-child(2) { animation: wave 0.6s infinite ease-in-out 0.1s; }
+    .speaking .audio-bar:nth-child(3) { animation: wave 0.5s infinite ease-in-out 0.2s; }
+    .speaking .audio-bar:nth-child(4) { animation: wave 0.7s infinite ease-in-out 0.05s; }
+    .speaking .audio-bar:nth-child(5) { animation: wave 0.4s infinite ease-in-out 0.15s; }
+
+    /* Right: Dynamic Slide Presentation Canvas */
+    .presentation-column {
+      position: relative;
+      padding: 24px 32px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: rgba(15, 23, 42, 0.4);
+      overflow-y: auto;
+    }
+
+    .slide-scene {
+      display: none;
+      opacity: 0;
+      transform: translateY(14px);
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .slide-scene.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .scene-meta-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .scene-step-pill {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #ffffff;
+      background: linear-gradient(135deg, var(--primary), #2563eb);
+      padding: 4px 12px;
+      border-radius: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .scene-time-pill {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-family: monospace;
+    }
+
+    .scene-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.55rem;
+      font-weight: 700;
+      line-height: 1.3;
+      color: #ffffff;
+      margin-bottom: 14px;
+    }
+
+    .scene-card-box {
+      background: rgba(30, 41, 59, 0.65);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-glass);
+      border-radius: 14px;
+      padding: 18px 22px;
+      margin-bottom: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .scene-lead-text {
+      font-size: 1.02rem;
+      line-height: 1.7;
+      color: #e2e8f0;
+      margin-bottom: 14px;
+    }
+
+    .bullet-point-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .bullet-point-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.95rem;
+      color: #cbd5e1;
+      line-height: 1.55;
+    }
+
+    .bullet-point-item i {
+      color: var(--accent);
+      margin-top: 4px;
+      font-size: 0.85rem;
+    }
+
+    .highlight-badge-box {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      background: rgba(2, 132, 199, 0.12);
+      border: 1px solid rgba(2, 132, 199, 0.35);
+      border-radius: 10px;
+      padding: 12px 16px;
+      margin-top: 14px;
+      font-size: 0.92rem;
+      color: #38bdf8;
+    }
+
+    .highlight-badge-box.warning {
+      background: rgba(239, 68, 68, 0.12);
+      border-color: rgba(239, 68, 68, 0.35);
+      color: #f87171;
+    }
+
+    .highlight-badge-box.success {
+      background: rgba(16, 185, 129, 0.12);
+      border-color: rgba(16, 185, 129, 0.35);
+      color: #34d399;
+    }
+
+    /* Subtitle Caption Overlay */
+    .subtitle-caption-bar {
+      position: absolute;
+      bottom: 8px;
+      left: 20px;
+      right: 20px;
+      background: rgba(10, 15, 29, 0.88);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--border-glass);
+      border-radius: 10px;
+      padding: 10px 18px;
+      text-align: center;
+      font-size: 0.95rem;
+      color: #f8fafc;
+      font-weight: 500;
+      line-height: 1.5;
+      min-height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 15;
+    }
+
+    .subtitle-caption-bar span {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* Studio Controls Toolbar */
+    .studio-controls-bar {
+      background: rgba(15, 23, 42, 0.95);
+      border-top: 1px solid var(--border-glass);
+      padding: 12px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      z-index: 25;
+    }
+
+    /* Scrubber Progress */
+    .scrubber-wrapper {
+      position: relative;
+      width: 100%;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .scrubber-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      border-radius: 4px;
+      position: relative;
+      transition: width 0.1s linear;
+    }
+
+    .scrubber-handle {
+      position: absolute;
+      right: -6px;
+      top: -4px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #ffffff;
+      box-shadow: 0 0 10px var(--accent);
+    }
+
+    /* Buttons Row */
+    .controls-main-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .controls-left, .controls-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn-ctrl {
+      background: transparent;
+      border: none;
+      color: #cbd5e1;
+      font-size: 1.1rem;
+      cursor: pointer;
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+
+    .btn-ctrl:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+    }
+
+    .btn-play-hero {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #0f172a;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      box-shadow: 0 0 18px rgba(0, 242, 254, 0.4);
+    }
+
+    .btn-play-hero:hover {
+      transform: scale(1.05);
+      color: #000000;
+    }
+
+    .time-readout {
+      font-family: monospace;
+      font-size: 0.88rem;
+      color: #94a3b8;
+    }
+
+    /* Chapter Quick Buttons */
+    .chapter-pills-row {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-top: 4px;
+      scrollbar-width: thin;
+    }
+
+    .btn-chapter-pill {
+      background: rgba(30, 41, 59, 0.7);
+      border: 1px solid var(--border-glass);
+      color: #94a3b8;
+      padding: 5px 12px;
+      border-radius: 16px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+
+    .btn-chapter-pill.active {
+      background: rgba(2, 132, 199, 0.25);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .btn-download-video {
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      color: #34d399;
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .btn-download-video:hover {
+      background: rgba(16, 185, 129, 0.3);
+      color: #ffffff;
+    }
+
+    /* Keyframe Animations */
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.85); }
+    }
+
+    @keyframes ambientGlow {
+      0% { transform: scale(0.9); opacity: 0.3; }
+      100% { transform: scale(1.15); opacity: 0.55; }
+    }
+
+    @keyframes headSway {
+      0% { transform: rotate(-1.5deg) translateY(0); }
+      50% { transform: rotate(1deg) translateY(-2px); }
+      100% { transform: rotate(-1deg) translateY(0); }
+    }
+
+    @keyframes lipSync {
+      0% { height: 4px; transform: translateX(-50%) scaleX(0.85); }
+      100% { height: 16px; transform: translateX(-50%) scaleX(1.15); }
+    }
+
+    @keyframes wave {
+      0%, 100% { height: 4px; }
+      50% { height: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="video-studio-wrapper">
+    <!-- Top Header Bar -->
+    <header class="studio-top-bar">
+      <div style="display: flex; align-items: center; gap: 12px; max-width: 75%;">
+        <span class="top-badge">
+          <span class="dot"></span>
+          <span>Interaktiv Video Darslik</span>
+        </span>
+        <span class="topic-name-headline" title="Pediatriyaning rivojlanish tarixi. Bolalarning jismoniy rivojlanishini monitoring qilish va baholash mezonlari.">
+          1-Mavzu: Pediatriyaning rivojlanish tarixi va jismoniy monitoring
+        </span>
+      </div>
+      <div class="studio-right-meta">
+        <span><i class="fas fa-university"></i> 2-son Nukus JST</span>
+        <button id="toggleFullscreenBtn" class="btn-ctrl" title="To'liq ekranga o'tish" style="font-size: 0.95rem;">
+          <i class="fas fa-expand"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Stage -->
+    <main class="studio-stage">
+      <!-- Presenter Column (Animated Avatar) -->
+      <section class="presenter-column">
+        <div class="presenter-glow"></div>
+
+        <div class="avatar-figure-box" id="avatarBox">
+          <div class="avatar-head-wrapper">
+            <img src="../../../assets/images/teacher.png" alt="Sametullaeva Sveta Smaylovna" class="avatar-head-img" id="avatarImg" onerror="this.src='photo_2025-05-07_11-55-23.jpg'">
+            <!-- Speaking mouth overlay -->
+            <div class="mouth-overlay" id="mouthOverlay"></div>
+            <!-- Blinking eye lids -->
+            <div class="eye-blink-layer">
+              <span class="eye-lid"></span>
+              <span class="eye-lid"></span>
+            </div>
+          </div>
+
+          <!-- Medical Doctor Uniform & Stethoscope -->
+          <div class="avatar-medical-body">
+            <div class="avatar-collar"></div>
+            <div class="stethoscope-line"></div>
+            <div class="stethoscope-bell"></div>
+          </div>
+        </div>
+
+        <!-- Presenter Badge -->
+        <div class="presenter-badge">
+          <div class="badge-name">
+            <i class="fas fa-user-doctor" style="color: var(--accent);"></i>
+            <span>Sametullaeva S. S.</span>
+          </div>
+          <div class="badge-role">Pediatriyada hamshiralik ishi o'qituvchisi</div>
+          <div class="audio-waves-container">
+            <span class="audio-bar"></span>
+            <span class="audio-bar"></span>
+            <span class="audio-bar"></span>
+            <span class="audio-bar"></span>
+            <span class="audio-bar"></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide Presentation Content Column -->
+      <section class="presentation-column">
+
+        <!-- Scene 1: Kirish -->
+        <article class="slide-scene active" id="scene-0">
+          <div class="scene-meta-header">
+            <span class="scene-step-pill">KIRISH &bull; MAVZU TAQDIMOTI</span>
+            <span class="scene-time-pill">00:00 - 00:30</span>
+          </div>
+          <h2 class="scene-title">Pediatriya fani va jismoniy monitoring</h2>
+          <div class="scene-card-box">
+            <p class="scene-lead-text">
+              Assalomu alaykum, hurmatli talabalar! Bugungi nazariy darsimizda bolalar salomatligini saqlash, pediatriyaning shakllanish tarixi va jismoniy rivojlanish monitoringini o'rganamiz.
+            </p>
+            <ul class="bullet-point-list">
+              <li class="bullet-point-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Pediatriya fani predmeti, maqsad va asosiy vazifalari</span>
+              </li>
+              <li class="bullet-point-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Tarixiy allomalar ta'limoti va Abu Ali ibn Sino qarashlari</span>
+              </li>
+              <li class="bullet-point-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Bolalik davrlari, antropometriya va profilaktik patronaj</span>
+              </li>
+            </ul>
+          </div>
+          <div class="highlight-badge-box">
+            <i class="fas fa-stethoscope"></i>
+            <span>Dars maqsadi: Bo'lajak hamshirada sog'lom bola parvarishi va monitoring ko'nikmasini shakllantirish.</span>
+          </div>
+        </article>
+
+        <!-- Scene 2: Tarix va Ibn Sino -->
+        <article class="slide-scene" id="scene-1">
+          <div class="scene-meta-header">
+            <span class="scene-step-pill">1-QISM &bull; TARIXIY BOSQICHLAR</span>
+            <span class="scene-time-pill">00:30 - 01:15</span>
+          </div>
+          <h2 class="scene-title">Pediatriya tarixi va allomalar ta'limoti</h2>
+          <div class="scene-card-box">
+            <p class="scene-lead-text">
+              "Pediatriya" yunoncha "pais" — bola va "iatreia" — davolash so'zlaridan olingan bo'lib, go'daklikdan to balog'at yoshigacha bo'lgan davrni qamrab oladi.
+            </p>
+            <ul class="bullet-point-list">
+              <li class="bullet-point-item">
+                <i class="fas fa-scroll"></i>
+                <span><strong>Abu Ali ibn Sino:</strong> "Tib qonunlari" asarida chaqaloqni cho'miltirish, toza havo, ona suti va gigiyenani birinchi o'ringa qo'ygan.</span>
+              </li>
+              <li class="bullet-point-item">
+                <i class="fas fa-user-nurse"></i>
+                <span><strong>Florens Naytingeyl:</strong> Hamshiralik parvarishi, aseptika va toza muhit kasallik asoratlarini 70% ga kamaytirishini isbotlagan.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="highlight-badge-box success">
+            <i class="fas fa-book-medical"></i>
+            <span>Klinik qoida: Bolaning organizmi kattalarning kichik nusxasi emas, u doimiy o'suvchi o'ziga xos tizimdir!</span>
+          </div>
+        </article>
+
+        <!-- Scene 3: Bolalik davrlari -->
+        <article class="slide-scene" id="scene-2">
+          <div class="scene-meta-header">
+            <span class="scene-step-pill">2-QISM &bull; DAVRLAR TASNIFI</span>
+            <span class="scene-time-pill">01:15 - 02:00</span>
+          </div>
+          <h2 class="scene-title">Bolalik davrlarining davriy tasnifi</h2>
+          <div class="scene-card-box">
+            <p class="scene-lead-text">
+              Bolalar parvarishini to'g'ri tashkil etish uchun bolalikning har bir davriga xos fiziologiyani bilish shart:
+            </p>
+            <ul class="bullet-point-list">
+              <li class="bullet-point-item">
+                <i class="fas fa-baby"></i>
+                <span><strong>Neonatal davr (0 - 28 kun):</strong> Chaqaloqning tashqi muhitga moslashuvi, kindik parvarishi va sariqlik nazorati.</span>
+              </li>
+              <li class="bullet-point-item">
+                <i class="fas fa-heart"></i>
+                <span><strong>Go'daklik davri (29 kundan 1 yoshgacha):</strong> Eng jadal o'sish davri, tabiiy oziqlantirish va profilaktik emlashlar.</span>
+              </li>
+              <li class="bullet-point-item">
+                <i class="fas fa-child"></i>
+                <span><strong>Maktabgacha va maktab davri:</strong> Immun tizimining mustahkamlanishi va jismoniy chiniqish.</span>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Scene 4: Antropometriya & JSST -->
+        <article class="slide-scene" id="scene-3">
+          <div class="scene-meta-header">
+            <span class="scene-step-pill">3-QISM &bull; ANTROPOMETRIYA</span>
+            <span class="scene-time-pill">02:00 - 02:45</span>
+          </div>
+          <h2 class="scene-title">Jismoniy rivojlanish va JSST standartlari</h2>
+          <div class="scene-card-box">
+            <p class="scene-lead-text">
+              Hamshira har oy patronaj ko'rigida bolaning asosiy antropometrik parametrlarini o'lchaydi:
+            </p>
+            <ul class="bullet-point-list">
+              <li class="bullet-point-item">
+                <i class="fas fa-ruler-vertical"></i>
+                <span><strong>Bo'y uzunligi:</strong> Gorizontal yoki vertikal bo'y o'lchagich yordamida (1 yoshda o'rtacha 75 sm).</span>
+              </li>
+              <li class="bullet-point-item">
+                <i class="fas fa-weight-scale"></i>
+                <span><strong>Tana vazni:</strong> Maxsus elektron bolalar tarozisida o'lchanadi (1 yoshda o'rtacha 10 kg).</span>
+              </li>
+              <li class="bullet-point-item">
+                <i class="fas fa-circle-notch"></i>
+                <span><strong>Bosh va ko'krak aylanasi:</strong> Santimetrli tasma yordamida o'lchanib, sentil jadvaliga kiritiladi.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="highlight-badge-box">
+            <i class="fas fa-chart-line"></i>
+            <span>Sentil jadvallari orqali bolaning o'sishdan ortda qolishi yoki gipotrofiya erta bosqichda aniqlanadi.</span>
+          </div>
+        </article>
+
+        <!-- Scene 5: Hamshiralik parvarishi va Xavf belgilari -->
+        <article class="slide-scene" id="scene-4">
+          <div class="scene-meta-header">
+            <span class="scene-step-pill">4-QISM &bull; XAVF BELGILARI</span>
+            <span class="scene-time-pill">02:45 - 03:30</span>
+          </div>
+          <h2 class="scene-title">Xavf belgilari va shoshilinch yordam</h2>
+          <div class="scene-card-box">
+            <p class="scene-lead-text">
+              Hamshira zudlik bilan shifokorga xabar berishi va birinchi yordam ko'rsatishi shart bo'lgan umumiy xavf belgilari:
+            </p>
+            <ul class="bullet-point-list">
+              <li class="bullet-point-item">
+                <i class="fas fa-temperature-arrow-up" style="color: var(--danger);"></i>
+                <span><strong>Tana harorati 38.5&deg;C dan yuqori:</strong> Isitmani tushiruvchi fizik usullar va dori tayinlash.</span>
+              </li>
+              <li class="bullet-point-item">
+                <i class="fas fa-lungs" style="color: var(--danger);"></i>
+                <span><strong>Nafas qisishi va ko'karish (sianoz):</strong> Nafas yo'llarini tozalash, kislorod oqimini ta'minlash.</span>
+              </li>
+              <li class="bullet-point-item">
+                <i class="fas fa-exclamation-triangle" style="color: var(--danger);"></i>
+                <span><strong>Talvasa (sudorgi) yoki hushning noaniqligi:</strong> Bolani yonbosh yotqizish, jarohatdan asrash.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="highlight-badge-box warning">
+            <i class="fas fa-bell"></i>
+            <span>Zudlik bilan: Har qanday xavf belgisida o'zboshimchalik qilinmaydi, shifokor nazorati ta'minlanadi!</span>
+          </div>
+        </article>
+
+        <!-- Scene 6: Harakat algoritmi va Xulosa -->
+        <article class="slide-scene" id="scene-5">
+          <div class="scene-meta-header">
+            <span class="scene-step-pill">XULOSA &bull; HARAKAT ALGORITMI</span>
+            <span class="scene-time-pill">03:30 - 04:00</span>
+          </div>
+          <h2 class="scene-title">Hamshira harakat algoritmi va dars yakuni</h2>
+          <div class="scene-card-box">
+            <ol class="bullet-point-list" style="padding-left: 8px;">
+              <li class="bullet-point-item">
+                <span style="font-weight: 700; color: var(--accent);">1.</span>
+                <span>Bemor bolaning umumiy ahvoli, tana harorati, puls va nafas sonini tekshirish;</span>
+              </li>
+              <li class="bullet-point-item">
+                <span style="font-weight: 700; color: var(--accent);">2.</span>
+                <span>Aseptika va gigiyena qoidalariga so'zsiz rioya qilish;</span>
+              </li>
+              <li class="bullet-point-item">
+                <span style="font-weight: 700; color: var(--accent);">3.</span>
+                <span>Oila a'zolariga to'g'ri oziqlantirish va uyda parvarishlash bo'yicha yo'l-yo'riq berish;</span>
+              </li>
+              <li class="bullet-point-item">
+                <span style="font-weight: 700; color: var(--accent);">4.</span>
+                <span>Monitoring natijalarini tibbiy hujjatlarga aniq qayd etib borish.</span>
+              </li>
+            </ol>
+          </div>
+          <div class="highlight-badge-box success">
+            <i class="fas fa-graduation-cap"></i>
+            <span>Dars tamom bo'ldi! Mavzuni mustahkamlash uchun "Interaktiv Test" bo'limiga o'ting!</span>
+          </div>
+        </article>
+
+      </section>
+
+      <!-- Subtitle Overlay Bar -->
+      <div class="subtitle-caption-bar" id="subtitleBar">
+        Pediatriyaning rivojlanish tarixi va bolalarning jismoniy monitoringi mavzusiga xush kelibsiz!
+      </div>
+    </main>
+
+    <!-- Controls Toolbar -->
+    <footer class="studio-controls-bar">
+      <!-- Scrubber -->
+      <div class="scrubber-wrapper" id="scrubberTrack">
+        <div class="scrubber-fill" id="scrubberFill">
+          <span class="scrubber-handle"></span>
+        </div>
+      </div>
+
+      <!-- Controls Row -->
+      <div class="controls-main-row">
+        <div class="controls-left">
+          <button class="btn-ctrl btn-play-hero" id="playPauseBtn" title="Ijro / To'xtatish">
+            <i class="fas fa-play" id="playIcon"></i>
+          </button>
+          <button class="btn-ctrl" id="prevChapterBtn" title="Oldingi qism">
+            <i class="fas fa-step-backward"></i>
+          </button>
+          <button class="btn-ctrl" id="nextChapterBtn" title="Keyingi qism">
+            <i class="fas fa-step-forward"></i>
+          </button>
+          <button class="btn-ctrl" id="muteBtn" title="Ovozni o'chirish / yoqish">
+            <i class="fas fa-volume-up" id="volumeIcon"></i>
+          </button>
+          <span class="time-readout" id="timeDisplay">00:00 / 04:00</span>
+        </div>
+
+        <div class="controls-right">
+          <button class="btn-ctrl" id="speedBtn" title="Tezlik">1.0x</button>
+          <button class="btn-ctrl" id="subtitlesToggleBtn" title="Subtitrlar" style="color: var(--accent);">
+            <i class="fas fa-closed-captioning"></i>
+          </button>
+          <button class="btn-download-video" id="downloadLessonBtn" title="Dars materialini saqlash">
+            <i class="fas fa-download"></i>
+            <span>Darsni yuklab olish</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Chapter Tabs Quick Selector -->
+      <div class="chapter-pills-row">
+        <button class="btn-chapter-pill active" data-index="0">1. Kirish</button>
+        <button class="btn-chapter-pill" data-index="1">2. Allomalar ta'limoti</button>
+        <button class="btn-chapter-pill" data-index="2">3. Bolalik davrlari</button>
+        <button class="btn-chapter-pill" data-index="3">4. Antropometriya</button>
+        <button class="btn-chapter-pill" data-index="4">5. Xavf belgilari</button>
+        <button class="btn-chapter-pill" data-index="5">6. Algoritm & Xulosa</button>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    /**
+     * =====================================================================
+     * ANIMATED MEDICAL LECTURE VIDEO ENGINE & AUDIO NARRATOR
+     * =====================================================================
+     */
+
+    const LESSON_CHAPTERS = [
+      {
+        id: 0,
+        title: "Kirish: Mavzu taqdimoti",
+        duration: 35, // soniya
+        text: "Assalomu alaykum, hurmatli talabalar! Bugungi nazariy mashg'ulotimiz mavzusi: Pediatriyaning rivojlanish tarixi hamda bolalarning jismoniy rivojlanishini monitoring qilish va baholash mezonlari. Ushbu darsda biz bolalar parvarishi asoslarini o'rganamiz."
+      },
+      {
+        id: 1,
+        title: "1-qism: Allomalar ta'limoti",
+        duration: 45,
+        text: "Pediatriya bolaning tug'ilganidan to balog'at yoshigacha bo'lgan davrdagi salomatligini o'rganuvchi fandir. Buyuk bobomiz Abu Ali ibn Sino o'zining 'Tib qonunlari' asarida chaqaloqlar parvarishi, ona suti va gigiyenani mustahkam poydevor qilib belgilab bergan."
+      },
+      {
+        id: 2,
+        title: "2-qism: Bolalik davrlari tasnifi",
+        duration: 45,
+        text: "Bolalik davri bir necha asosiy bosqichga bo'linadi: neonatal davr ya'ni dastlabki 28 kun, bir yoshgacha bo'lgan emizikli go'daklik davri, hamda maktabgacha va maktab davrlari. Har bir davr o'ziga xos anatomik va fiziologik xususiyatlarga ega."
+      },
+      {
+        id: 3,
+        title: "3-qism: Antropometriya va JSST mezonlari",
+        duration: 45,
+        text: "Bolaning jismoniy rivojlanishi bo'y uzunligi, tana vazni, bosh va ko'krak qafasi aylanalarini muntazam o'lchash orqali baholanadi. Olingan natijalar xalqaro JSST sentil jadvallariga kiritilib, gipotrofiya yoki semirish xavfi erta aniqlanadi."
+      },
+      {
+        id: 4,
+        title: "4-qism: Xavf belgilari va birinchi yordam",
+        duration: 45,
+        text: "Hamshira o'ta hushyor bo'lishi shart! Tana haroratining 38.5 darajadan oshishi, nafas qisishi, talvasa yoki kuchli lanjlik holatlari umumiy xavf belgilari hisoblanadi. Bunday vaqtda darhol shoshilinch yordam ko'rsatilib, shifokorga xabar beriladi."
+      },
+      {
+        id: 5,
+        title: "5-qism: Algoritm va Dars yakuni",
+        duration: 25,
+        text: "Xulosa qilib aytganda, tizimli dispanser kuzatuvi va to'g'ri gigiyenik parvarish bolalarning barkamol o'sish garovidir. E'tiboringiz uchun katta rahmat, bilimlaringizni sinash uchun platformadagi interaktiv testlarni topshirishni unutmang!"
+      }
+    ];
+
+    const TOTAL_DURATION = LESSON_CHAPTERS.reduce((acc, ch) => acc + ch.duration, 0);
+
+    let isPlaying = false;
+    let currentTime = 0;
+    let currentChapterIndex = 0;
+    let playbackSpeed = 1.0;
+    let isMuted = false;
+    let showSubtitles = true;
+    let timerInterval = null;
+
+    // Elements
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const playIcon = document.getElementById('playIcon');
+    const prevChapterBtn = document.getElementById('prevChapterBtn');
+    const nextChapterBtn = document.getElementById('nextChapterBtn');
+    const muteBtn = document.getElementById('muteBtn');
+    const volumeIcon = document.getElementById('volumeIcon');
+    const speedBtn = document.getElementById('speedBtn');
+    const subtitlesToggleBtn = document.getElementById('subtitlesToggleBtn');
+    const timeDisplay = document.getElementById('timeDisplay');
+    const scrubberTrack = document.getElementById('scrubberTrack');
+    const scrubberFill = document.getElementById('scrubberFill');
+    const subtitleBar = document.getElementById('subtitleBar');
+    const avatarBox = document.getElementById('avatarBox');
+    const chapterPills = document.querySelectorAll('.btn-chapter-pill');
+    const toggleFullscreenBtn = document.getElementById('toggleFullscreenBtn');
+    const downloadLessonBtn = document.getElementById('downloadLessonBtn');
+
+    // Web Audio Synthesizer (Ambient Background Piano/Bell Chords)
+    let audioCtx = null;
+    let ambientGain = null;
+
+    function initAudioContext() {
+      if (!audioCtx) {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        audioCtx = new AudioContext();
+        ambientGain = audioCtx.createGain();
+        ambientGain.gain.setValueAtTime(0.04, audioCtx.currentTime);
+        ambientGain.connect(audioCtx.destination);
+      }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+    }
+
+    function playSoftChime() {
+      if (!audioCtx || isMuted) return;
+      try {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(523.25, audioCtx.currentTime); // C5
+        osc.frequency.exponentialRampToValueAtTime(659.25, audioCtx.currentTime + 0.3); // E5
+        gain.gain.setValueAtTime(0.05, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.8);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.85);
+      } catch (e) {}
+    }
+
+    // Speech Synthesis Narrator
+    let synth = window.speechSynthesis;
+    let currentUtterance = null;
+
+    function speakCurrentChapter() {
+      if (!synth || isMuted) {
+        setAvatarSpeaking(isPlaying);
+        return;
+      }
+
+      synth.cancel();
+
+      if (!isPlaying) {
+        setAvatarSpeaking(false);
+        return;
+      }
+
+      const chapter = LESSON_CHAPTERS[currentChapterIndex];
+      const textToSpeak = chapter.text;
+
+      currentUtterance = new SpeechSynthesisUtterance(textToSpeak);
+      currentUtterance.rate = playbackSpeed;
+      currentUtterance.pitch = 1.05;
+
+      // Select suitable voice
+      const voices = synth.getVoices();
+      const uzVoice = voices.find(v => v.lang.startsWith('uz') || v.lang.startsWith('tr') || v.lang.startsWith('ru'));
+      if (uzVoice) currentUtterance.voice = uzVoice;
+
+      currentUtterance.onstart = () => {
+        setAvatarSpeaking(true);
+      };
+
+      currentUtterance.onend = () => {
+        setAvatarSpeaking(false);
+      };
+
+      currentUtterance.onerror = () => {
+        setAvatarSpeaking(false);
+      };
+
+      synth.speak(currentUtterance);
+    }
+
+    function setAvatarSpeaking(isSpeaking) {
+      if (isSpeaking) {
+        avatarBox.classList.add('speaking');
+      } else {
+        avatarBox.classList.remove('speaking');
+      }
+    }
+
+    // Natural Eye Blinking loop
+    setInterval(() => {
+      avatarBox.classList.add('blinking');
+      setTimeout(() => {
+        avatarBox.classList.remove('blinking');
+      }, 180);
+    }, 3800);
+
+    // Playback Controller
+    function togglePlay() {
+      initAudioContext();
+      isPlaying = !isPlaying;
+
+      if (isPlaying) {
+        playIcon.className = 'fas fa-pause';
+        startTimer();
+        speakCurrentChapter();
+        playSoftChime();
+      } else {
+        playIcon.className = 'fas fa-play';
+        stopTimer();
+        if (synth) synth.cancel();
+        setAvatarSpeaking(false);
+      }
+    }
+
+    function startTimer() {
+      if (timerInterval) clearInterval(timerInterval);
+      timerInterval = setInterval(() => {
+        currentTime += 1 * playbackSpeed;
+        if (currentTime >= TOTAL_DURATION) {
+          currentTime = TOTAL_DURATION;
+          togglePlay();
+        }
+        updateStudioProgress();
+      }, 1000);
+    }
+
+    function stopTimer() {
+      if (timerInterval) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+      }
+    }
+
+    function formatTime(seconds) {
+      const m = Math.floor(seconds / 60);
+      const s = Math.floor(seconds % 60);
+      return `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+    }
+
+    function updateStudioProgress() {
+      // Calculate active chapter based on currentTime
+      let accumulated = 0;
+      let newChapterIndex = 0;
+      for (let i = 0; i < LESSON_CHAPTERS.length; i++) {
+        if (currentTime >= accumulated && currentTime < accumulated + LESSON_CHAPTERS[i].duration) {
+          newChapterIndex = i;
+          break;
+        }
+        accumulated += LESSON_CHAPTERS[i].duration;
+      }
+
+      if (newChapterIndex !== currentChapterIndex) {
+        switchScene(newChapterIndex);
+        if (isPlaying) speakCurrentChapter();
+      }
+
+      // Update Scrubber
+      const pct = (currentTime / TOTAL_DURATION) * 100;
+      scrubberFill.style.width = `${pct}%`;
+      timeDisplay.textContent = `${formatTime(currentTime)} / ${formatTime(TOTAL_DURATION)}`;
+
+      // Update Subtitles
+      const currentCh = LESSON_CHAPTERS[currentChapterIndex];
+      subtitleBar.innerHTML = `<span>[${currentCh.title}]:</span> ${currentCh.text}`;
+    }
+
+    function switchScene(index) {
+      currentChapterIndex = index;
+      document.querySelectorAll('.slide-scene').forEach(sc => sc.classList.remove('active'));
+      const activeScene = document.getElementById(`scene-${index}`);
+      if (activeScene) activeScene.classList.add('active');
+
+      chapterPills.forEach(pill => {
+        if (parseInt(pill.dataset.index) === index) {
+          pill.classList.add('active');
+        } else {
+          pill.classList.remove('active');
+        }
+      });
+      playSoftChime();
+    }
+
+    function seekToChapter(index) {
+      let accumulated = 0;
+      for (let i = 0; i < index; i++) {
+        accumulated += LESSON_CHAPTERS[i].duration;
+      }
+      currentTime = accumulated;
+      switchScene(index);
+      updateStudioProgress();
+      if (isPlaying) speakCurrentChapter();
+    }
+
+    // Event Listeners
+    playPauseBtn.addEventListener('click', togglePlay);
+
+    prevChapterBtn.addEventListener('click', () => {
+      if (currentChapterIndex > 0) seekToChapter(currentChapterIndex - 1);
+    });
+
+    nextChapterBtn.addEventListener('click', () => {
+      if (currentChapterIndex < LESSON_CHAPTERS.length - 1) seekToChapter(currentChapterIndex + 1);
+    });
+
+    chapterPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        seekToChapter(parseInt(pill.dataset.index));
+      });
+    });
+
+    scrubberTrack.addEventListener('click', (e) => {
+      const rect = scrubberTrack.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+      const pct = Math.max(0, Math.min(1, clickX / rect.width));
+      currentTime = pct * TOTAL_DURATION;
+      updateStudioProgress();
+      if (isPlaying) speakCurrentChapter();
+    });
+
+    muteBtn.addEventListener('click', () => {
+      isMuted = !isMuted;
+      if (isMuted) {
+        volumeIcon.className = 'fas fa-volume-mute';
+        muteBtn.style.color = '#ef4444';
+        if (synth) synth.cancel();
+        setAvatarSpeaking(false);
+      } else {
+        volumeIcon.className = 'fas fa-volume-up';
+        muteBtn.style.color = '#cbd5e1';
+        if (isPlaying) speakCurrentChapter();
+      }
+    });
+
+    speedBtn.addEventListener('click', () => {
+      const speeds = [1.0, 1.25, 1.5, 0.85];
+      const nextIdx = (speeds.indexOf(playbackSpeed) + 1) % speeds.length;
+      playbackSpeed = speeds[nextIdx];
+      speedBtn.textContent = `${playbackSpeed}x`;
+      if (isPlaying) speakCurrentChapter();
+    });
+
+    subtitlesToggleBtn.addEventListener('click', () => {
+      showSubtitles = !showSubtitles;
+      subtitleBar.style.display = showSubtitles ? 'flex' : 'none';
+      subtitlesToggleBtn.style.color = showSubtitles ? 'var(--accent)' : 'var(--text-muted)';
+    });
+
+    toggleFullscreenBtn.addEventListener('click', () => {
+      const container = document.querySelector('.video-studio-wrapper');
+      if (!document.fullscreenElement) {
+        container.requestFullscreen().catch(() => {});
+        toggleFullscreenBtn.innerHTML = '<i class="fas fa-compress"></i>';
+      } else {
+        document.exitFullscreen().catch(() => {});
+        toggleFullscreenBtn.innerHTML = '<i class="fas fa-expand"></i>';
+      }
+    });
+
+    downloadLessonBtn.addEventListener('click', () => {
+      alert("Video darslik ma'lumotlari: Ushbu dars HTML5 animatsion studio formatida to'liq saqlangan bo'lib, uning barcha matnlari, slayd va audio sinxroni bevosita brauzeringizda to'liq offline ishlaydi!");
+    });
+
+    // Keyboard Shortcuts
+    document.addEventListener('keydown', (e) => {
+      if (e.code === 'Space') {
+        e.preventDefault();
+        togglePlay();
+      } else if (e.code === 'ArrowRight') {
+        currentTime = Math.min(TOTAL_DURATION, currentTime + 5);
+        updateStudioProgress();
+      } else if (e.code === 'ArrowLeft') {
+        currentTime = Math.max(0, currentTime - 5);
+        updateStudioProgress();
+      }
+    });
+
+    // Initial setup
+    updateStudioProgress();
+  </script>
+</body>
+</html>
