@@ -5,4 +5,5 @@ github_login.bat
 deploy_github.bat
 deploy_to_github.bat
 update_site.bat
+build_animated_video.ps1
 *.backup.html

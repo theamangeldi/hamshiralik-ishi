@@ -3827,7 +3827,7 @@ var COURSE_CONFIG = {
                                                      "text":  "Birlamchi bo\u0027g\u0027in hamshirasining oilalarda o\u0027tkazadigan patronaj ko\u0027riklari sog\u0027lom avlodni voyaga yetkazishning poydevoridir."
                                                  }
                                              ],
-                                  "videoUrl":  "Teoriya/mavzu1/vedio/video.html",
+                                  "videoUrl":  "Teoriya/mavzu1/vedio/video.mp4",
                                   "pedTechPdf":  "Teoriya/mavzu1/pedtex/Fanning talim texnologiyalari.pdf",
                                   "visualPdf":  "Teoriya/mavzu1/vizual/Vizual-didaktik resurslar.pdf",
                                   "quiz":  [

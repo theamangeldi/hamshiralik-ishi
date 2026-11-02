@@ -486,15 +486,18 @@ class TopicViewerManager {
         return;
       }
       this.videoContainer.innerHTML = `
-        <div class="video-player-container">
-          <video class="topic-video-elem" id="topicVideoPlayer" controls playsinline preload="metadata">
+        <div class="video-player-container" style="display: flex; justify-content: center; align-items: center; background: #070b14; border-radius: 14px; overflow: hidden; padding: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.35);">
+          <video class="topic-video-elem" id="topicVideoPlayer" controls playsinline preload="metadata" style="max-height: 560px; width: auto; max-width: 100%; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.5);">
             <source src="${videoUrl}" type="video/mp4">
             Brauzeringiz videoni qo'llab-quvvatlamaydi.
           </video>
         </div>
-        <div style="text-align: center; margin-top: 16px;">
-          <a href="${videoUrl}" download class="btn-secondary" style="font-size: 0.88rem; padding: 8px 18px;">
-            <i class="fas fa-download"></i> Videoni yuklab olish
+        <div style="text-align: center; margin-top: 14px; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
+          <a href="${videoUrl}" download class="btn-primary" style="font-size: 0.88rem; padding: 8px 18px;">
+            <i class="fas fa-download"></i> Videoni yuklab olish (MP4)
+          </a>
+          <a href="${videoUrl}" target="_blank" class="btn-secondary" style="font-size: 0.88rem; padding: 8px 18px;">
+            <i class="fas fa-external-link-alt"></i> Alohida oynada ko'rish
           </a>
         </div>
       `;
