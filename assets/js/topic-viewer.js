@@ -489,9 +489,14 @@ class TopicViewerManager {
     if (ytMatch && ytMatch[1]) {
       const ytId = ytMatch[1];
       const safeTitle = (this.currentTopic.title || 'Video darslik').replace(/"/g, '&quot;');
-      // youtube-nocookie va maxsus referrerpolicy Error 153 xatosining oldini oladi
-      const embedUrl = `https://www.youtube-nocookie.com/embed/${ytId}?rel=0`;
       const isFileProtocol = window.location.protocol === 'file:';
+
+      // file:// protokolida brauzer Origin yubormagani sababli YouTube "Error 153" chiqaradi.
+      // Buning oldini olish uchun GitHub Pages xavfsiz HTTPS proksisidan foydalanamiz,
+      // vebda esa www.youtube.com/embed to'g'ridan-to'g'ri ochiladi.
+      const embedUrl = isFileProtocol 
+        ? `https://theamangeldi.github.io/hamshiralik-ishi/player.html?v=${ytId}&title=${encodeURIComponent(safeTitle)}`
+        : `https://www.youtube.com/embed/${ytId}?rel=0`;
 
       this.videoContainer.innerHTML = `
         <div class="video-player-container" style="position: relative; width: 100%; max-width: 960px; margin: 0 auto; padding-bottom: 56.25%; height: 0; border-radius: 14px; overflow: hidden; box-shadow: 0 12px 35px rgba(0,0,0,0.35); background: #000;">
@@ -506,14 +511,25 @@ class TopicViewerManager {
           </iframe>
         </div>
         <div style="text-align: center; margin-top: 16px; display: flex; flex-direction: column; align-items: center; gap: 10px;">
-          <a href="https://www.youtube.com/watch?v=${ytId}" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size: 0.95rem; font-weight: 600; padding: 10px 24px; background: linear-gradient(135deg, #e50914, #b20710); border: none; box-shadow: 0 4px 15px rgba(229,9,20,0.35); border-radius: 8px; display: inline-flex; align-items: center; gap: 8px;">
-            <i class="fab fa-youtube" style="font-size: 1.15rem;"></i> YouTubeda to'liq ekranda tomosha qilish
-          </a>
+          <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
+            <a href="https://www.youtube.com/watch?v=${ytId}" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size: 0.95rem; font-weight: 600; padding: 10px 24px; background: linear-gradient(135deg, #e50914, #b20710); border: none; box-shadow: 0 4px 15px rgba(229,9,20,0.35); border-radius: 8px; display: inline-flex; align-items: center; gap: 8px;">
+              <i class="fab fa-youtube" style="font-size: 1.15rem;"></i> YouTubeda to'liq ekranda tomosha qilish
+            </a>
+            <button type="button" onclick="window.topicViewer && window.topicViewer.toggleVideoPlayer('${ytId}')" class="btn-secondary" style="font-size: 0.88rem; padding: 10px 18px; background: rgba(255,255,255,0.08); color: #cbd5e1; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
+              <i class="fas fa-sync-alt"></i> Pleerni almashtirish / Qayta yuklash
+            </button>
+          </div>
+          <div id="playerModeStatus" style="font-size: 0.8rem; color: #94a3b8; display: none;"></div>
           ${isFileProtocol ? `
-            <div style="font-size: 0.82rem; color: #f59e0b; background: rgba(245, 158, 11, 0.12); border: 1px solid rgba(245, 158, 11, 0.3); padding: 8px 16px; border-radius: 8px; max-width: 600px; text-align: center;">
-              <i class="fas fa-info-circle"></i> Faylni to'g'ridan-to'g'ri kompyuterdan ochganda brauzer xavfsizlik cheklovi sababli yuqoridagi qizil tugma orqali YouTubeda tomosha qilishingiz mumkin.
+            <div style="font-size: 0.84rem; color: #38bdf8; background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.25); padding: 8px 18px; border-radius: 8px; max-width: 650px; text-align: center; line-height: 1.5;">
+              <i class="fas fa-shield-alt" style="color: #10b981; margin-right: 5px;"></i> 
+              YouTube <strong>Error 153</strong> xatosining oldini olish uchun xavfsiz HTTPS proksi orqali yuklanmoqda. Agar internetingiz sekin bo'lsa yoki brauzer bloklasa, qizil tugma orqali bevosita YouTubeda ko'rishingiz mumkin.
             </div>
-          ` : ''}
+          ` : `
+            <div style="font-size: 0.8rem; color: #94a3b8;">
+              <i class="fas fa-info-circle"></i> Agar videoni o'ynatishda brauzer cheklovi bo'lsa, qizil tugmani bosib to'g'ridan-to'g'ri YouTubeda ko'rishingiz mumkin.
+            </div>
+          `}
         </div>
       `;
       return;
@@ -571,6 +587,38 @@ class TopicViewerManager {
       setTimeout(() => {
         if (iframeElem) iframeElem.src = currentSrc;
       }, 50);
+    }
+  }
+
+  toggleVideoPlayer(ytId) {
+    const iframe = document.getElementById('topicVideoIframe');
+    const statusElem = document.getElementById('playerModeStatus');
+    if (!iframe || !ytId) return;
+
+    this.videoSourceMode = ((this.videoSourceMode || 0) + 1) % 3;
+    const safeTitle = (this.currentTopic && this.currentTopic.title ? this.currentTopic.title : 'Video').replace(/"/g, '&quot;');
+
+    const sources = [
+      {
+        url: `https://theamangeldi.github.io/hamshiralik-ishi/player.html?v=${ytId}&title=${encodeURIComponent(safeTitle)}`,
+        name: "Xavfsiz HTTPS Proksi (Error 153 bartaraf etilgan)"
+      },
+      {
+        url: `https://www.youtube.com/embed/${ytId}?rel=0`,
+        name: "YouTube Standart Pleer"
+      },
+      {
+        url: `https://www.youtube-nocookie.com/embed/${ytId}?rel=0`,
+        name: "YouTube Maxfiy Pleer (No-Cookie)"
+      }
+    ];
+
+    const current = sources[this.videoSourceMode];
+    iframe.src = current.url;
+
+    if (statusElem) {
+      statusElem.style.display = 'block';
+      statusElem.innerHTML = `<i class="fas fa-check-circle" style="color: #10b981;"></i> Faol pleer rejimi: <strong>${current.name}</strong>`;
     }
   }
 

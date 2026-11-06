@@ -13,8 +13,15 @@ window.VisualDidacticViewer = {
   customImages: {
     "amaliy-1": "assets/images/didactic/amaliy-1.jpg",
     "amaliy-2": "assets/images/didactic/amaliy-2.jpg",
+    "amaliy-3": "assets/images/didactic/amaliy-3.jpg",
     "amaliy-4": "assets/images/didactic/amaliy-4.jpg",
+    "amaliy-5": "assets/images/didactic/amaliy-5.jpg",
     "amaliy-6": "assets/images/didactic/amaliy-6.jpg",
+    "amaliy-7": "assets/images/didactic/amaliy-7.jpg",
+    "amaliy-8": "assets/images/didactic/amaliy-8.jpg",
+    "amaliy-9": "assets/images/didactic/amaliy-9.jpg",
+    "amaliy-10": "assets/images/didactic/amaliy-10.jpg",
+    "amaliy-11": "assets/images/didactic/amaliy-11.jpg",
     "amaliy-21": "assets/images/didactic/amaliy-21.jpg"
   },
 
@@ -64,6 +71,56 @@ window.VisualDidacticViewer = {
         "Mantu sinamasi bilak sohasining o'rta uchligiga 0.1 ml (2 TE PPD-L) hajmda terining ichiga (intradermal) yuboriladi.",
         "Inyeksiya joyida 7-8 mm li oqish 'limon po'sti' ko'rinishidagi papula hosil bo'lishi to'g'ri texnikaning belgisidir.",
         "Natija 72 soatdan keyin shaffof millimetrli chizg'ich yordamida qizarish (giperemiya) emas, faqat zichlashma (infiltrat) ko'ndalang diametri o'lchanadi."
+      ];
+    }
+    if (text.includes('qon bosim') || text.includes('arterial')) {
+      return [
+        "Bolalarda qon bosimini o'lchashda manjetka kengligi yelka uzunligining 2/3 qismini egallashi shart (yoshga mos bolalar manjetkasi).",
+        "1 yoshdan katta bolalarda sistolik qon bosimini hisoblash formulasi: 90 + 2n (bu yerda n - bolaning to'liq yoshi).",
+        "Diastolik qon bosimi me'yorda sistolik bosimning 1/2 dan 2/3 qismigacha teng bo'ladi (taxminan 60 + n).",
+        "O'lchash bola to'liq tinch holatda, tirsak bo'g'imi yurak sathida joylashtirilgan holda amalga oshiriladi."
+      ];
+    }
+    if (text.includes('patronaj') || text.includes('poliklinika')) {
+      return [
+        "Chaqaloq tug'uruqxonadan chiqqach dastlabki 3 kun ichida uchastka patronaj hamshirasi va shifokori tomonidan birlamchi patronaj o'tkaziladi.",
+        "Patronaj paytida bolaning kindik jarohati, terisi, ko'krak suti bilan emizilishi va umumiy salomatligi to'liq baholanadi.",
+        "Onaga go'dak gigiyenasi, to'g'ri kiyintirish, xona harorati (20-22°C) va xavfli belgilar haqida individual tushuntirish beriladi."
+      ];
+    }
+    if (text.includes('prikorm') || text.includes('qo\'shimcha ovqat') || text.includes('taomnoma')) {
+      return [
+        "Qo'shimcha ovqatlar (prikorm) go'dakka 6 oyligidan boshlab kiritiladi (kunning birinchi yarmida 1 choy qoshiqdan boshlab).",
+        "Birinchi prikorm sifatida bir tarkibli sabzavot pyuresi (qovoqcha, sabzi) yoki glyutensiz bo'tqalar (guruch, grechka) beriladi.",
+        "Har bir yangi mahsulot 1-2 hafta oralig'ida asta-sekin ko'paytiriladi, bolaning axlat va teri holati muntazam kuzatiladi."
+      ];
+    }
+    if (text.includes('fototerapiya') || text.includes('asfiksiya')) {
+      return [
+        "Fototerapiya paytida chaqaloqning ko'zlari maxsus yorug'lik o'tkazmaydigan bog'lagich (ko'zoynak) bilan himoyalanishi shart.",
+        "Tana harorati har 2-3 soatda o'lchanadi, bolaning tana holati (orqa, qorin, yonbosh) har 2 soatda almashtirib turiladi.",
+        "Asfiksiyada dastlabki 30 soniyada: issiqlikni ta'minlash, quritish, nafas yo'llarini shilliqdan tozalash va Ambu qopi bilan nafas berish bajariladi."
+      ];
+    }
+    if (text.includes('yurakni massaj') || text.includes('massaj qilish') || text.includes('sepsis')) {
+      return [
+        "Kindik jarohatiga har kuni 3% li vodorod peroksidi va antiseptik bilan steril sharlar yordamida markazdan chetga ishlov beriladi.",
+        "Chaqaloqlarda yopiq yurak massaji ikki bosh barmoq usuli (Two-Thumb technique) yordamida to'sh suyagining pastki 1/3 qismiga bosiladi.",
+        "Massaj chuqurligi ko'krak qafasi o'lchamining 1/3 qismini (taxminan 4 sm) tashkil etib, daqiqasiga 100-120 marta chastotada bajariladi."
+      ];
+    }
+    if (text.includes('raxit') || text.includes('spazmofiliya') || text.includes('diatez')) {
+      return [
+        "Raxit profilaktikasi uchun to'liq muddatli chaqaloqlarga 1 oyligidan boshlab har kuni 500-1000 XB miqdorida D3 vitamini beriladi.",
+        "Dastlabki belgilar: bolaning bezovtaligi, orqa ensa sohasining ko'p terlashi va sochlarning to'kilishi, mushaklar bo'shashishi.",
+        "D vitamini qabul qilish bilan birga toza havoda sayr qilish va quyosh vannalaridan me'yorida foydalanish shart."
+      ];
+    }
+    if (text.includes('dori tomizish') || text.includes('kompress') || text.includes('laringit')) {
+      return [
+        "Kichik yoshdagi bolalarga quloqqa dori tomizishda quloq suprasi orqaga va pastga (katta yoshda orqaga va yuqoriga) tortiladi.",
+        "Ko'zga dori tomizishda pastki qovoq biroz pastga tortilib, kon'yunktiva xaltasiga 1-2 tomchi tomiziladi (pipetka shox pardaga tegmasligi kerak).",
+        "Quloqqa isituvchi kompress 4 qatlamdan iborat: namlangan teshikli doka, kleyonka/qog'oz, qalin paxta qatlami va mahkamlovchi bint."
       ];
     }
 
