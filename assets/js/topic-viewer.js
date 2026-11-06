@@ -10,6 +10,7 @@ class TopicViewerManager {
     this.currentTopicIndex = 0;
     this.allTopics = [];
     this.currentSlideIndex = 0;
+    window.topicViewer = this;
     
     // Quiz holati
     this.quizState = {
@@ -47,6 +48,7 @@ class TopicViewerManager {
     this.slideContainer = document.getElementById('slideViewerContainer');
     this.quizContainer = document.getElementById('quizRunnerContainer');
     this.videoContainer = document.getElementById('videoPlayerContainer');
+    this.pedtechContainer = document.getElementById('pedtechViewerContainer');
     this.resourcesContainer = document.getElementById('resourcesGridContainer');
   }
 
@@ -132,6 +134,7 @@ class TopicViewerManager {
     this.renderSlidePane();
     this.renderQuizPane();
     this.renderVideoPane();
+    this.renderPedTechPane();
     this.renderResourcesPane();
 
     // Dastlabki tabni faollashtirish (Ma'ruza)
@@ -572,7 +575,25 @@ class TopicViewerManager {
   }
 
   // -------------------------------------------------------------
-  // 5. DIDAKTIK VA PEDAGOGIK RESURSLAR CHIQARISH
+  // 5. PEDAGOGIK TEXNOLOGIYA VA TEXNOLOGIK XARITALAR CHIQARISH
+  // -------------------------------------------------------------
+  renderPedTechPane() {
+    if (!this.pedtechContainer) return;
+    if (window.PedTechBuilder && typeof window.PedTechBuilder.buildHtml === 'function') {
+      this.pedtechContainer.innerHTML = window.PedTechBuilder.buildHtml(this.currentTopic, window.COURSE_CONFIG);
+    } else {
+      this.pedtechContainer.innerHTML = `
+        <div class="pdf-fallback-box">
+          <i class="fas fa-chalkboard-teacher pdf-fallback-icon"></i>
+          <h3>Pedagogik texnologiya moduli tayyorlanmoqda...</h3>
+          <p class="slide-body-text">Iltimos, sahifani yangilang.</p>
+        </div>
+      `;
+    }
+  }
+
+  // -------------------------------------------------------------
+  // 6. DIDAKTIK VA PEDAGOGIK RESURSLAR CHIQARISH
   // -------------------------------------------------------------
   renderResourcesPane() {
     if (!this.resourcesContainer) return;
@@ -582,6 +603,7 @@ class TopicViewerManager {
       {
         title: "Pedagogik texnologiya",
         desc: "Dars ishlanmasi, o'qitish metodlari va zamonaviy interaktiv usullar majmuasi.",
+        isPedTech: true,
         file: t.pedTechPdf,
         icon: "fa-chalkboard-teacher"
       },
@@ -609,8 +631,15 @@ class TopicViewerManager {
             <div class="resource-card-info">
               <h4 class="resource-card-title">${res.title}</h4>
               <p class="resource-card-desc">${res.desc}</p>
-              <div style="display: flex; gap: 8px;">
-                ${res.file ? `
+              <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                ${res.isPedTech ? `
+                  <button type="button" class="btn-primary" onclick="window.topicViewer.switchTab('pedtech')" style="padding: 6px 14px; font-size: 0.85rem; cursor: pointer;">
+                    <i class="fas fa-chalkboard-teacher"></i> Interaktiv ko'rish
+                  </button>
+                  <button type="button" class="btn-secondary" onclick="window.PedTechBuilder.exportWord('${t.id}')" style="padding: 6px 14px; font-size: 0.85rem; cursor: pointer;">
+                    <i class="fas fa-file-word"></i> Word yuklab olish
+                  </button>
+                ` : (res.file ? `
                   <a href="${res.file}" target="_blank" class="btn-secondary" style="padding: 6px 14px; font-size: 0.85rem;">
                     <i class="fas fa-eye"></i> Ko'rish
                   </a>
@@ -619,7 +648,7 @@ class TopicViewerManager {
                   </a>
                 ` : `
                   <span class="meta-chip"><i class="fas fa-info-circle"></i> Fayl kiritilmoqda</span>
-                `}
+                `)}
               </div>
             </div>
           </div>

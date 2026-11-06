@@ -623,6 +623,10 @@
           <i class="fas fa-video"></i>
           <span>Video darslik</span>
         </button>
+        <button class="topic-tab-link" data-tab="pedtech">
+          <i class="fas fa-chalkboard-teacher"></i>
+          <span>Pedagogik texnologiya</span>
+        </button>
         <button class="topic-tab-link" data-tab="resources">
           <i class="fas fa-folder-open"></i>
           <span>Didaktik resurslar</span>
@@ -651,7 +655,12 @@
           <div id="videoPlayerContainer"></div>
         </div>
 
-        <!-- 5. Didaktik resurslar -->
+        <!-- 5. Pedagogik texnologiya (Dars modeli & Texnologik karta) -->
+        <div class="topic-tab-pane" id="tabPane-pedtech">
+          <div id="pedtechViewerContainer"></div>
+        </div>
+
+        <!-- 6. Didaktik resurslar -->
         <div class="topic-tab-pane" id="tabPane-resources">
           <div id="resourcesGridContainer"></div>
         </div>
@@ -680,6 +689,7 @@
   <!-- JavaScript fayllari -->
   <script src="./data/course-data.js"></script>
   <script src="./assets/js/html2pdf.bundle.min.js"></script>
+  <script src="./assets/js/pedtech-builder.js"></script>
   <script src="./assets/js/topic-viewer.js"></script>
   <script src="./assets/js/main.js"></script>
 </body>

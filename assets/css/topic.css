@@ -754,3 +754,313 @@
     display: inline;
   }
 }
+
+/* =====================================================================
+   PEDAGOGIK TEXNOLOGIYA VA TEXNOLOGIK XARITALAR STILLARI
+   ===================================================================== */
+.pedtech-wrapper {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 10px 0 30px;
+}
+
+.pedtech-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  background: var(--bg-card);
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-sm);
+}
+
+.pedtech-nav-pills {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.pedtech-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.pedtech-pill-btn:hover {
+  background: rgba(14, 165, 233, 0.08);
+  color: var(--primary-600);
+}
+
+.pedtech-pill-btn.active {
+  background: var(--primary-600);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+}
+
+.pedtech-action-btns {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pedtech-btn {
+  padding: 8px 16px !important;
+  font-size: 0.88rem !important;
+  border-radius: 8px !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Hujjat qog'oz bloki */
+.pedtech-document {
+  background: #ffffff;
+  color: #1e293b;
+  border-radius: 14px;
+  padding: 36px 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+  line-height: 1.5;
+}
+
+[data-theme="dark"] .pedtech-document {
+  background: #111827;
+  color: #f1f5f9;
+  border-color: #374151;
+}
+
+.pedtech-doc-header {
+  text-align: center;
+  border-bottom: 2px solid #0284c7;
+  padding-bottom: 16px;
+  margin-bottom: 24px;
+}
+
+.pedtech-institution {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #0369a1;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+[data-theme="dark"] .pedtech-institution {
+  color: #38bdf8;
+}
+
+.pedtech-department {
+  font-size: 0.92rem;
+  color: #64748b;
+  font-style: italic;
+  margin-bottom: 12px;
+}
+
+.pedtech-main-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+[data-theme="dark"] .pedtech-main-title {
+  color: #f8fafc;
+}
+
+.pedtech-topic-badge {
+  display: inline-block;
+  background: #e0f2fe;
+  color: #0369a1;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border: 1px solid #bae6fd;
+}
+
+[data-theme="dark"] .pedtech-topic-badge {
+  background: rgba(14, 165, 233, 0.2);
+  color: #38bdf8;
+  border-color: rgba(56, 189, 248, 0.3);
+}
+
+.pedtech-section-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0284c7;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Jadvallar */
+.pedtech-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  font-size: 0.92rem;
+}
+
+.pedtech-table th,
+.pedtech-table td {
+  border: 1px solid #cbd5e1;
+  padding: 10px 12px;
+  vertical-align: top;
+  text-align: left;
+}
+
+[data-theme="dark"] .pedtech-table th,
+[data-theme="dark"] .pedtech-table td {
+  border-color: #374151;
+}
+
+.pedtech-table th {
+  background: #f8fafc;
+  color: #334155;
+  font-weight: 700;
+}
+
+[data-theme="dark"] .pedtech-table th {
+  background: #1f2937;
+  color: #cbd5e1;
+}
+
+.pedtech-ordered-list {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.pedtech-ordered-list li {
+  margin-bottom: 6px;
+}
+
+.pedtech-sublist {
+  margin: 0;
+  padding-left: 18px;
+  list-style-type: disc;
+}
+
+.pedtech-sublist li {
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+}
+
+.pedtech-step-time {
+  background: #f8fafc;
+}
+
+[data-theme="dark"] .pedtech-step-time {
+  background: #1e293b;
+}
+
+.pedtech-time-pill {
+  display: inline-block;
+  margin-top: 6px;
+  background: #dbeafe;
+  color: #1e40af;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+[data-theme="dark"] .pedtech-time-pill {
+  background: rgba(59, 130, 246, 0.25);
+  color: #93c5fd;
+}
+
+.pedtech-signatures {
+  margin-top: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+  border-top: 1px dashed #cbd5e1;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+[data-theme="dark"] .pedtech-signatures {
+  border-color: #374151;
+}
+
+.pedtech-sig-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.92rem;
+}
+
+.pedtech-sig-line {
+  color: #64748b;
+}
+
+/* =====================================================================
+   CHOP ETISH UCHUN MAXSUS STIL (PRINT CSS)
+   ===================================================================== */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .no-print,
+  .site-header,
+  .site-footer,
+  .topic-modal-header,
+  .topic-tabs-nav,
+  .topic-modal-footer,
+  .theme-toggle-btn,
+  .btn-fullscreen {
+    display: none !important;
+  }
+  #topicModal,
+  .topic-modal-overlay,
+  .topic-modal-container,
+  .topic-modal-body,
+  #tabPane-pedtech,
+  #pedtechPrintableArea,
+  #pedtechPrintableArea * {
+    visibility: visible !important;
+  }
+  #pedtechPrintableArea {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 10.5pt;
+  }
+  .pedtech-table th,
+  .pedtech-table td {
+    border: 1px solid #000000 !important;
+    color: #000000 !important;
+    background: transparent !important;
+  }
+  .pedtech-doc-header {
+    border-bottom: 2px solid #000000 !important;
+  }
+  .pedtech-topic-badge {
+    background: transparent !important;
+    border: 1px solid #000000 !important;
+    color: #000000 !important;
+  }
+}
