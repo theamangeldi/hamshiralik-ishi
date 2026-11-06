@@ -1064,3 +1064,404 @@
     color: #000000 !important;
   }
 }
+
+/* =====================================================================
+   VIZUAL DIDAKTIK RESURSLAR VA KO'RGAZMALI QUROLLAR MODALI
+   ===================================================================== */
+.visual-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-normal);
+}
+
+.visual-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.visual-modal-window {
+  background: var(--bg-card);
+  width: 100%;
+  max-width: 1100px;
+  max-height: 90vh;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.45);
+  border: 1px solid var(--border-subtle);
+  animation: modalScaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.visual-modal-header {
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: var(--bg-glass);
+}
+
+.visual-header-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.visual-badge {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #0284c7;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.visual-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.visual-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.visual-close-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.visual-close-btn:hover {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+.visual-modal-body {
+  padding: 24px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* 1. Asosiy Hero illyustratsiya kartasi */
+.visual-hero-card {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+@media (max-width: 860px) {
+  .visual-hero-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+.visual-hero-image-wrap {
+  position: relative;
+  background: #090d16;
+  min-height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.visual-hero-img {
+  width: 100%;
+  height: 100%;
+  max-height: 380px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  cursor: pointer;
+}
+
+.visual-hero-img:hover {
+  transform: scale(1.03);
+}
+
+.visual-hero-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(14, 165, 233, 0.9);
+  color: #ffffff;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  backdrop-filter: blur(4px);
+}
+
+.visual-hero-details {
+  padding: 24px 20px 24px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (max-width: 860px) {
+  .visual-hero-details {
+    padding: 0 20px 20px;
+  }
+}
+
+.visual-hero-heading {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+  line-height: 1.35;
+}
+
+.visual-hero-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.visual-hero-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* 2. Slaydlar va sxemalar galereyasi */
+.visual-schemes-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.visual-section-heading {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary-600);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.visual-schemes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.visual-scheme-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+}
+
+.visual-scheme-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary-500);
+  box-shadow: var(--shadow-md);
+}
+
+.visual-scheme-img-box {
+  position: relative;
+  background: #0b1120;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.visual-scheme-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 10px;
+  transition: transform 0.3s ease;
+}
+
+.visual-scheme-card:hover .visual-scheme-img {
+  transform: scale(1.08);
+}
+
+.visual-scheme-overlay-hint {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.6);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.visual-scheme-card:hover .visual-scheme-overlay-hint {
+  opacity: 1;
+}
+
+.visual-scheme-info {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.visual-scheme-step {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--primary-600);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.visual-scheme-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.visual-scheme-text {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* 3. Klinik eslatmalar bloki */
+.visual-tips-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-left: 4px solid var(--primary-600);
+  border-radius: 12px;
+  padding: 18px 20px;
+}
+
+.visual-tips-heading {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.visual-tips-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.visual-tip-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.visual-tip-icon {
+  color: #10b981;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+/* Lightbox to'liq ekranda ko'rish */
+.visual-lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 20000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.25s ease;
+}
+
+.visual-lightbox-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.visual-lightbox-container {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.visual-lightbox-close {
+  position: absolute;
+  top: -40px;
+  right: -10px;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.visual-lightbox-img {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 10px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
+}
+
+.visual-lightbox-caption {
+  color: #ffffff;
+  margin-top: 12px;
+  font-size: 1rem;
+  text-align: center;
+  max-width: 700px;
+}

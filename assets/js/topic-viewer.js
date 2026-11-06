@@ -610,6 +610,7 @@ class TopicViewerManager {
       {
         title: "Vizual didaktik resurs",
         desc: "Ko'rgazmali qurollar, chizmalar, anatomo-fiziologik sxemalar va fotosuratlar.",
+        isVisual: true,
         file: t.visualPdf,
         icon: "fa-images"
       },
@@ -639,6 +640,15 @@ class TopicViewerManager {
                   <button type="button" class="btn-secondary" onclick="window.PedTechBuilder.exportWord('${t.id}')" style="padding: 6px 14px; font-size: 0.85rem; cursor: pointer;">
                     <i class="fas fa-file-word"></i> Word yuklab olish
                   </button>
+                ` : res.isVisual ? `
+                  <button type="button" class="btn-primary" onclick="window.VisualDidacticViewer.open('${t.id}')" style="padding: 6px 14px; font-size: 0.85rem; cursor: pointer;">
+                    <i class="fas fa-images"></i> Ko'rgazmali resurslarni ochish
+                  </button>
+                  ${window.VisualDidacticViewer.customImages[t.id] ? `
+                    <a href="${window.VisualDidacticViewer.customImages[t.id]}" download="Didaktik_illyustratsiya_${t.id}.jpg" class="btn-secondary" style="padding: 6px 14px; font-size: 0.85rem;">
+                      <i class="fas fa-download"></i> HD Rasm
+                    </a>
+                  ` : ''}
                 ` : (res.file ? `
                   <a href="${res.file}" target="_blank" class="btn-secondary" style="padding: 6px 14px; font-size: 0.85rem;">
                     <i class="fas fa-eye"></i> Ko'rish
