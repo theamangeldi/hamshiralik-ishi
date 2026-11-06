@@ -464,44 +464,13 @@ class TopicViewerManager {
   }
 
   // -------------------------------------------------------------
-  // 4. VIDEO DARSLIK CHIQARISH
+  // 4. VIDEO DARSLIK CHIQARISH (YouTube, HTML & MP4)
   // -------------------------------------------------------------
   renderVideoPane() {
     if (!this.videoContainer) return;
     const videoUrl = this.currentTopic.videoUrl;
 
-    if (videoUrl) {
-      const isHtml = videoUrl.toLowerCase().endsWith('.html') || videoUrl.toLowerCase().endsWith('.htm');
-      if (isHtml) {
-        this.videoContainer.innerHTML = `
-          <div class="video-player-container" style="position: relative; width: 100%; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.25); background: #090d16;">
-            <iframe id="topicVideoIframe" src="${videoUrl}" style="width: 100%; height: 580px; border: none; display: block;" allow="autoplay; fullscreen" allowfullscreen></iframe>
-          </div>
-          <div style="text-align: center; margin-top: 14px; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
-            <a href="${videoUrl}" target="_blank" class="btn-primary" style="font-size: 0.88rem; padding: 8px 18px;">
-              <i class="fas fa-external-link-alt"></i> Alohida to'liq oynada ochish
-            </a>
-          </div>
-        `;
-        return;
-      }
-      this.videoContainer.innerHTML = `
-        <div class="video-player-container" style="display: flex; justify-content: center; align-items: center; background: #070b14; border-radius: 14px; overflow: hidden; padding: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.35);">
-          <video class="topic-video-elem" id="topicVideoPlayer" controls playsinline preload="metadata" style="max-height: 560px; width: auto; max-width: 100%; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.5);">
-            <source src="${videoUrl}" type="video/mp4">
-            Brauzeringiz videoni qo'llab-quvvatlamaydi.
-          </video>
-        </div>
-        <div style="text-align: center; margin-top: 14px; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
-          <a href="${videoUrl}" download class="btn-primary" style="font-size: 0.88rem; padding: 8px 18px;">
-            <i class="fas fa-download"></i> Videoni yuklab olish (MP4)
-          </a>
-          <a href="${videoUrl}" target="_blank" class="btn-secondary" style="font-size: 0.88rem; padding: 8px 18px;">
-            <i class="fas fa-external-link-alt"></i> Alohida oynada ko'rish
-          </a>
-        </div>
-      `;
-    } else {
+    if (!videoUrl) {
       this.videoContainer.innerHTML = `
         <div class="pdf-fallback-box">
           <i class="fas fa-video-slash pdf-fallback-icon"></i>
@@ -509,7 +478,66 @@ class TopicViewerManager {
           <p class="slide-body-text">Ushbu mavzu uchun video fayl tez kunda tizimga joylashtiriladi.</p>
         </div>
       `;
+      return;
     }
+
+    // 1. YouTube videoni aniqlash va qulay 16:9 iframe pleer chiqarish
+    const ytMatch = videoUrl.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([\w-]{11})/i);
+    if (ytMatch && ytMatch[1]) {
+      const ytId = ytMatch[1];
+      const embedUrl = `https://www.youtube.com/embed/${ytId}?rel=0&enablejsapi=1`;
+      this.videoContainer.innerHTML = `
+        <div class="video-player-container" style="position: relative; width: 100%; max-width: 960px; margin: 0 auto; padding-bottom: 56.25%; height: 0; border-radius: 14px; overflow: hidden; box-shadow: 0 12px 35px rgba(0,0,0,0.35); background: #000;">
+          <iframe 
+            id="topicVideoIframe" 
+            src="${embedUrl}" 
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div style="text-align: center; margin-top: 16px; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
+          <a href="https://www.youtube.com/watch?v=${ytId}" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size: 0.9rem; padding: 10px 20px; background: linear-gradient(135deg, #e50914, #b20710); border: none; box-shadow: 0 4px 15px rgba(229,9,20,0.35);">
+            <i class="fab fa-youtube"></i> YouTubeda ochish
+          </a>
+        </div>
+      `;
+      return;
+    }
+
+    // 2. HTML interaktiv o'yin / simulyator
+    const isHtml = videoUrl.toLowerCase().endsWith('.html') || videoUrl.toLowerCase().endsWith('.htm');
+    if (isHtml) {
+      this.videoContainer.innerHTML = `
+        <div class="video-player-container" style="position: relative; width: 100%; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.25); background: #090d16;">
+          <iframe id="topicVideoIframe" src="${videoUrl}" style="width: 100%; height: 580px; border: none; display: block;" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        </div>
+        <div style="text-align: center; margin-top: 14px; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
+          <a href="${videoUrl}" target="_blank" class="btn-primary" style="font-size: 0.88rem; padding: 8px 18px;">
+            <i class="fas fa-external-link-alt"></i> Alohida to'liq oynada ochish
+          </a>
+        </div>
+      `;
+      return;
+    }
+
+    // 3. Mahalliy MP4 video fayl
+    this.videoContainer.innerHTML = `
+      <div class="video-player-container" style="display: flex; justify-content: center; align-items: center; background: #070b14; border-radius: 14px; overflow: hidden; padding: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.35);">
+        <video class="topic-video-elem" id="topicVideoPlayer" controls playsinline preload="metadata" style="max-height: 560px; width: auto; max-width: 100%; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.5);">
+          <source src="${videoUrl}" type="video/mp4">
+          Brauzeringiz videoni qo'llab-quvvatlamaydi.
+        </video>
+      </div>
+      <div style="text-align: center; margin-top: 14px; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
+        <a href="${videoUrl}" download class="btn-primary" style="font-size: 0.88rem; padding: 8px 18px;">
+          <i class="fas fa-download"></i> Videoni yuklab olish (MP4)
+        </a>
+        <a href="${videoUrl}" target="_blank" class="btn-secondary" style="font-size: 0.88rem; padding: 8px 18px;">
+          <i class="fas fa-external-link-alt"></i> Alohida oynada ko'rish
+        </a>
+      </div>
+    `;
   }
 
   stopVideo() {
@@ -518,10 +546,17 @@ class TopicViewerManager {
       videoElem.pause();
     }
     const iframeElem = document.getElementById('topicVideoIframe');
-    if (iframeElem && iframeElem.contentWindow) {
+    if (iframeElem) {
       try {
+        iframeElem.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
         iframeElem.contentWindow.postMessage('stopVideo', '*');
       } catch (e) {}
+      // Reset iframe source to immediately cut off any audio/video
+      const currentSrc = iframeElem.src;
+      iframeElem.src = '';
+      setTimeout(() => {
+        if (iframeElem) iframeElem.src = currentSrc;
+      }, 50);
     }
   }
 
