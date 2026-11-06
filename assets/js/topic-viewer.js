@@ -481,25 +481,36 @@ class TopicViewerManager {
       return;
     }
 
-    // 1. YouTube videoni aniqlash va qulay 16:9 iframe pleer chiqarish
+    // 1. YouTube videoni aniqlash va xatosiz 16:9 pleer chiqarish
     const ytMatch = videoUrl.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([\w-]{11})/i);
     if (ytMatch && ytMatch[1]) {
       const ytId = ytMatch[1];
-      const embedUrl = `https://www.youtube.com/embed/${ytId}?rel=0&enablejsapi=1`;
+      const safeTitle = (this.currentTopic.title || 'Video darslik').replace(/"/g, '&quot;');
+      // youtube-nocookie va maxsus referrerpolicy Error 153 xatosining oldini oladi
+      const embedUrl = `https://www.youtube-nocookie.com/embed/${ytId}?rel=0`;
+      const isFileProtocol = window.location.protocol === 'file:';
+
       this.videoContainer.innerHTML = `
         <div class="video-player-container" style="position: relative; width: 100%; max-width: 960px; margin: 0 auto; padding-bottom: 56.25%; height: 0; border-radius: 14px; overflow: hidden; box-shadow: 0 12px 35px rgba(0,0,0,0.35); background: #000;">
           <iframe 
             id="topicVideoIframe" 
             src="${embedUrl}" 
+            title="${safeTitle}"
+            referrerpolicy="strict-origin-when-cross-origin"
             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
             allowfullscreen>
           </iframe>
         </div>
-        <div style="text-align: center; margin-top: 16px; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
-          <a href="https://www.youtube.com/watch?v=${ytId}" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size: 0.9rem; padding: 10px 20px; background: linear-gradient(135deg, #e50914, #b20710); border: none; box-shadow: 0 4px 15px rgba(229,9,20,0.35);">
-            <i class="fab fa-youtube"></i> YouTubeda ochish
+        <div style="text-align: center; margin-top: 16px; display: flex; flex-direction: column; align-items: center; gap: 10px;">
+          <a href="https://www.youtube.com/watch?v=${ytId}" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size: 0.95rem; font-weight: 600; padding: 10px 24px; background: linear-gradient(135deg, #e50914, #b20710); border: none; box-shadow: 0 4px 15px rgba(229,9,20,0.35); border-radius: 8px; display: inline-flex; align-items: center; gap: 8px;">
+            <i class="fab fa-youtube" style="font-size: 1.15rem;"></i> YouTubeda to'liq ekranda tomosha qilish
           </a>
+          ${isFileProtocol ? `
+            <div style="font-size: 0.82rem; color: #f59e0b; background: rgba(245, 158, 11, 0.12); border: 1px solid rgba(245, 158, 11, 0.3); padding: 8px 16px; border-radius: 8px; max-width: 600px; text-align: center;">
+              <i class="fas fa-info-circle"></i> Faylni to'g'ridan-to'g'ri kompyuterdan ochganda brauzer xavfsizlik cheklovi sababli yuqoridagi qizil tugma orqali YouTubeda tomosha qilishingiz mumkin.
+            </div>
+          ` : ''}
         </div>
       `;
       return;

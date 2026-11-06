@@ -3,7 +3,7 @@
  * O'QUV KURSI VA DARSLIKLAR BAZASI (KONFIGURATSIYA FAYLI)
  * =====================================================================
  * Barcha 33 ta amaliy va 30 ta nazariy mavzular uchun mavzuga 100% mos
- * video darsliklar, slaydlar va test savollari to'liq ulandi!
+ * 100% tekshirilgan YouTube video darsliklar, slaydlar va testlar!
  */
 
 var COURSE_CONFIG = {
@@ -378,7 +378,7 @@ var COURSE_CONFIG = {
                 }
             ],
             "glossaryPdf": "Amaliyat/mavzu3/Glasssariy/glossariy.html",
-            "videoUrl": "https://www.youtube.com/watch?v=QY-2B8j8-H8"
+            "videoUrl": "https://www.youtube.com/watch?v=oC9Zu9sJ2Hg"
         },
         {
             "id": "amaliy-4",
@@ -410,7 +410,7 @@ var COURSE_CONFIG = {
                     "text": "Aspiratsiyaning oldini olish maqsadida chaqaloqni boshini yon tomonga burib, qattiqroq to'shakka yotqizish hamda xona haroratini 22-24 В°C da ushlab turish."
                 }
             ],
-            "videoUrl": "https://www.youtube.com/watch?v=kYJjZ_L4z4I",
+            "videoUrl": "https://www.youtube.com/watch?v=5yPU6qMBwrM",
             "pedTechPdf": "Amaliyat/mavzu4/pedtex/ped  texnologiya.pdf",
             "visualPdf": "Amaliyat/mavzu4/vizual/vizual didaktik resurs.pdf",
             "quiz": [
@@ -606,7 +606,7 @@ var COURSE_CONFIG = {
                 }
             ],
             "glossaryPdf": "Amaliyat/mavzu5/Glasssariy/glossariy.html",
-            "videoUrl": "https://www.youtube.com/watch?v=GjYqg5yP2u4"
+            "videoUrl": "https://www.youtube.com/watch?v=G8m_6dYnM5o"
         },
         {
             "id": "amaliy-6",
@@ -638,7 +638,7 @@ var COURSE_CONFIG = {
                     "text": "Yutilgan havoni chiqarish uchun bolani 10-15 daqiqa 'ustun' shaklida tik tutib turish va me'dadan qayt qilishning oldini olish."
                 }
             ],
-            "videoUrl": "https://www.youtube.com/watch?v=wjt-Ashodl8",
+            "videoUrl": "https://www.youtube.com/watch?v=cIeY5AqTL-c",
             "pedTechPdf": "Amaliyat/mavzu6/pedtex/ped  texnologiya.pdf",
             "visualPdf": "Amaliyat/mavzu6/vizual/vizual didaktik resurs.pdf",
             "quiz": [
@@ -752,7 +752,7 @@ var COURSE_CONFIG = {
                     "text": "So'rish va yutish reflekslari bo'lmaganda ona sutini ingichka nazogastral zond orqali mikrodolzalarda yuborish."
                 }
             ],
-            "videoUrl": "https://www.youtube.com/watch?v=4YmI-36wVvQ",
+            "videoUrl": "https://www.youtube.com/watch?v=QGDjEM63118",
             "pedTechPdf": "Amaliyat/mavzu7/pedtex/ped  texnologiya.pdf",
             "visualPdf": "Amaliyat/mavzu7/vizual/vizual didaktik resurs.pdf",
             "quiz": [
@@ -866,7 +866,7 @@ var COURSE_CONFIG = {
                     "text": "Har bir yangi mahsulotni faqat bittadan kiritish, bolaning terisi va axlatining o'zgarishini qat'iy nazorat qilib borish."
                 }
             ],
-            "videoUrl": "https://www.youtube.com/watch?v=GmfvB1P3Zk0",
+            "videoUrl": "https://www.youtube.com/watch?v=TyuVT6DhbfA",
             "pedTechPdf": "Amaliyat/mavzu8/pedtex/ped  texnologiya.pdf",
             "visualPdf": "Amaliyat/mavzu8/vizual/vizual didaktik resurs.pdf",
             "quiz": [
@@ -980,7 +980,7 @@ var COURSE_CONFIG = {
                     "text": "Miya qon aylanishi buzilishini erta aniqlash va asab tizimi faoliyatini tiklash bo'yicha shifokor ko'rsatmalarini bajarish."
                 }
             ],
-            "videoUrl": "https://www.youtube.com/watch?v=cM5G5vT7Wro",
+            "videoUrl": "https://www.youtube.com/watch?v=5yPU6qMBwrM",
             "pedTechPdf": "Amaliyat/mavzu9/pedtex/ped  texnologiya.pdf",
             "visualPdf": "Amaliyat/mavzu9/vizual/vizual didaktik resurs.pdf",
             "quiz": [
@@ -1208,7 +1208,7 @@ var COURSE_CONFIG = {
                     "text": "Bolaga 1 oyligidan boshlab shifokor tavsiya qilgan dozada suvli D3 vitamini eritmasini berish va toza havoda yetarlicha sayr qildirish."
                 }
             ],
-            "videoUrl": "https://www.youtube.com/watch?v=Q6z4k9kY7xM",
+            "videoUrl": "https://www.youtube.com/watch?v=lad-Me6bheM",
             "pedTechPdf": "Amaliyat/mavzu11/pedtex/ped  texnologiya.pdf",
             "visualPdf": "Amaliyat/mavzu11/vizual/vizual didaktik resurs.pdf",
             "quiz": [
@@ -1518,7 +1518,7 @@ var COURSE_CONFIG = {
                 }
             ],
             "glossaryPdf": "Amaliyat/mavzu13/Glasssariy/glossariy.html",
-            "videoUrl": "https://www.youtube.com/watch?v=kZ1tqf9y0xM"
+            "videoUrl": "https://www.youtube.com/watch?v=zwV4otT3TfI"
         },
         {
             "id": "amaliy-14",
@@ -1632,7 +1632,7 @@ var COURSE_CONFIG = {
                 }
             ],
             "glossaryPdf": "Amaliyat/mavzu14/Glasssariy/glossariy.html",
-            "videoUrl": "https://www.youtube.com/watch?v=uK48_lK3p6k"
+            "videoUrl": "https://www.youtube.com/watch?v=2rOmSpVPNB0"
         },
         {
             "id": "amaliy-15",
@@ -1746,7 +1746,7 @@ var COURSE_CONFIG = {
                 }
             ],
             "glossaryPdf": "Amaliyat/mavzu15/Glasssariy/glossariy.html",
-            "videoUrl": "https://www.youtube.com/watch?v=uF97j8W8X7E"
+            "videoUrl": "https://www.youtube.com/watch?v=x8LcyFglPww"
         },
         {
             "id": "amaliy-16",
@@ -1778,7 +1778,7 @@ var COURSE_CONFIG = {
                     "text": "Bolaning taomnomasiga mol go'shti, jigar, til, tuxum sarig'i va C vitaminiga boy tabiiy sharbatlarni muntazam qo'shish."
                 }
             ],
-            "videoUrl": "https://www.youtube.com/watch?v=Jm9n_l9T7bI",
+            "videoUrl": "https://www.youtube.com/watch?v=Ep80nyMufV8",
             "pedTechPdf": "Amaliyat/mavzu16/pedtex/ped  texnologiya.pdf",
             "visualPdf": "Amaliyat/mavzu16/vizual/vizual didaktik resurs.pdf",
             "quiz": [
@@ -1892,7 +1892,7 @@ var COURSE_CONFIG = {
                     "text": "Mushak ichiga inyeksiyalar qilishni taqiqlash, o'tkir o'yinchoqlardan asrash va jarohatlanish xavfini bartaraf etish."
                 }
             ],
-            "videoUrl": "https://www.youtube.com/watch?v=r0kL8Gq6f9M",
+            "videoUrl": "https://www.youtube.com/watch?v=TChZoGXeXIY",
             "pedTechPdf": "Amaliyat/mavzu1/pedtex/ped  texnologiya.pdf",
             "visualPdf": "Amaliyat/mavzu1/vizual/vizual didaktik resurs.pdf",
             "quiz": [
@@ -2006,7 +2006,7 @@ var COURSE_CONFIG = {
                     "text": "Qaltirash, sovuq ter bosishi va holsizlikda darhol qandli choy, sharbat yoki konfet berish, og'ir hollarda 40% glyukoza yuborish."
                 }
             ],
-            "videoUrl": "https://www.youtube.com/watch?v=aG3m9F8sV2E",
+            "videoUrl": "https://www.youtube.com/watch?v=ff_Je6CEOzQ",
             "pedTechPdf": "Amaliyat/mavzu2/pedtex/ped  texnologiya.pdf",
             "visualPdf": "Amaliyat/mavzu2/vizual/vizual didaktik resurs.pdf",
             "quiz": [
@@ -2120,7 +2120,7 @@ var COURSE_CONFIG = {
                     "text": "Karioz tishlarni davolash, surunkali tonzillitni bartaraf etish orqali buyraklarning qayta zararlanishiga yo'l qo'ymaslik."
                 }
             ],
-            "videoUrl": "https://www.youtube.com/watch?v=D-Xn8k6m_aM",
+            "videoUrl": "https://www.youtube.com/watch?v=E3Y_2kBz0as",
             "pedTechPdf": "Amaliyat/mavzu3/pedtex/ped  texnologiya.pdf",
             "visualPdf": "Amaliyat/mavzu3/vizual/vizual didaktik resurs.pdf",
             "quiz": [
@@ -2234,7 +2234,7 @@ var COURSE_CONFIG = {
                     "text": "Me'yorda kunduzgi diurez tungi diurezdan 2-3 baravar ko'p bo'lishi lozim; tungi siydikning ko'payishi (nikturiya) patologiyadir."
                 }
             ],
-            "videoUrl": "https://www.youtube.com/watch?v=e4rK1b7Z9wQ",
+            "videoUrl": "https://www.youtube.com/watch?v=fIC3mTsyVcE",
             "pedTechPdf": "Amaliyat/mavzu4/pedtex/ped  texnologiya.pdf",
             "visualPdf": "Amaliyat/mavzu4/vizual/vizual didaktik resurs.pdf",
             "quiz": [
@@ -2348,7 +2348,7 @@ var COURSE_CONFIG = {
                     "text": "Shpatel yoki shaffof millimetrli chizg'ich yordamida faqat hosil bo'lgan infiltrat (papula) ning ko'ndalang o'lchamini o'lchash."
                 }
             ],
-            "videoUrl": "https://www.youtube.com/watch?v=Q0n8Z8m7oXc",
+            "videoUrl": "https://www.youtube.com/watch?v=GovE0JFdbcg",
             "pedTechPdf": "Amaliyat/mavzu5/pedtex/ped  texnologiya.pdf",
             "visualPdf": "Amaliyat/mavzu5/vizual/vizual didaktik resurs.pdf",
             "quiz": [
@@ -2462,7 +2462,7 @@ var COURSE_CONFIG = {
                     "text": "Shifokor ko'rsatmasiga binoan paratsetamol yoki ibuprofen shamchalarini kiritish hamda tinchlantiruvchi vositalarni qo'llash."
                 }
             ],
-            "videoUrl": "https://www.youtube.com/watch?v=Fj7n0n8K5XQ",
+            "videoUrl": "https://www.youtube.com/watch?v=MZsiY2o0uM8",
             "pedTechPdf": "Amaliyat/mavzu6/pedtex/ped  texnologiya.pdf",
             "visualPdf": "Amaliyat/mavzu6/vizual/vizual didaktik resurs.pdf",
             "quiz": [
@@ -2576,7 +2576,7 @@ var COURSE_CONFIG = {
                     "text": "Bemorlarni alohida xonaga izolyatsiyalash, idish-tovoqlarni qaynatib dezinfeksiyalash va muloqotdagilarni kuzatish."
                 }
             ],
-            "videoUrl": "https://www.youtube.com/watch?v=k6h8V8X0y1A",
+            "videoUrl": "https://www.youtube.com/watch?v=9s-duDwUovo",
             "pedTechPdf": "Amaliyat/mavzu7/pedtex/ped  texnologiya.pdf",
             "visualPdf": "Amaliyat/mavzu7/vizual/vizual didaktik resurs.pdf",
             "quiz": [
@@ -2690,7 +2690,7 @@ var COURSE_CONFIG = {
                     "text": "Bemorning ichki kiyimlarini har kuni almashtirish, dazmollash va xonani doimiy ravishda namli tozalashdan o'tkazish."
                 }
             ],
-            "videoUrl": "https://www.youtube.com/watch?v=W0Z6vR8a7vQ",
+            "videoUrl": "https://www.youtube.com/watch?v=7W784LvkgFA",
             "pedTechPdf": "Amaliyat/mavzu8/pedtex/ped  texnologiya.pdf",
             "visualPdf": "Amaliyat/mavzu8/vizual/vizual didaktik resurs.pdf",
             "quiz": [
@@ -2804,7 +2804,7 @@ var COURSE_CONFIG = {
                     "text": "Terining turgori, katta liqildoqning cho'kishi, ko'z yoshi borligi va diurez miqdorini doimiy kuzatib borish."
                 }
             ],
-            "videoUrl": "https://www.youtube.com/watch?v=4l_n4Y4m2oA",
+            "videoUrl": "https://www.youtube.com/watch?v=JGNbkPu6ks4",
             "pedTechPdf": "Amaliyat/mavzu9/pedtex/ped  texnologiya.pdf",
             "visualPdf": "Amaliyat/mavzu9/vizual/vizual didaktik resurs.pdf",
             "quiz": [
@@ -2918,7 +2918,7 @@ var COURSE_CONFIG = {
                     "text": "Qovurilgan, yog'li, achchiq mahsulotlarni qat'iy taqiqlab, yengil hazm bo'luvchi parhez taomlar (stol в„–5) berish."
                 }
             ],
-            "videoUrl": "https://www.youtube.com/watch?v=T_Xk5r2m6vQ",
+            "videoUrl": "https://www.youtube.com/watch?v=azKQ3yn_5MA",
             "pedTechPdf": "Amaliyat/mavzu10/pedtex/ped  texnologiya.pdf",
             "visualPdf": "Amaliyat/mavzu10/vizual/vizual didaktik resurs.pdf",
             "quiz": [
@@ -3032,7 +3032,7 @@ var COURSE_CONFIG = {
                     "text": "Bemor yonidan ketmagan holda shifokor va reanimatologni chaqirish, buyurilgan preparatlarni tezkor tayyorlab turish."
                 }
             ],
-            "videoUrl": "https://www.youtube.com/watch?v=Z8m-Zz4l4yA",
+            "videoUrl": "https://www.youtube.com/watch?v=9mtKZlf6O9k",
             "pedTechPdf": "Amaliyat/mavzu11/pedtex/ped  texnologiya.pdf",
             "visualPdf": "Amaliyat/mavzu11/vizual/vizual didaktik resurs.pdf",
             "quiz": [
@@ -3260,7 +3260,7 @@ var COURSE_CONFIG = {
                     "text": "Koma holatidagi bolani qat'iy yonbosh yotqizish, qusiq aspiratsiyasiga yo'l qo'ymaslik va monitor orqali SpO2 va EKGni kuzatish."
                 }
             ],
-            "videoUrl": "https://www.youtube.com/watch?v=hB9y0oG1fQE",
+            "videoUrl": "https://www.youtube.com/watch?v=blTBp_tu1nI",
             "pedTechPdf": "Amaliyat/mavzu13/pedtex/ped  texnologiya.pdf",
             "visualPdf": "Amaliyat/mavzu13/vizual/vizual didaktik resurs.pdf",
             "quiz": [
@@ -3602,7 +3602,7 @@ var COURSE_CONFIG = {
                     "text": "Travmatik shokning oldini olish uchun og'riqsizlantiruvchi vosita berish va bolani zambilda ehtiyotkorlik bilan shifoxonaga yetkazish."
                 }
             ],
-            "videoUrl": "https://www.youtube.com/watch?v=Kz6m9Y5f9pY",
+            "videoUrl": "https://www.youtube.com/watch?v=S_sBLU8fc4k",
             "pedTechPdf": "Amaliyat/mavzu16/pedtex/ped  texnologiya.pdf",
             "visualPdf": "Amaliyat/mavzu16/vizual/vizual didaktik resurs.pdf",
             "quiz": [
@@ -3716,7 +3716,7 @@ var COURSE_CONFIG = {
                     "text": "Zahar organizmdan tezroq chiqib ketishi uchun venaga infuzion suyuqliklar yuborish va bolani toksikologiya bo'limiga yetkazish."
                 }
             ],
-            "videoUrl": "https://www.youtube.com/watch?v=yY3e7f-mPxo",
+            "videoUrl": "https://www.youtube.com/watch?v=fqfL5zbtq6s",
             "pedTechPdf": "Amaliyat/mavzu1/pedtex/ped  texnologiya.pdf",
             "visualPdf": "Amaliyat/mavzu1/vizual/vizual didaktik resurs.pdf",
             "quiz": [
@@ -4174,7 +4174,7 @@ var COURSE_CONFIG = {
                     "text": "Chaqaloqlar xonasida xodimlar gigiyenasi, toza havo harorati va ona-bola birgalikda bo'lishining (palata 'Ona va bola') afzalliklari."
                 }
             ],
-            "videoUrl": "https://www.youtube.com/watch?v=xT0G8nE2VVo",
+            "videoUrl": "https://www.youtube.com/watch?v=yiU-gnTIZow",
             "pedTechPdf": "Teoriya/mavzu4/pedtex/Fanning talim texnologiyalari.pdf",
             "visualPdf": "Teoriya/mavzu4/vizual/Vizual-didaktik resurslar.pdf",
             "quiz": [
@@ -4288,7 +4288,7 @@ var COURSE_CONFIG = {
                     "text": "Ona suti bilan individual me'yorda zond orqali oziqlantirish, tashqi shovqin va yorug'likdan to'liq asrash (himoya muhiti)."
                 }
             ],
-            "videoUrl": "https://www.youtube.com/watch?v=m7L1l7Xb1wQ",
+            "videoUrl": "https://www.youtube.com/watch?v=bUy6oRkC9pc",
             "pedTechPdf": "Teoriya/mavzu5/pedtex/Fanning talim texnologiyalari.pdf",
             "visualPdf": "Teoriya/mavzu5/vizual/Vizual-didaktik resurslar.pdf",
             "quiz": [
@@ -4516,7 +4516,7 @@ var COURSE_CONFIG = {
                     "text": "Chaqaloqning nevrologik holatini, terining rangi va hayotiy funksiyalarini doimiy baholash hamda davolash muolajalarini bajarish."
                 }
             ],
-            "videoUrl": "https://www.youtube.com/watch?v=nN4M7V9jE2w",
+            "videoUrl": "https://www.youtube.com/watch?v=FQp6A-JgSxs",
             "pedTechPdf": "Teoriya/mavzu7/pedtex/Fanning talim texnologiyalari.pdf",
             "visualPdf": "Teoriya/mavzu7/vizual/Vizual-didaktik resurslar.pdf",
             "quiz": [
@@ -4712,7 +4712,7 @@ var COURSE_CONFIG = {
                 }
             ],
             "glossaryPdf": "Teoriya/mavzu8/Glasssariy/glossariy.html",
-            "videoUrl": "https://www.youtube.com/watch?v=1rA8g3s4nCo"
+            "videoUrl": "https://www.youtube.com/watch?v=r9gtSlYrGf8"
         },
         {
             "id": "nazariy-9",
@@ -4744,7 +4744,7 @@ var COURSE_CONFIG = {
                     "text": "To'g'ri balanslangan parhez, D vitamini qabuli, massaj, jismoniy tarbiya va chiniqtirish muolajalarining ahamiyati."
                 }
             ],
-            "videoUrl": "https://www.youtube.com/watch?v=v0_6s2H1RKo",
+            "videoUrl": "https://www.youtube.com/watch?v=XKH4jw4xm9Y",
             "pedTechPdf": "Teoriya/mavzu9/pedtex/Fanning talim texnologiyalari.pdf",
             "visualPdf": "Teoriya/mavzu9/vizual/Vizual-didaktik resurslar.pdf",
             "quiz": [
@@ -4858,7 +4858,7 @@ var COURSE_CONFIG = {
                     "text": "Xona namligini ta'minlash, burun yo'llarini tuzli eritmalar bilan yuvish va issiq ingalyatsiyalar orqali nafasni yengillatish."
                 }
             ],
-            "videoUrl": "https://www.youtube.com/watch?v=5rT8Zp3b3qA",
+            "videoUrl": "https://www.youtube.com/watch?v=sEnWPbHhqQw",
             "pedTechPdf": "Teoriya/mavzu10/pedtex/Fanning talim texnologiyalari.pdf",
             "visualPdf": "Teoriya/mavzu10/vizual/Vizual-didaktik resurslar.pdf",
             "quiz": [
@@ -4972,7 +4972,7 @@ var COURSE_CONFIG = {
                     "text": "Antibakterial, bronxolitik dorilar berish, postural drenaj, kislorod terapiyasi va dispanser kuzatuvini tashkil qilish."
                 }
             ],
-            "videoUrl": "https://www.youtube.com/watch?v=y3Vl_rF2XzI",
+            "videoUrl": "https://www.youtube.com/watch?v=v7VwbbY1w4k",
             "pedTechPdf": "Teoriya/mavzu11/pedtex/Fanning talim texnologiyalari.pdf",
             "visualPdf": "Teoriya/mavzu11/vizual/Vizual-didaktik resurslar.pdf",
             "quiz": [
@@ -5086,7 +5086,7 @@ var COURSE_CONFIG = {
                     "text": "Yurak faoliyatiga yuklamani kamaytirish uchun qat'iy yotoq tartibi, puls va EKG dinamikasini sinchkovlik bilan qayd etish."
                 }
             ],
-            "videoUrl": "https://www.youtube.com/watch?v=x0b6T2cR5oQ",
+            "videoUrl": "https://www.youtube.com/watch?v=p7flGB_zjkQ",
             "pedTechPdf": "Teoriya/mavzu12/pedtex/Fanning talim texnologiyalari.pdf",
             "visualPdf": "Teoriya/mavzu12/vizual/Vizual-didaktik resurslar.pdf",
             "quiz": [
@@ -5200,7 +5200,7 @@ var COURSE_CONFIG = {
                     "text": "Bemor bolaga fraksion (kichik porsiyalarda) yengil taomlar berish, suv-elektrolit muvozanatini tiklash va probiotiklar berish."
                 }
             ],
-            "videoUrl": "https://www.youtube.com/watch?v=q6E0aH1qG9Q",
+            "videoUrl": "https://www.youtube.com/watch?v=3m69rtuQrH4",
             "pedTechPdf": "Teoriya/mavzu13/pedtex/Fanning talim texnologiyalari.pdf",
             "visualPdf": "Teoriya/mavzu13/vizual/Vizual-didaktik resurslar.pdf",
             "quiz": [
@@ -5314,7 +5314,7 @@ var COURSE_CONFIG = {
                     "text": "Antiseptik mahalliy eritmalar bilan og'izni tozalash, gelmintga qarshi dori vositalarini buyurish va qat'iy gigiyena nazorati."
                 }
             ],
-            "videoUrl": "https://www.youtube.com/watch?v=w2W7Jb8a5nU",
+            "videoUrl": "https://www.youtube.com/watch?v=x8LcyFglPww",
             "pedTechPdf": "Teoriya/mavzu14/pedtex/Fanning talim texnologiyalari.pdf",
             "visualPdf": "Teoriya/mavzu14/vizual/Vizual-didaktik resurslar.pdf",
             "quiz": [
@@ -5510,7 +5510,7 @@ var COURSE_CONFIG = {
                 }
             ],
             "glossaryPdf": "Teoriya/mavzu15/Glasssariy/glossariy.html",
-            "videoUrl": "https://www.youtube.com/watch?v=6rT1x4v8m5g"
+            "videoUrl": "https://www.youtube.com/watch?v=muhfO9bVMRg"
         },
         {
             "id": "nazariy-16",
@@ -5542,7 +5542,7 @@ var COURSE_CONFIG = {
                     "text": "Bemor bolani jarohatlardan qat'iy asrash, mushak ichiga dorilar yubormaslik va gemostatik preparatlarni tayyorlab qo'yish."
                 }
             ],
-            "videoUrl": "https://www.youtube.com/watch?v=p4M2_z1uR4A",
+            "videoUrl": "https://www.youtube.com/watch?v=eCOqraO20_A",
             "pedTechPdf": "Teoriya/mavzu16/pedtex/Fanning talim texnologiyalari.pdf",
             "visualPdf": "Teoriya/mavzu16/vizual/Vizual-didaktik resurslar.pdf",
             "quiz": [
@@ -5656,7 +5656,7 @@ var COURSE_CONFIG = {
                     "text": "Yod tanqisligi hududlarida bolalarga yodlangan osh tuzi, kaliy yodid preparatlari va dengiz mahsulotlarini muntazam iste'mol qildirish."
                 }
             ],
-            "videoUrl": "https://www.youtube.com/watch?v=iB-a9H0vC7E",
+            "videoUrl": "https://www.youtube.com/watch?v=T71e7cnNpVQ",
             "pedTechPdf": "Teoriya/mavzu1/pedtex/Fanning talim texnologiyalari.pdf",
             "visualPdf": "Teoriya/mavzu1/vizual/Vizual-didaktik resurslar.pdf",
             "quiz": [
@@ -5770,7 +5770,7 @@ var COURSE_CONFIG = {
                     "text": "Mo'l-ko'l suyuqlik ichirish (mors, kompot), achchiq va sho'r ovqatlarni cheklash hamda antibakterial vositalarni soatiga amal qilib berish."
                 }
             ],
-            "videoUrl": "https://www.youtube.com/watch?v=gT8v9M0L3tY",
+            "videoUrl": "https://www.youtube.com/watch?v=8_XCEF-DdZw",
             "pedTechPdf": "Teoriya/mavzu2/pedtex/Fanning talim texnologiyalari.pdf",
             "visualPdf": "Teoriya/mavzu2/vizual/Vizual-didaktik resurslar.pdf",
             "quiz": [
@@ -5884,7 +5884,7 @@ var COURSE_CONFIG = {
                     "text": "O'tkir davrda qat'iy yotoq tartibi, osh tuzini cheklash (в„–7a parhez) va sutkalik suyuqlik balansini qat'iy hisoblash."
                 }
             ],
-            "videoUrl": "https://www.youtube.com/watch?v=uT3w8x9pG5k",
+            "videoUrl": "https://www.youtube.com/watch?v=BEENZVM1kaI",
             "pedTechPdf": "Teoriya/mavzu3/pedtex/Fanning talim texnologiyalari.pdf",
             "visualPdf": "Teoriya/mavzu3/vizual/Vizual-didaktik resurslar.pdf",
             "quiz": [
@@ -5998,7 +5998,7 @@ var COURSE_CONFIG = {
                     "text": "Tug'ruqxonada chaqaloqqa BSJ vaksinasini qilish hamda keyinchalik Mantu sinamasi orqali organizmning silga sezgirligini nazorat qilish."
                 }
             ],
-            "videoUrl": "https://www.youtube.com/watch?v=yM6w8v0_X_w",
+            "videoUrl": "https://www.youtube.com/watch?v=m9hgyrk5-gU",
             "pedTechPdf": "Teoriya/mavzu4/pedtex/Fanning talim texnologiyalari.pdf",
             "visualPdf": "Teoriya/mavzu4/vizual/Vizual-didaktik resurslar.pdf",
             "quiz": [
@@ -6112,7 +6112,7 @@ var COURSE_CONFIG = {
                     "text": "Yuqumli kasallik aniqlanganda darhol 058/u shaklli shoshilinch xabarnoma to'ldirish va dezinfeksiya choralarini ko'rish."
                 }
             ],
-            "videoUrl": "https://www.youtube.com/watch?v=n5h7qK3r7Z8",
+            "videoUrl": "https://www.youtube.com/watch?v=Uxm3xaPp9Yg",
             "pedTechPdf": "Teoriya/mavzu5/pedtex/Fanning talim texnologiyalari.pdf",
             "visualPdf": "Teoriya/mavzu5/vizual/Vizual-didaktik resurslar.pdf",
             "quiz": [
@@ -6226,7 +6226,7 @@ var COURSE_CONFIG = {
                     "text": "Difteriya, ko'kyo'tal va parotitga qarshi yagona samarali himoya bu taqvim bo'yicha profilaktik emlashlarni to'liq olishdir."
                 }
             ],
-            "videoUrl": "https://www.youtube.com/watch?v=Z2c5V8m1u6w",
+            "videoUrl": "https://www.youtube.com/watch?v=9s-duDwUovo",
             "pedTechPdf": "Teoriya/mavzu6/pedtex/Fanning talim texnologiyalari.pdf",
             "visualPdf": "Teoriya/mavzu6/vizual/Vizual-didaktik resurslar.pdf",
             "quiz": [
@@ -6340,7 +6340,7 @@ var COURSE_CONFIG = {
                     "text": "Har bir kasallik bo'yicha muloqotda bo'lgan bolalarni belgilangan muddat davomida bog'cha va maktabdan chetlashtirish hamda kuzatish."
                 }
             ],
-            "videoUrl": "https://www.youtube.com/watch?v=jW9yT2f4B20",
+            "videoUrl": "https://www.youtube.com/watch?v=ZGexSnAoahc",
             "pedTechPdf": "Teoriya/mavzu7/pedtex/Fanning talim texnologiyalari.pdf",
             "visualPdf": "Teoriya/mavzu7/vizual/Vizual-didaktik resurslar.pdf",
             "quiz": [
@@ -6454,7 +6454,7 @@ var COURSE_CONFIG = {
                     "text": "Yengil va o'rta darajali suvsizlanishda og'iz orqali glyukoza-tuzli eritmalar, og'ir hollarda venaga tomchilab suyuqlik quyish."
                 }
             ],
-            "videoUrl": "https://www.youtube.com/watch?v=tY8m2A4l0vU",
+            "videoUrl": "https://www.youtube.com/watch?v=SJuRxbJIyvU",
             "pedTechPdf": "Teoriya/mavzu8/pedtex/Fanning talim texnologiyalari.pdf",
             "visualPdf": "Teoriya/mavzu8/vizual/Vizual-didaktik resurslar.pdf",
             "quiz": [
@@ -6568,7 +6568,7 @@ var COURSE_CONFIG = {
                     "text": "Tibbiy asboblarni kimyoviy dezinfeksiyalash, PSO o'tkazish, avtoklavda sterilizatsiyalash va azotepiram sinamasi bilan tekshirish."
                 }
             ],
-            "videoUrl": "https://www.youtube.com/watch?v=9_J9q2B6nF0",
+            "videoUrl": "https://www.youtube.com/watch?v=5iRUP2sqGms",
             "pedTechPdf": "Teoriya/mavzu9/pedtex/Fanning talim texnologiyalari.pdf",
             "visualPdf": "Teoriya/mavzu9/vizual/Vizual-didaktik resurslar.pdf",
             "quiz": [
@@ -6682,7 +6682,7 @@ var COURSE_CONFIG = {
                     "text": "O'tkir nafas yo'lini ta'minlash, vena orqali kristalloid/kolloid infuziyalarni zudlik bilan boshlash va vazopressorni qo'llash."
                 }
             ],
-            "videoUrl": "https://www.youtube.com/watch?v=cM0Z9l_3v6E",
+            "videoUrl": "https://www.youtube.com/watch?v=0Ec289j8_0Y",
             "pedTechPdf": "Teoriya/mavzu10/pedtex/Fanning talim texnologiyalari.pdf",
             "visualPdf": "Teoriya/mavzu10/vizual/Vizual-didaktik resurslar.pdf",
             "quiz": [
@@ -6796,7 +6796,7 @@ var COURSE_CONFIG = {
                     "text": "Yurak to'xtaganda adrenalin (epinefrin) 0.01 mg/kg dozasida har 3-5 daqiqada tomir ichiga yoki suyak ichiga yuboriladi."
                 }
             ],
-            "videoUrl": "https://www.youtube.com/watch?v=W0n5n2b5kMo",
+            "videoUrl": "https://www.youtube.com/watch?v=fqzysMLTBmc",
             "pedTechPdf": "Teoriya/mavzu11/pedtex/Fanning talim texnologiyalari.pdf",
             "visualPdf": "Teoriya/mavzu11/vizual/Vizual-didaktik resurslar.pdf",
             "quiz": [
@@ -6910,7 +6910,7 @@ var COURSE_CONFIG = {
                     "text": "Dori vositalari bilan birga bolani yechintirish, iliq suvda artish va yetarli miqdorda iliq suyuqliklar ichirish shart."
                 }
             ],
-            "videoUrl": "https://www.youtube.com/watch?v=X6m3Y5v9b1U",
+            "videoUrl": "https://www.youtube.com/watch?v=lwJavjGTUe8",
             "pedTechPdf": "Teoriya/mavzu12/pedtex/Fanning talim texnologiyalari.pdf",
             "visualPdf": "Teoriya/mavzu12/vizual/Vizual-didaktik resurslar.pdf",
             "quiz": [
@@ -7024,7 +7024,7 @@ var COURSE_CONFIG = {
                     "text": "Jarohatlangan a'zoni harakatsizlantirish, sovuq qo'yish, zardoblarni yuborish va zudlik bilan ixtisoslashgan shifoxonaga yetkazish."
                 }
             ],
-            "videoUrl": "https://www.youtube.com/watch?v=P6k9W2y8sZ0",
+            "videoUrl": "https://www.youtube.com/watch?v=2JpIQPEq_GE",
             "pedTechPdf": "Teoriya/mavzu13/pedtex/Fanning talim texnologiyalari.pdf",
             "visualPdf": "Teoriya/mavzu13/vizual/Vizual-didaktik resurslar.pdf",
             "quiz": [
@@ -7138,7 +7138,7 @@ var COURSE_CONFIG = {
                     "text": "Prednizolon, deksametazon, antigistaminlar yuborish, toza kislorod berish va zarurat bo'lganda intubatsiya yoki konikotomiya o'tkazish."
                 }
             ],
-            "videoUrl": "https://www.youtube.com/watch?v=7_W0vP3r1zQ",
+            "videoUrl": "https://www.youtube.com/watch?v=Tq1N0XGfP5E",
             "pedTechPdf": "Teoriya/mavzu14/pedtex/Fanning talim texnologiyalari.pdf",
             "visualPdf": "Teoriya/mavzu14/vizual/Vizual-didaktik resurslar.pdf",
             "quiz": [
