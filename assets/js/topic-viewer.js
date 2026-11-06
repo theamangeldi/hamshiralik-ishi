@@ -641,14 +641,9 @@ class TopicViewerManager {
                     <i class="fas fa-file-word"></i> Word yuklab olish
                   </button>
                 ` : res.isVisual ? `
-                  <button type="button" class="btn-primary" onclick="window.VisualDidacticViewer.open('${t.id}')" style="padding: 6px 14px; font-size: 0.85rem; cursor: pointer;">
-                    <i class="fas fa-images"></i> Ko'rgazmali resurslarni ochish
+                  <button type="button" class="btn-primary" onclick="window.VisualDidacticViewer.zoomImage(window.VisualDidacticViewer.getImageForTopic('${t.id}'), '${t.title.replace(/'/g, "\\'")}')" style="padding: 7px 20px; font-size: 0.88rem; cursor: pointer; display: inline-flex; align-items: center; gap: 8px;">
+                    <i class="fas fa-image"></i> HD Rasm
                   </button>
-                  ${window.VisualDidacticViewer.customImages[t.id] ? `
-                    <a href="${window.VisualDidacticViewer.customImages[t.id]}" download="Didaktik_illyustratsiya_${t.id}.jpg" class="btn-secondary" style="padding: 6px 14px; font-size: 0.85rem;">
-                      <i class="fas fa-download"></i> HD Rasm
-                    </a>
-                  ` : ''}
                 ` : (res.file ? `
                   <a href="${res.file}" target="_blank" class="btn-secondary" style="padding: 6px 14px; font-size: 0.85rem;">
                     <i class="fas fa-eye"></i> Ko'rish

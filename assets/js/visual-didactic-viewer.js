@@ -18,6 +18,14 @@ window.VisualDidacticViewer = {
     "amaliy-21": "assets/images/didactic/amaliy-21.jpg"
   },
 
+  // Mavzu uchun mos rasm yo'lini qaytarish
+  getImageForTopic: function(topicId) {
+    if (this.customImages && this.customImages[topicId]) {
+      return this.customImages[topicId];
+    }
+    return `assets/images/slides/${topicId}-slayd-1.svg`;
+  },
+
   // Mavzuga oid maxsus didaktik ko'rsatmalar va klinik me'yorlar
   getClinicalTips: function(topic) {
     const text = ((topic.title || '') + ' ' + (topic.shortDesc || '')).toLowerCase();
@@ -219,7 +227,15 @@ window.VisualDidacticViewer = {
           <i class="fas fa-times"></i>
         </button>
         <img src="${src}" alt="${title || 'Rasm'}" class="visual-lightbox-img">
-        ${title ? `<div class="visual-lightbox-caption">${title}</div>` : ''}
+        <div style="display: flex; gap: 12px; margin-top: 14px; justify-content: center; align-items: center; flex-wrap: wrap;">
+          ${title ? `<div class="visual-lightbox-caption" style="margin: 0; font-weight: 600;">${title}</div>` : ''}
+          <a href="${src}" download class="btn-primary" style="font-size: 0.85rem; padding: 6px 16px; border-radius: 6px; text-decoration: none;">
+            <i class="fas fa-download"></i> Yuklab olish
+          </a>
+          <a href="${src}" target="_blank" class="btn-secondary" style="font-size: 0.85rem; padding: 6px 16px; border-radius: 6px; text-decoration: none;">
+            <i class="fas fa-external-link-alt"></i> Alohida oynada ochish
+          </a>
+        </div>
       </div>
     `;
 
@@ -231,3 +247,4 @@ window.VisualDidacticViewer = {
     window.print();
   }
 };
+
