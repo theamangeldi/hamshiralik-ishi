@@ -238,6 +238,12 @@ class TopicViewerManager {
     const iframeSrc = isHtml ? lecturePath : `${lecturePath}#toolbar=1`;
     const iconClass = isHtml ? 'fas fa-book-reader' : 'fas fa-file-pdf';
 
+    const isAmaliy = this.currentTopic.category === 'amaliy';
+    const num = this.currentTopic.number || 1;
+    const wordPath = isAmaliy 
+      ? `Amaliyat/mavzu${num}/maruza/maruza.docx` 
+      : `Teoriya/mavzu${num}/maruza/maruza.docx`;
+
     this.pdfContainer.innerHTML = `
       <div class="pdf-viewer-wrapper">
         <div class="pdf-toolbar">
@@ -245,11 +251,14 @@ class TopicViewerManager {
             <i class="${iconClass}"></i>
             <span>${this.currentTopic.title} — Ma'ruza matni</span>
           </div>
-          <div class="pdf-toolbar-actions">
+          <div class="pdf-toolbar-actions" style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+            <a href="${wordPath}" download class="btn-success" style="padding: 6px 14px; font-size: 0.85rem; background: #16a34a; color: #fff; border-radius: 6px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; font-weight: 600; box-shadow: 0 2px 8px rgba(22, 163, 74, 0.3);">
+              <i class="fas fa-file-word"></i> Word (.docx) yuklab olish
+            </a>
             <a href="${lecturePath}" target="_blank" class="btn-secondary" style="padding: 6px 14px; font-size: 0.85rem;">
               <i class="fas fa-external-link-alt"></i> Alohida oynada ochish
             </a>
-            <button type="button" onclick="var f=document.getElementById('lectureIframe'); if(f && f.contentWindow){f.contentWindow.print();}else{window.open('${lecturePath}','_blank');}" class="btn-primary" style="padding: 6px 14px; font-size: 0.85rem; margin-left: 8px;">
+            <button type="button" onclick="var f=document.getElementById('lectureIframe'); if(f && f.contentWindow){f.contentWindow.print();}else{window.open('${lecturePath}','_blank');}" class="btn-primary" style="padding: 6px 14px; font-size: 0.85rem;">
               <i class="fas fa-print"></i> Chop etish
             </button>
           </div>
