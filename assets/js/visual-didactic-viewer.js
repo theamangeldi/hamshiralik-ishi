@@ -22,6 +22,7 @@ window.VisualDidacticViewer = {
     "amaliy-9": "assets/images/didactic/amaliy-9.jpg",
     "amaliy-10": "assets/images/didactic/amaliy-10.jpg",
     "amaliy-11": "assets/images/didactic/amaliy-11.jpg",
+    "amaliy-12": "assets/images/didactic/amaliy-12.jpg",
     "amaliy-21": "assets/images/didactic/amaliy-21.jpg"
   },
 
@@ -121,6 +122,14 @@ window.VisualDidacticViewer = {
         "Kichik yoshdagi bolalarga quloqqa dori tomizishda quloq suprasi orqaga va pastga (katta yoshda orqaga va yuqoriga) tortiladi.",
         "Ko'zga dori tomizishda pastki qovoq biroz pastga tortilib, kon'yunktiva xaltasiga 1-2 tomchi tomiziladi (pipetka shox pardaga tegmasligi kerak).",
         "Quloqqa isituvchi kompress 4 qatlamdan iborat: namlangan teshikli doka, kleyonka/qog'oz, qalin paxta qatlami va mahkamlovchi bint."
+      ];
+    }
+    if (text.includes('nebulayzer') || text.includes('ingalyats') || text.includes('astma') || text.includes('xantal') || text.includes('krup') || text.includes('pnevmoniya')) {
+      return [
+        "Nebulayzer muolajasi paytida bola qulay o'tirgan holatda bo'lishi va ingalyatsiya niqobi yuziga zich o'rnashishi shart.",
+        "Ingalyatsiya davomiyligi o'rtacha 5-10 daqiqa davom etadi, dori qoldig'i 0.5-1.0 ml dan oshmasligi kuzatib boriladi.",
+        "Gormonal preparatlar (masalan, budesonid/pulmikort) ingalyatsiyasidan so'ng og'iz bo'shlig'i zamburug'li zararlanishining (kandidoz) oldini olish uchun og'izni toza iliq suv bilan chayish shart.",
+        "Soxta krup xurujida tezkor yordam: xonaga toza namlangan havo kiritish, issiq oyoq vannasi, nebulayzerda bronxolitik yuborish va zudlik bilan shifokorga xabar berish."
       ];
     }
 
