@@ -30,7 +30,10 @@ window.VisualDidacticViewer = {
     "amaliy-17": "assets/images/didactic/amaliy-17.jpg",
     "amaliy-18": "assets/images/didactic/amaliy-18.jpg",
     "amaliy-19": "assets/images/didactic/amaliy-19.jpg",
-    "amaliy-21": "assets/images/didactic/amaliy-21.jpg"
+    "amaliy-21": "assets/images/didactic/amaliy-21.jpg",
+    "amaliy-22": "assets/images/didactic/amaliy-22.jpg",
+    "amaliy-23": "assets/images/didactic/amaliy-23.jpg",
+    "amaliy-24": "assets/images/didactic/amaliy-24.jpg"
   },
 
   // Mavzu uchun mos rasm yo'lini qaytarish
@@ -186,6 +189,38 @@ window.VisualDidacticViewer = {
         "Buyrak xastaliklarida shishlar ertalab asosan yuz va ko'z qovoqlarida (oqish, yumshoq) paydo bo'ladi.",
         "Yashirin shishlarni aniqlash uchun har kuni bir vaqtda och qoringa tana vazni va sutkalik diurez (suyuqlik balansi) o'lchanadi.",
         "Boldir suyagi old yuzasiga barmoq bilan 5 soniya bosilganda chuqurcha qolishi shishning obyektiv belgisidir."
+      ];
+    }
+    if (text.includes('vaksin') || text.includes('emlash') || text.includes('profilaktik emlash')) {
+      return [
+        "Emlashdan oldin bolaning umumiy ahvoli, tana harorati o'lchanadi va pediatr ko'rigidan o'tkazilishi shart.",
+        "Vaksinalar 'sovuqlik zanjiri' (+2°C dan +8°C gacha) qoidalariga qat'iy rioya qilingan holda saqlanadi va tashiladi.",
+        "Mushak ichiga inyeksiyalar kichik yoshdagi bolalarga sonning oldingi-yon sohasiga, katta bolalarda esa yelkaning deltasimon mushagiga kiritiladi.",
+        "Emlashdan so'ng darhol anafilaktik yoki allergik reaksiyalarni kuzatish uchun bola kamida 30 daqiqa tibbiy muassasada nazoratda bo'lishi shart."
+      ];
+    }
+    if (text.includes('o\'rvi') || text.includes('gripp') || text.includes('burun-halqumdan') || text.includes('surtma olish') || text.includes('talvasa') || text.includes('sudorgi')) {
+      return [
+        "Burun-halqumdan surtma (PSR/ekspress-test) olishda bolaning boshi orqaga biroz engashtiriladi va steril tampon burun tubi bo'ylab kiritiladi.",
+        "Tomoqdan surtma olishda tampon til, milk va tishlarga tegmasdan faqat murtak bezlari va orqa halqum devoriga tegishi shart.",
+        "Febril talvasada (sudorgi) bolani qattiq, tekis yuzaga yonbosh holatda yotqizish, nafas yo'llarini ochish va kiyimlarni bo'shatish zarur.",
+        "Yuqori haroratda (38.5°C dan yuqori) jismoniy sovutish usullari (iliq suv bilan artish) va shifokor tayinlagan antipiretiklar qo'llaniladi."
+      ];
+    }
+    if (text.includes('parotit') || text.includes('tepki') || text.includes('borde-jangu') || text.includes('difteriya') || text.includes('ko\'kyo\'tal')) {
+      return [
+        "Epidemik parotitda quloq oldi sohasiga quruq issiq yoki isituvchi moyli kompresslar og'riqni kamaytirish uchun qo'yiladi.",
+        "Bemor bolaga chaynamaydigan, suyuq yoki bo'tqasimon, kislotali bo'lmagan parhez (issiqligi mo'tadil) tavsiya etiladi.",
+        "Difteriyaga shubha bo'lganda burun va halqumdan BL (Borde-Jangu/Loeffler) tayoqchasiga steril quruq tamponlar bilan shoshilinch surtma olinadi.",
+        "Orxit va pankreatit kabi asoratlarni oldini olish uchun kamida 9 kun qat'iy yotoq rejimiga rioya qilinishi shart."
+      ];
+    }
+    if (text.includes('qizamiq') || text.includes('suvchechak') || text.includes('qizilcha') || text.includes('skarlatina') || text.includes('ekzantem') || text.includes('toshma')) {
+      return [
+        "Suvchechak toshmalariga (pufakchalariga) 1% li brilliant yashili (zelyonka) yoki fukortsin eritmasi bilan nuqtali ishlov beriladi.",
+        "Qichishishni kamaytirish va ikkilamchi bakterial infeksiya tushmasligi uchun tirnoqlarni qisqa olish va sedativ losonlar tavsiya etiladi.",
+        "Qizamiqda fotofobiya (yorug'likdan qo'rqish) bo'lgani sababli xona pardalari yopiladi va ko'zlar iliq choy yoki furatsilin eritmasida yuviladi.",
+        "Skarlatinada til o'ziga xos 'malina tili' ko'rinishida bo'lib, tomoqni antiseptik eritmalar (romashka, furatsilin) bilan chayish buyuriladi."
       ];
     }
 
