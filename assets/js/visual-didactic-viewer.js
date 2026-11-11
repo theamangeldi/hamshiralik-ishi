@@ -33,7 +33,17 @@ window.VisualDidacticViewer = {
     "amaliy-21": "assets/images/didactic/amaliy-21.jpg",
     "amaliy-22": "assets/images/didactic/amaliy-22.jpg",
     "amaliy-23": "assets/images/didactic/amaliy-23.jpg",
-    "amaliy-24": "assets/images/didactic/amaliy-24.jpg"
+    "amaliy-24": "assets/images/didactic/amaliy-24.jpg",
+    "nazariy-1": "assets/images/didactic/nazariy-1.jpg",
+    "nazariy-2": "assets/images/didactic/nazariy-2.jpg",
+    "nazariy-3": "assets/images/didactic/nazariy-3.jpg",
+    "nazariy-4": "assets/images/didactic/nazariy-4.jpg",
+    "nazariy-5": "assets/images/didactic/nazariy-5.jpg",
+    "nazariy-6": "assets/images/didactic/nazariy-6.jpg",
+    "nazariy-7": "assets/images/didactic/nazariy-7.jpg",
+    "nazariy-8": "assets/images/didactic/nazariy-8.jpg",
+    "nazariy-9": "assets/images/didactic/nazariy-9.jpg",
+    "nazariy-10": "assets/images/didactic/nazariy-10.jpg"
   },
 
   // Mavzu uchun mos rasm yo'lini qaytarish
@@ -54,6 +64,28 @@ window.VisualDidacticViewer = {
         "Chaqaloq tug'ilganda bosh aylanasi (34-36 sm) ko'krak qafasi aylanasidan (32-34 sm) 1-2 sm katta bo'ladi. Ular 4 oylikda tenglashadi.",
         "Go'dak hayotining 1-choragida har oy o'rtacha 800 grammdan tana vazni orttiradi.",
         "Antropometriya o'lchovlari har doim bir xil vaqtda (ertalab och qoringa) o'tkazilishi tavsiya etiladi."
+      ];
+    }
+    if (text.includes('chala tug\'il') || text.includes('kuvez') || text.includes('inkubator')) {
+      return [
+        "Chala tug'ilgan chaqaloqlar tana haroratini mustaqil ushlab tura olmasligi tufayli maxsus kuvez (inkubator) da 36.5-37.0°C haroratda parvarishlanadi.",
+        "Kuvez ichidagi namlik dastlabki kunlarda 70-80% darajasida saqlanadi, bu teri orqali suyuqlik va issiqlik yo'qotilishining oldini oladi.",
+        "Tashqi yorug'lik va shovqin ta'sirini kamaytirish uchun inkubator usti maxsus himoya yopinchiqlari bilan yopiladi, bolaga rivojlantiruvchi uya (nesting) hosil qilinadi.",
+        "Kuvezdagi barcha muolajalar steril qo'lqopda maxsus yon tuynuklar orqali chaqaloqni bezovta qilmasdan bajariladi."
+      ];
+    }
+    if (text.includes('yetuk tug\'il') || text.includes('neonatologiya')) {
+      return [
+        "Yetuk tug'ilgan chaqaloqning tana vazni 2500-4000 g, bo'yi 48-52 sm oralig'ida bo'lib, baland ovoz bilan yig'laydi va emish refleksi yaxshi rivojlangan bo'ladi.",
+        "Tug'ruqdan keyingi fiziologik holatlar: fiziologik sariqlik (2-3 kundan boshlanadi), fiziologik vazn yo'qotish (6-8% gacha) va jinsiy kriz kuzatilishi mumkin.",
+        "Chaqaloq xonasida harorat 22-24°C, namlik 50-60% darajasida saqlanishi hamda chaqaloq kiyimlari tabiiy paxtali matodan bo'lishi lozim."
+      ];
+    }
+    if (text.includes('qon yaratish') || text.includes('siydik ajratish a\'zolari') || text.includes('morfologik va funksional yetilishi')) {
+      return [
+        "Kichik yoshdagi bolalarda qon aylanish tezligi yuqori, tomirlar devori elastik, yurakning nisbiy hajmi kattalarnikiga qaraganda kattaroq bo'ladi.",
+        "Go'daklarda nafas yo'llari tor, shilliq qavatlari qon tomirlariga boy bo'lgani sababli hatto yengil shamollashda ham shish va nafas qisishi tez rivojlanadi.",
+        "Chaqaloqlarda buyraklarning konsentratsiyalash qobiliyati past bo'lib, ular suvsizlanish va tuzlar disbalansiga juda sezgir bo'ladi."
       ];
     }
     if (text.includes('puls') || text.includes('nafas') || text.includes('vital')) {
