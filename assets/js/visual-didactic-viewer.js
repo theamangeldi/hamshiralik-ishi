@@ -23,6 +23,13 @@ window.VisualDidacticViewer = {
     "amaliy-10": "assets/images/didactic/amaliy-10.jpg",
     "amaliy-11": "assets/images/didactic/amaliy-11.jpg",
     "amaliy-12": "assets/images/didactic/amaliy-12.jpg",
+    "amaliy-13": "assets/images/didactic/amaliy-13.jpg",
+    "amaliy-14": "assets/images/didactic/amaliy-14.jpg",
+    "amaliy-15": "assets/images/didactic/amaliy-15.jpg",
+    "amaliy-16": "assets/images/didactic/amaliy-16.jpg",
+    "amaliy-17": "assets/images/didactic/amaliy-17.jpg",
+    "amaliy-18": "assets/images/didactic/amaliy-18.jpg",
+    "amaliy-19": "assets/images/didactic/amaliy-19.jpg",
     "amaliy-21": "assets/images/didactic/amaliy-21.jpg"
   },
 
@@ -130,6 +137,55 @@ window.VisualDidacticViewer = {
         "Ingalyatsiya davomiyligi o'rtacha 5-10 daqiqa davom etadi, dori qoldig'i 0.5-1.0 ml dan oshmasligi kuzatib boriladi.",
         "Gormonal preparatlar (masalan, budesonid/pulmikort) ingalyatsiyasidan so'ng og'iz bo'shlig'i zamburug'li zararlanishining (kandidoz) oldini olish uchun og'izni toza iliq suv bilan chayish shart.",
         "Soxta krup xurujida tezkor yordam: xonaga toza namlangan havo kiritish, issiq oyoq vannasi, nebulayzerda bronxolitik yuborish va zudlik bilan shifokorga xabar berish."
+      ];
+    }
+    if (text.includes('biokimyoviy tahlil') || text.includes('venadan qon') || text.includes('qon aylanish a\'zolari')) {
+      return [
+        "Bolalarda venadan qon olishda kapillyar kapalak-igna (butterfly) yoki vakuumli probirkalardan foydalaniladi.",
+        "Jgut qo'yilgan vaqt 1 daqiqadan oshmasligi kerak, aks holda gemoliz va qon tahlilining o'zgarishi kuzatiladi.",
+        "Inyeksiyadan keyin punksiya joyiga quruq steril paxta sharri qo'yilib, tirsak bo'g'imi 3-5 daqiqa bukilgan holatda ushlab turiladi."
+      ];
+    }
+    if (text.includes('diareya') || text.includes('degidratsiya') || text.includes('regidron') || text.includes('suvsizlanish')) {
+      return [
+        "Degidratsiyaning I-II darajalarida oral regidratsiya (Regidron) asosiy davolash usuli hisoblanadi.",
+        "Regidron eritmasi 1 litr toza qaynatilgan va xona haroratigacha ilitilgan suvda eritiladi.",
+        "Bolaga eritmalar oz-ozdan (har 5-10 daqiqada 1-2 choy qoshiqdan) beriladi; qusganda 10 daqiqa tanaffus qilib, yana sekin davom ettiriladi."
+      ];
+    }
+    if (text.includes('stomatit') || text.includes('og\'iz shilliq') || text.includes('gelmintoz')) {
+      return [
+        "Og'iz shilliq qavatiga dori surtishda steril shpatel va paxta tamponidan foydalaniladi, har bir yaraga alohida ishlov beriladi.",
+        "Kandidozli stomatitda (molochnitsa) 2% li natriy gidrokarbonat (iste'mol sodasi) eritmasi bilan shilliq qavat ehtiyotkorlik bilan tozalanadi.",
+        "Muolaja ovqatlantirishdan 30 daqiqa oldin yoki ovqatdan keyin og'iz chayilgach bajarilishi lozim."
+      ];
+    }
+    if (text.includes('kapillyar qon') || text.includes('kamqonlik') || text.includes('anemiya')) {
+      return [
+        "Kapillyar qon odatda bolaning IV (nomsiz) barmog'ining yon yuzasidan steril skarifakator yordamida olinadi.",
+        "Birinchi tomchi qon quruq steril paxta bilan artib tashlanadi, chunki unda to'qima suyuqligi bo'ladi.",
+        "Barmoqni qattiq siqish taqiqlanadi, aks holda to'qima suyuqligi aralashib, eritrotsit va gemoglobin ko'rsatkichlari buziladi."
+      ];
+    }
+    if (text.includes('burundan qon') || text.includes('epistaksis') || text.includes('gemorragik diatez') || text.includes('muzli xaltacha')) {
+      return [
+        "Burundan qon ketganda bolaning boshini orqaga tashlash qat'iyan man etiladi (boshni biroz oldinga engashtirish zarur).",
+        "Burun qanotlari burun to'sig'iga 5-10 daqiqa davomida barmoqlar bilan zich bosiladi.",
+        "Burun suyagi sohasiga (peshona va ensaga) sovuq kompress yoki muzli xaltacha qo'yiladi."
+      ];
+    }
+    if (text.includes('insulin') || text.includes('qandli diabet') || text.includes('shprits-ruchka')) {
+      return [
+        "Shprits-ruchka yordamida insulin teri osti yog' qatlamiga (qorin, son, yelka) 45-90 gradus burchak ostida kiritiladi.",
+        "Inyeksiya tugagach ignani darhol sug'urmasdan, kamida 10 soniya ushlab turish kerak (dori to'liq so'rilishi uchun).",
+        "Lipodistrofiyaning oldini olish maqsadida har bir inyeksiya joyi avvalgisidan kamida 1-2 sm masofada o'zgartirib boriladi."
+      ];
+    }
+    if (text.includes('pielonefrit') || text.includes('glomerulonefrit') || text.includes('shishlarni baholash') || text.includes('sistit')) {
+      return [
+        "Buyrak xastaliklarida shishlar ertalab asosan yuz va ko'z qovoqlarida (oqish, yumshoq) paydo bo'ladi.",
+        "Yashirin shishlarni aniqlash uchun har kuni bir vaqtda och qoringa tana vazni va sutkalik diurez (suyuqlik balansi) o'lchanadi.",
+        "Boldir suyagi old yuzasiga barmoq bilan 5 soniya bosilganda chuqurcha qolishi shishning obyektiv belgisidir."
       ];
     }
 
