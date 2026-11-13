@@ -43,7 +43,17 @@ window.VisualDidacticViewer = {
     "nazariy-7": "assets/images/didactic/nazariy-7.jpg",
     "nazariy-8": "assets/images/didactic/nazariy-8.jpg",
     "nazariy-9": "assets/images/didactic/nazariy-9.jpg",
-    "nazariy-10": "assets/images/didactic/nazariy-10.jpg"
+    "nazariy-10": "assets/images/didactic/nazariy-10.jpg",
+    "nazariy-11": "assets/images/didactic/nazariy-11.jpg",
+    "nazariy-12": "assets/images/didactic/nazariy-12.jpg",
+    "nazariy-13": "assets/images/didactic/nazariy-13.jpg",
+    "nazariy-14": "assets/images/didactic/nazariy-14.jpg",
+    "nazariy-15": "assets/images/didactic/nazariy-15.jpg",
+    "nazariy-16": "assets/images/didactic/nazariy-16.jpg",
+    "nazariy-17": "assets/images/didactic/nazariy-17.jpg",
+    "nazariy-18": "assets/images/didactic/nazariy-18.jpg",
+    "nazariy-19": "assets/images/didactic/nazariy-19.jpg",
+    "nazariy-20": "assets/images/didactic/nazariy-20.jpg"
   },
 
   // Mavzu uchun mos rasm yo'lini qaytarish
@@ -253,6 +263,41 @@ window.VisualDidacticViewer = {
         "Qichishishni kamaytirish va ikkilamchi bakterial infeksiya tushmasligi uchun tirnoqlarni qisqa olish va sedativ losonlar tavsiya etiladi.",
         "Qizamiqda fotofobiya (yorug'likdan qo'rqish) bo'lgani sababli xona pardalari yopiladi va ko'zlar iliq choy yoki furatsilin eritmasida yuviladi.",
         "Skarlatinada til o'ziga xos 'malina tili' ko'rinishida bo'lib, tomoqni antiseptik eritmalar (romashka, furatsilin) bilan chayish buyuriladi."
+      ];
+    }
+    if (text.includes('yurak nuqson') || text.includes('revmatizm') || text.includes('revmatik xoreya') || text.includes('revmokardit')) {
+      return [
+        "Tug'ma yurak nuqsonlari bor bolalarda jismoniy zo'riqish cheklanadi va sianoz xurujlarida tizzani ko'krakka bosish (knee-chest) holati beriladi.",
+        "O'tkir revmatik isitma va karditda bemor bola kamida 2-3 hafta davomida qat'iy yotoq rejimiga olinishi va puls tez-tez sanalishi shart.",
+        "Revmatik xoreyada asab tizimi shikastlanishi sababli bola xonasida shovqinsiz, xotirjam muhit yaratiladi va jarohatlarning oldi olinadi."
+      ];
+    }
+    if (text.includes('pilorostenoz') || text.includes('pilorospazm') || text.includes('enterokolit')) {
+      return [
+        "Pilorostenozda bolada ovqatlangandan keyin 'favvora kabi' (fontan bilan) nordon qusish kuzatiladi va tana vazni tez kamayadi.",
+        "Bemor go'dak har safar ovqatlantirilgandan so'ng 20-30 daqiqa davomida vertikal ('askarchasiga') ko'tarib turiladi.",
+        "Ichak enterokolitida degidratsiyani baholash uchun teri burmasining yozilishi va katta liqildoq holati muntazam tekshiriladi."
+      ];
+    }
+    if (text.includes('trombotsitopenik purpura') || text.includes('gemofiliya')) {
+      return [
+        "Gemofiliyada mushak ichiga inyeksiyalar qat'iyan man etiladi (gematoma xavfi tufayli faqat vena ichiga yoki peroral qilinadi).",
+        "Bo'g'imlarga qon quyilganda (gemartroz) oyoq-qo'lga to'liq tinchlik beriladi va sovuq kompress qo'yiladi.",
+        "Trombotsitopenik purpurada bolaning terisiga mexanik bosim, travmalar va qattiq tish cho'tkalaridan foydalanish taqiqlanadi."
+      ];
+    }
+    if (text.includes('gipotireoz') || text.includes('endemik buqoq')) {
+      return [
+        "Tug'ma gipotireozda neonatal skrining (TSH darajasi) dastlabki 4-5 kunlikda o'tkazilib, erta L-tiroksin o'rinbosar terapiyasi boshlanadi.",
+        "Bemor bolalarda letargiya, tana haroratining pastligi, qabziyat va tilning kattalashganligi (makroglossiya) kuzatiladi.",
+        "Endemik buqoq profilaktikasi uchun osh tuzini yodlash va yod preparatlarini shifokor ko'rsatmasi bilan qabul qilish zarur."
+      ];
+    }
+    if (text.includes('sovuqlik zanjiri') || text.includes('sil kasalligi') || text.includes('tuberkulyoz')) {
+      return [
+        "Vaksinalar 'sovuqlik zanjiri' tizimida qat'iy ravishda +2°C dan +8°C gacha bo'lgan haroratda saqlanishi va tashilishi shart.",
+        "Muzlatgich harorati kuniga 2 marta (ertalab va kechqurun) maxsus nazorat jurnaliga qayd etib boriladi.",
+        "BSSJ (BCG) vaksinasi chaqaloqqa hayotining 2-4 kunlarida chap yelkaning deltasimon mushagiga qat'iy teri ichiga (0.05 ml) yuboriladi."
       ];
     }
 
